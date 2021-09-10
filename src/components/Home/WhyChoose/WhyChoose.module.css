@@ -1,0 +1,61 @@
+/* .title{
+    text-align: center;
+    margin: 0 auto 80px;
+    position: relative;
+    line-height:60px ;
+    font-size: 30px;
+    color: #EDBB00;
+    font-weight: 600;
+    text-shadow: 2px 0px #ffcc0b;
+}
+.titleHalf{
+    text-shadow: 2px 0px #1f1ffc;
+    color: #1f1ffc;
+} */
+/* .titleHalf::after{
+    content: " ";
+    background:  #EDBB00;
+    width: 80px;
+    height: 5px; 
+    position: absolute; 
+    bottom: 0;
+    left: 50%; 
+    transform: translateX(-50%);
+
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+.titleText{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: 'Lobster', cursive;
+}
+.titleText .title{
+    margin: auto;
+    font-size: 2rem;
+    color: #EDBB00;
+    font-weight: bold;
+    /* text-shadow: 2px 0px #EDBB00; */
+    position: relative;
+    z-index: 1;
+    /* display: inline-block; */
+}
+.titleHalf{
+    /* text-shadow: 2px 0px #1f1ffc; */
+    color: #1f1ffc;
+} 
+.titleText .title::after {
+    content: "";
+    width: 3rem;
+    height: 2rem;
+    background: linear-gradient(#3434ff,#f3c41b);
+    position: absolute;
+    top: -30px;
+    left: 0;
+    z-index:-1;
+    transform: rotate(3deg);
+    border-top-left-radius: 62px;
+    border-bottom-right-radius: 55px;
+}

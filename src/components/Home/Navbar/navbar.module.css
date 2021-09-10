@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 #navbar{
     
     background: #44424230;
 }
 #img{
-    background-color:linear-gradient(blue, yellow) ;
+    background-color:linear-gradient(blue, yellow)!important; ;
 }
 .logo{
     width:100%;
@@ -58,9 +59,15 @@ a{
     
 }
 .slideTitle{
-    font-size: 70px;
+    font-size: 6rem;
     text-shadow: 3px 0px #ffcc0b;
     color: #EDBB00;
+    font-family: 'Lobster', cursive;
+}
+.slideText{
+    font-size: 2rem;
+    font-family: 'Lobster', cursive;
+    color: #ffffffe1;
 }
 .slideContact{
     padding: 10px 35px;
@@ -69,7 +76,6 @@ a{
     border: none;
     border-radius:1rem;
     font-weight: 600;
-    
     margin: 10px;
 }
 .slideContact a{
@@ -78,9 +84,6 @@ a{
 .slideContact:hover{
     background-color: #EDBB00;
     transition: 0.5s all;
-   color: #000000d7;
+   color: #555;
    font-weight: 600;
-}
-.slideText{
-    color: #ffffffe1;
 }
