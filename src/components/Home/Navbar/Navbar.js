@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import style from './navbar.module.css';
 import sliderFour from '../../../img/sliderFour.jpg';
 import sliderFive from '../../../img/sliderFive.jpg';
-import sliderTwo from '../../../img/sliderTwo.jpg';
 import sliderThree from '../../../img/sliderThree.jpg';
 const Navbar = () => {
     return (
@@ -20,22 +19,22 @@ const Navbar = () => {
                                 <Link class="nav-link text-warning fw-bold" aria-current="page" to="/">Home</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link text-primary fw-bold" to="/features">Features</Link>
+                                <Link class="nav-link text-warning fw-bold" to="/features">Features</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link text-primary fw-bold" to="/services">Services</Link>
+                                <Link class="nav-link text-warning fw-bold" to="/services">Services</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link text-primary fw-bold" to="/blogs">Blogs</Link>
+                                <Link class="nav-link text-warning fw-bold" to="/blogs">Blogs</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link text-primary fw-bold" to="/reviews">Reviews</Link>
+                                <Link class="nav-link text-warning fw-bold" to="/reviews">Reviews</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link text-primary fw-bold" to="/login">login</Link>
+                                <Link class="nav-link text-warning fw-bold" to="/contact">Contact</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link text-primary fw-bold" to="/contact">Contact</Link>
+                                <Link class="nav-link text-warning fw-bold" to="/login">Login</Link>
                             </li>
                         </ul>
                     </div>

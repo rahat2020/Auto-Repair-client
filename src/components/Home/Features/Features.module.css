@@ -1,15 +1,18 @@
 .wrapper{
     box-sizing: border-box;
     height: 100%;
-    padding:20px;
+    padding: 2rem;
     border-radius: 10px;
     transition: transform 0.4s;
-    box-shadow: 0px 2px 5px 2px #888484;
+    box-shadow: 2px 2px 10px 0px #888484;
 }
 .wrapper:hover{
     transform:translateY(10px);
 }
 .wrapper:nth-child(2){
+    background-color: #EDBB00;
+}
+#yellow{
     background-color: #EDBB00;
 }
 ul li{
@@ -42,7 +45,7 @@ ul li{
 .btnReadmore{
     border: 1px solid #fff;
     color: #ffffffe3;
-    padding: 0.5rem;
+    padding: 5px 1rem;
     border-radius: 1rem;
     font-weight: 600;
     background: #1f1ffc;
@@ -79,4 +82,10 @@ ul li{
     display: block;
     text-align: center;
     align-items: center;
+}
+@media only screen and (max-width: 468px) {
+    .wrapper{
+        height:20rem;
+        margin: 1rem;
+    }
 }

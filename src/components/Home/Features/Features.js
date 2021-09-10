@@ -6,7 +6,7 @@ const Features = () => {
     return (
         <section className="container mt-4 pt-4 mb-4">
 
-            <div className="row bg-gradient">
+            <div className="row bg-gradient ">
                 <div className="col-md-4">
                     <div className={style.wrapper}>
                         <div className={style.featureIcon}>
@@ -24,8 +24,8 @@ const Features = () => {
                     </div>
                 </div>
                 <div className="col-md-4">
-                    <div className={style.wrapper}>
-                        <div className={style.featureIcon}>
+                    <div className={style.wrapper} >
+                        <div className={style.featureIcon} id={style.yellow}>
                             <FontAwesomeIcon className={style.icon} icon={faClock} />
                         </div>
                         <p className={style.FeatureTitle}>Working time</p><hr className={style.hr} />
@@ -48,7 +48,7 @@ const Features = () => {
                     </div>
                 </div>
                 <div className="col-md-4">
-                    <div className={style.wrapper}>
+                    <div className={style.wrapper} >
                         <div className={style.featureIcon}>
                             <FontAwesomeIcon className={style.icon} icon={faPhone} />
                         </div>

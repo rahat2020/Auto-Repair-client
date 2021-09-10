@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 #navbar{
-    
-    background: #44424230;
+     background: #44424298;
+     box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 #img{
     background-color:linear-gradient(blue, yellow)!important; ;
@@ -86,4 +86,9 @@ a{
     transition: 0.5s all;
    color: #555;
    font-weight: 600;
+}
+@media only screen and (max-width: 468px) {
+    #navbar{
+        background: #080707d7;
+   }
 }
