@@ -33,7 +33,7 @@ const Footer = () => {
                                 <FontAwesomeIcon className={style.fas} icon={faEnvelope} />
                                 <div class={style.ctaText}>
                                     <h4 className="text-start">Mail us</h4>
-                                    <span>E-ShebaHelp@gmail.com</span>
+                                    <span>Auto-Repair@gmail.com</span>
                                 </div>
                             </div>
                         </div>

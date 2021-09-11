@@ -2,17 +2,20 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import style from './WhyChoose.module.css';
-import sliderFour from '../../../img/sliderFour.jpg';
-import sliderThree from '../../../img/sliderThree.jpg';
-import { Link } from 'react-router-dom';
+// import sliderFour from '../../../img/sliderFour.jpg';
+// import sliderThree from '../../../img/sliderThree.jpg';
+// import { Link } from 'react-router-dom';
+import Typing from 'react-typing-animation';
+import ReactPlayer from 'react-player'
 const WhyChoose = () => {
     return (
         <section className="container mt-5 pt-5 mb-5">
-            <div className={style.titleText}>
-                <h2 className={style.title}>Why<span className={style.titleHalf}> Us ?</span></h2>
-            </div>
-
-            <div className="row mt-4">
+            <Typing speed={400}>
+                <div className={style.titleText}>
+                    <h2 className={style.title}>Why<span className={style.titleHalf}> Us ?</span></h2>
+                </div>
+            </Typing>
+            <div className="row mt-5 pt-4">
                 <div className="col-md-3">
                     <div className={style.wrapper}>
                         <div className="choseTitle">
@@ -38,35 +41,12 @@ const WhyChoose = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="col-md-6">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src={sliderFour} class="d-block w-100 rounded-1" alt="..." />
-                                <div class="carousel-caption">
-                                    <h2 class={style.slideTitle}>We Are <span>Creative</span></h2>
-                                    <h3 class={style.slideText}>Web Design and Development Agency</h3>
-                                    <Link to="/">  <button class={style.slideContact}>Contact Now</button> </Link>
-                                    <Link to="/">  <button class={style.slideContact}>Book Now</button> </Link>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img src={sliderThree} class="d-block w-100 rounded-1" alt="..." />
-                                <div class="carousel-caption">
-                                    <h2 class={style.slideTitle}>We Are <span>Creative</span></h2>
-                                    <h3 class={style.slideText}>Web Design and Development Agency</h3>
-                                    <Link to="/">  <button class={style.slideContact}>Contact Now</button> </Link>
-                                    <Link to="/">  <button class={style.slideContact}>Book Now</button> </Link>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                <div className="col-md-6 bordered">
+                   <ReactPlayer 
+                   controls 
+                   width="100%" 
+                   height="19rem"
+                   url="https://www.youtube.com/watch?v=eWUxqVFBq74"/>
                 </div>
             </div>
 
@@ -75,3 +55,33 @@ const WhyChoose = () => {
 };
 
 export default WhyChoose;
+
+
+// <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+// <div class="carousel-indicators">
+//     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+//     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+//     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+// </div>
+// <div class="carousel-inner">
+//     <div class="carousel-item active">
+//         <img src={sliderFour} class="d-block w-100 rounded-1" alt="..." />
+//         <div class="carousel-caption">
+//             <h2 class={style.slideTitle}>We Are <span>Creative</span></h2>
+//             <h3 class={style.slideText}>Web Design and Development Agency</h3>
+//             <Link to="/">  <button class={style.slideContact}>Contact Now</button> </Link>
+//             <Link to="/">  <button class={style.slideContact}>Book Now</button> </Link>
+//         </div>
+//     </div>
+//     <div class="carousel-item">
+//         <img src={sliderThree} class="d-block w-100 rounded-1" alt="..." />
+//         <div class="carousel-caption">
+//             <h2 class={style.slideTitle}>We Are <span>Creative</span></h2>
+//             <h3 class={style.slideText}>Web Design and Development Agency</h3>
+//             <Link to="/">  <button class={style.slideContact}>Contact Now</button> </Link>
+//             <Link to="/">  <button class={style.slideContact}>Book Now</button> </Link>
+//         </div>
+//     </div>
+
+// </div>
+// </div>

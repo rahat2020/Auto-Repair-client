@@ -47,8 +47,8 @@ const Navbar = () => {
                     <div class="carousel-item active">
                         <img  src={sliderFour} class={style.banner}alt="..." />
                         <div class="carousel-caption">
-                            <h2 class={style.slideTitle}>We Are <span>Creative</span></h2>
-                            <h3 class={style.slideText}>Web Design and Development Agency</h3>
+                            <h2 class={style.slideTitle}>We Are <span>Professional</span></h2>
+                            <h3 class={style.slideText}>Web will modify your car as you want</h3>
                             <Link to="/">  <button class={style.slideContact}>Contact Now</button> </Link>
                             <Link to="/">  <button class={style.slideContact}>Book Now</button> </Link>
                         </div>
@@ -57,7 +57,7 @@ const Navbar = () => {
                         <img  src={sliderFive} class={style.banner} alt="..." />
                         <div class="carousel-caption">
                             <h2 class={style.slideTitle}>We Are <span>Creative</span></h2>
-                            <h3 class={style.slideText}>Web Design and Development Agency</h3>
+                            <h3 class={style.slideText}>We will fix your car as you bought dammn new</h3>
                             <Link to="/">  <button class={style.slideContact}>Contact Now</button> </Link>
                             <Link to="/">  <button class={style.slideContact}>Book Now</button> </Link>
                         </div>
@@ -65,8 +65,8 @@ const Navbar = () => {
                     <div class="carousel-item">
                         <img  src={sliderThree} class={style.banner} alt="..." />
                         <div class="carousel-caption">
-                            <h2 class={style.slideTitle}>We Are <span>Creative</span></h2>
-                            <h3 class={style.slideText}>Web Design and Development Agency</h3>
+                            <h2 class={style.slideTitle}>We care about<span> your car as you do</span></h2>
+                            <h3 class={style.slideText}>We are always dedicated to our client statisfactions</h3>
                             <Link to="/">  <button class={style.slideContact}>Contact Now</button> </Link>
                             <Link to="/">  <button class={style.slideContact}>Book Now</button> </Link>
                         </div>

@@ -1,0 +1,11 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: EagleLake-Regular
+font link: https://fonts.google.com/specimen/Eagle+Lake
+font author: Astigmatic
+font author site: http://www.astigmatic.com/
+
+
+{"bg-gradient-0":"#181B80","bg-gradient-1":"#181ED9","icon":"#ffffff","font":"#ffffff","slogan":"#ffffff"}
+      
