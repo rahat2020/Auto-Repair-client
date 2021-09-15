@@ -1,3 +1,5 @@
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import Typing from 'react-typing-animation';
 import style from './FAQ.module.css';
@@ -62,7 +64,9 @@ const FAQ = () => {
                             </div>
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary">Submit question</button>
+                        <button className={style.btnReadmore}>
+                            <FontAwesomeIcon className={style.arrow} icon={faArrowRight} /> Submit
+                        </button>
                         </div>
                     </form>
                 </div>

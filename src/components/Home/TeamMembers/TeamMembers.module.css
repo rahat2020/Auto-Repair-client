@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap');
-
 .titleText{
     text-align: center;
     justify-content: center;
@@ -12,10 +10,13 @@
     font-size: 2rem;
     color: #EDBB00;
     font-weight: 500;
+    /* text-shadow: 2px 0px #EDBB00; */
     position: relative;
     z-index: 1;
+    /* display: inline-block; */
 }
 .titleHalf{
+    /* text-shadow: 2px 0px #1f1ffc; */
     color: #1f1ffc;
 } 
 .titleText .title::after {
@@ -31,28 +32,38 @@
     border-top-left-radius: 62px;
     border-bottom-right-radius: 55px;
 }
-.title{
-    color: #555;
-    font-size: 1.5rem;
+.cardImg{
+    width: 100%;
+    height: 250px;
 }
-.faqQue{
-    color: #000000c7;
+#CardDetails{
+    background-color: #cec6c627;
+    padding: 1rem;
 }
-.details{
-    transition: 0.5s;
+#singleCard:hover{
+    transition: all 0.5s ease;
+    transform: translateY(10px);
 }
-
 .btnReadmore{
     border: 1px solid #fff;
     color: #ffffffe3;
-    padding: 6px 2.5rem;
+    padding: 5px 1rem;
     border-radius: 1rem;
-    font-size: 1em;
     font-weight: 600;
+    font-size: 0.75em;
     background: #1f1ffc;
 }
 .btnReadmore:hover{
     background: #EDBB00;
     color: #000000e5;
     transition: all 0.5s ease-in-out;
+}
+.cardPosition{
+    color: #666;
+    font-size: 0.75em;
+}
+.cardTitle{
+    color: #666;
+    letter-spacing:1px;
+    font-family: serif;
 }

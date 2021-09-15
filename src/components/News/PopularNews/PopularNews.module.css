@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap');
-
 .titleText{
     text-align: center;
     justify-content: center;
@@ -12,10 +10,13 @@
     font-size: 2rem;
     color: #EDBB00;
     font-weight: 500;
+    /* text-shadow: 2px 0px #EDBB00; */
     position: relative;
     z-index: 1;
+    /* display: inline-block; */
 }
 .titleHalf{
+    /* text-shadow: 2px 0px #1f1ffc; */
     color: #1f1ffc;
 } 
 .titleText .title::after {
@@ -31,23 +32,11 @@
     border-top-left-radius: 62px;
     border-bottom-right-radius: 55px;
 }
-.title{
-    color: #555;
-    font-size: 1.5rem;
-}
-.faqQue{
-    color: #000000c7;
-}
-.details{
-    transition: 0.5s;
-}
-
 .btnReadmore{
     border: 1px solid #fff;
     color: #ffffffe3;
-    padding: 6px 2.5rem;
+    padding: 10px 2rem;
     border-radius: 1rem;
-    font-size: 1em;
     font-weight: 600;
     background: #1f1ffc;
 }

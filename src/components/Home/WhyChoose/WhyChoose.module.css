@@ -79,9 +79,10 @@
 .btnReadmore{
     border: 1px solid #fff;
     color: #ffffffe3;
-    padding: 5px 1rem;
+    padding: 7px 1.2rem;
     border-radius: 1rem;
     font-weight: 600;
+    font-size: 1em;
     background: #1f1ffc;
 }
 .btnReadmore:hover{
