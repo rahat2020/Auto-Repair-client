@@ -3,8 +3,8 @@ import style from './PopularNews.module.css';
 import fakeNews from '../../../Data/fakeNews';
 import Typing from 'react-typing-animation';
 import News from '../News';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 const PopularNews = () => {
     const [news, setNews] = useState([])
     useEffect(() => {
@@ -31,8 +31,8 @@ const PopularNews = () => {
 
                 </div>
                 <div className="blogs-button text-center">
-                <button data-aos="fade-right" className={style.btnReadmore}>All Blogs</button>
-            </div>
+                    <button data-aos="fade-right" className={style.btnReadmore}>All Blogs</button>
+                </div>
             </div>
         </section>
     );

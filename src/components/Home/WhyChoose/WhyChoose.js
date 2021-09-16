@@ -15,7 +15,7 @@ const WhyChoose = () => {
                     <h2 className={style.title}>Why<span className={style.titleHalf}> Us ?</span></h2>
                 </div>
             </Typing>
-            <div className="row mt-5 pt-4">
+            <div data-aos="fade-up" className="row mt-5 pt-4">
                 <div className="col-md-3">
                     <div className={style.wrapper}>
                         <div className="choseTitle">

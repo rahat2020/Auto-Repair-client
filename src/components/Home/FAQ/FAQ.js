@@ -41,7 +41,7 @@ const FAQ = () => {
                         </details>
                     </div>
                 </div>
-                <div className="col-md-6" >
+                <div data-aos="zoom-in" className="col-md-6" >
                     <h2 className="text-secondary">Ask a question</h2>
                     <form class="row g-3 mt-2">
                         <div class="col-md-6">

@@ -1,30 +1,30 @@
 const team = [
     {
-        name: 'John',
+        name: 'Donal Bezos',
         img:'https://i.ibb.co/Fh9MPF8/teamFour.jpg',
-        phone: '98952785',
+        phone: '0180044444',
         email: 'john@gmail.com',
         position: 'CEO'
     },
     {
         name: 'Robert Muller',
         img:'https://i.ibb.co/jTDqhsn/teamOne.webp',
-        phone: '989524857',
+        phone: '0189784654',
         email: 'Robert@gmail.com',
         position: 'MAIN MECHANIC'
     },
     {
         name: 'Johnans mayers',
         img:'https://i.ibb.co/WsKf3MR/team-Three.jpg',
-        phone: '98952744',
+        phone: '0187777777',
         email: 'johans@gmail.com',
         position: 'MECHANIC'
     },
     {
         name: 'Johnathon',
         img:'https://i.ibb.co/D1qMr7F/teamTwo.jpg',
-        phone: '98952775',
-        email: 'Johnathon@gmail.com',
+        phone: '0173333333',
+        email: 'Jonaton@gmail.com',
         position: 'MECHANIC'
     },
 ]

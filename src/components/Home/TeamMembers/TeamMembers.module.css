@@ -50,20 +50,53 @@
     padding: 5px 1rem;
     border-radius: 1rem;
     font-weight: 600;
+    display: flex;
+    position: relative;
+    justify-content:center;
+    align-items:center;
     font-size: 0.75em;
     background: #1f1ffc;
+}
+.arrow{
+    margin-right: 10px;
 }
 .btnReadmore:hover{
     background: #EDBB00;
     color: #000000e5;
     transition: all 0.5s ease-in-out;
 }
-.cardPosition{
+.cardPosition {
     color: #666;
     font-size: 0.75em;
+}
+.email,.phone{
+    color: #666;
+    font-size: 0.75em;
+    letter-spacing:1px;
 }
 .cardTitle{
     color: #666;
     letter-spacing:1px;
     font-family: serif;
+    font-size: 1.5rem;
+}
+.socialIcon{
+    cursor: pointer;
+    display: flex;
+    justify-content:space-evenly;
+    align-items:center;
+    margin-bottom: 5px;
+}
+a:nth-child(1){
+    color: #1771E6;
+}
+a:nth-child(2){
+    color: #0775C3;
+}
+a:nth-child(3){
+    color:#E74957;
+}
+.icon{
+    font-size:1.5rem;
+
 }

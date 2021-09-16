@@ -5,8 +5,7 @@ import { faEnvelope, faClock, faPhone, faArrowRight } from '@fortawesome/free-so
 const Features = () => {
     return (
         <section className="container mt-4 pt-4 mb-4">
-
-            <div className="row bg-gradient ">
+            <div data-aos="fade-up" className="row bg-gradient ">
                 <div className="col-md-4">
                     <div className={style.wrapper}>
                         <div className={style.featureIcon}>

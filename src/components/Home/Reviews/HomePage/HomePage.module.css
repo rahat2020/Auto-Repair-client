@@ -1,0 +1,51 @@
+
+.blogContainer{
+    background: #beb5b53f;
+    border-radius: 3px;
+    box-shadow: 0px 0px 0px 3px #cecbcb63;
+    transition: all 0.5s Fast Out, Linear In;
+}
+.blogContainer:hover{
+    transition: background, color, all 0.5s ease;
+    background:#f3be003f;
+    transform:  skewY(3deg);
+    color: #fffff9;
+}
+.blogTitle{
+    color: #000000c7;
+    font-size: 17px;
+}
+
+.blogIcon{
+    margin-right: 5px;
+    color: gray;
+}
+.blogger,.blogDate{
+    color: #635f5f;
+    font-family: serif;
+    letter-spacing: 1px;
+    font-size: 0.75em;
+}
+.socialIcon{
+    cursor: pointer;
+    display: flex;
+    justify-content:space-evenly;
+    align-items:center;
+    font-size: 2rem;
+}
+.icon:hover{
+    color: #fff;
+    transition: all 0.5s ease;
+    transform:  skewY(10deg);
+}
+.blogger{
+    margin-left: 20px;
+}
+.blogs{
+    font-family: serif;
+    letter-spacing: 3px;
+
+}
+.reviewImage{
+    width:20%;height:50px;
+}

@@ -1,9 +1,5 @@
 import React from 'react';
 import style from './News.module.css';
-import newsOne from '../../img/newsOne.jpg';
-// import newsTwo from '../../img/newsTwo.jpg';
-// import newsThree from '../../img/newsThree.jpg';
-import newsFour from '../../img/newsFour.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faCalendarAlt, faUser } from '@fortawesome/free-solid-svg-icons';
 
