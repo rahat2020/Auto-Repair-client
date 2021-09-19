@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Typing from 'react-typing-animation';
 import style from './Reviews.module.css';
 import allReviews from '../../../Data/allReviews.js';
-import HomePage from './HomePage/HomePage';
+import HomePageReview from './HomePageReview/HomePageReview';
 
 const Reviews = () => {
     
@@ -22,7 +22,7 @@ const Reviews = () => {
                         {
                             review?.slice(0, 3).map((item) =>
                                 <div className="col-md-4">
-                                    <HomePage key={item.id} item={item} />
+                                    <HomePageReview key={item.id} item={item} />
                                 </div>
 
                         )}

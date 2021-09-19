@@ -3,7 +3,7 @@ import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import style from './HomePage.module.css'
+import style from './HomePageReview.module.css'
 const readMore = {
     color: '#5653f1',
     cursor: 'pointer',
@@ -17,13 +17,13 @@ const Text = {
     color: "gray",
 }
 
-const HomePage = ({ item: { id, img, position, description, name, date } }) => {
+const HomePageReview = ({ item: { id, img, position, description, name, date } }) => {
     const truncate = (text, n) => {
         return text?.length > n ? text.substr(0, n - 1) + " ..." : text;
     }
     return (
         <section className="container mt-5 pt-5 mb-5">
-            <div data-aos="fade-up" className="card shadow" className={style.blogContainer} data-aos="zoom-in" data-aos-duration={500 * `${id}`}>
+            <div id={style.container} className="card shadow"  data-aos="zoom-in" data-aos-duration={500 * `${id}`}>
                 <div className="d-flex justify-content-between">
                     <div className="blog-head-one">
                         <p className={style.blogDate}> <FontAwesomeIcon className={style.blogIcon} icon={faCalendarAlt} />{date}</p>
@@ -54,4 +54,4 @@ const HomePage = ({ item: { id, img, position, description, name, date } }) => {
     );
 };
 
-export default HomePage;
+export default HomePageReview;
