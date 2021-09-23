@@ -6,17 +6,25 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './components/Home/Home/Home';
+import Contact from './components/Home/Contact/Contact';
+import Aboutus from './components/Aboutus/Aboutus';
+import Footer from './components/Home/Footer/Footer';
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Switch>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </Router>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route  path="/contacts">
+          <Contact />
+        </Route>
+        <Route path="/about">
+          <Aboutus />
+        </Route>
+      </Switch>
+      <Footer/>
+    </Router>
   );
 }
 

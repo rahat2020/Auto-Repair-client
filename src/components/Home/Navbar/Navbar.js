@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import style from './navbar.module.css';
 import sliderFour from '../../../img/sliderFour.jpg';
 import sliderFive from '../../../img/sliderFive.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faBars } from '@fortawesome/free-solid-svg-icons';
 import sliderThree from '../../../img/sliderThree.jpg';
 import Typical from 'react-typical'
 const Navbar = () => {
@@ -12,12 +14,13 @@ const Navbar = () => {
                 <div class="container-fluid">
                     <Link to="/"> <span className={style.logo}>Auto</span><span className={style.logoTwo}>Repair</span> </Link>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        {/* <span class="navbar-toggler-icon"></span> */}
+                        <FontAwesomeIcon className={style.arrow} icon={faBars} />
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto text-center">
                             <li class="nav-item">
-                                <Link class="nav-link text-warning fw-bold" aria-current="page" to="/">Home</Link>
+                                <Link class="nav-link active text-warning fw-bold" aria-current="page" to="/">Home</Link>
                             </li>
                             <li class="nav-item">
                                 <Link class="nav-link text-warning fw-bold" to="/features">Features</Link>
@@ -26,13 +29,16 @@ const Navbar = () => {
                                 <Link class="nav-link text-warning fw-bold" to="/services">Services</Link>
                             </li>
                             <li class="nav-item">
+                                <Link class="nav-link text-warning fw-bold" to="/products">Products</Link>
+                            </li>
+                            <li class="nav-item">
                                 <Link class="nav-link text-warning fw-bold" to="/blogs">Blogs</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link text-warning fw-bold" to="/reviews">Reviews</Link>
+                                <Link class="nav-link text-warning fw-bold" to="/about">About</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link text-warning fw-bold" to="/contact">Contact</Link>
+                                <Link class="nav-link text-warning fw-bold" to="/contacts">Contact</Link>
                             </li>
                             <li class="nav-item">
                                 <Link class="nav-link text-warning fw-bold" to="/login">Login</Link>

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 #navbar{
-     background: #44424298;
+   
      box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 #img{
@@ -14,6 +14,20 @@
     color: #1f1ffc;
     font-weight: 600;
     font-family: 'Lobster', cursive;
+}
+.active{
+    border-bottom: 1px solid #000;
+}
+.navbar-toggler{
+    border: none !important;
+    outline: none !important;
+    padding: initial !important;
+}
+.arrow{
+    color: #fff !important;
+    border: none !important;
+    font-size: 35px !important;
+    outline: none !important;
 }
 
 .logoTwo{

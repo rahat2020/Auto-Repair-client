@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+#navbar{
+    background-color: #5142369c;
+}
+#navItem:hover {
+    text-decoration: underline;
+}
+.aboutBox{
+    text-align: center;
+    margin-top: 6rem;
+    background-image: url('../../img/bg10.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.aboutBox:hover{
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.1)
+}
+.slideTitle{
+    font-size: 4rem;
+    color: #fff;
+    font-family: 'Lobster', cursive;
+}
+.TitleTwo{
+    font-size: 2.5rem;
+    color: #fff;
+    font-family: 'Lobster', cursive;
+}
+.btn{
+    display: flex;
+    justify-content:center;
+}
+.btnReadmore{
+    color: #fff;
+    border: none;
+    padding: 7px 3rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    position: relative;
+    justify-content:center;
+    margin: 10px;
+    align-items:center;
+    font-size: 1.25em;
+    background-color: #EDBB00;;
+}
+.arrow{
+    margin-right: 10px;
+}
+.btnReadmore:hover{
+    background: #1f1ffc;
+    transition: all 0.5s ease-in-out;
+}
+.logo{
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-top: 1rem;
+}
+.aboutLogo{
+    width: 10%;
+    height: 150px;
+}
+.qoute{
+    text-align: center;
+    display: block;
+    justify-content:center;
+    align-items:center;
+    margin-top: 1rem;
+}
+.para{
+    text-align: start;
+    color: #000000c7;
+    justify-content:center;
+    align-items:center;
+    font-weight: 400;
+    font-size: 0.75rem;
+    width: 400px;
+   
+}
+.title{
+    color: #00000093;
+    font-weight: 400;
+    text-align: center;
+}

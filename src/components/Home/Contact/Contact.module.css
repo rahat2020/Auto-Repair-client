@@ -1,0 +1,150 @@
+#navbar{
+    background: #44424298;
+    box-shadow: 0 0 10px #00000066;
+}
+.contactTilte{
+    display: flex;
+  
+    justify-content: center;
+    align-items: center;
+}
+
+.active{
+    border-bottom: 1px solid #000 !important;
+}
+#navItem:hover{
+    text-decoration: underline;
+    transition: all 0.5s ease;
+    text-decoration-color: #4646fd;
+}
+.navbar-toggler{
+    border: none !important;
+    outline: none !important;
+    padding: initial !important;
+}
+.mapContainer{
+    background: #beb5b517;
+}
+.googleMap{
+    width:100%;
+    height:500px;
+}
+.ContactBar{
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+}
+.contactTilte h2{
+    color: #000000ce;
+    font-weight: 300;
+    text-align:center;
+    margin: 1rem;
+    
+}
+.lineOne {
+    width: 25px;
+    height: 25px;
+   background: #4646fd;
+   display: inline-block;
+}
+.arrow{
+    color: #4646fd;
+    font-size: 2rem;
+}
+.scheduleText{
+    height: 160px;
+    padding: 0.75rem;
+    display: block;
+    text-align: center;
+    font-style: italic;
+    font-weight: 400;
+    justify-content:center;
+    align-items:center;
+    border-radius: 0.5rem;
+    border: 1px solid #8d8a8a59;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 10px #42414148;
+}
+.para{
+    margin-top: 10px;
+    line-height:10px;
+    color: #666666dc;
+}
+
+.scheduleText:hover{
+    background: #d5f520ce;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #d5f520ce;
+    border: none;
+}
+.socialIcon{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    
+}
+.icon{
+    font-size: 2rem;
+    margin: 1rem;
+    transition: all 0.5s ease;
+}
+.icon:hover{
+    transform: scale(1.3);
+  
+}
+#facebookBg{
+    transition: all 0.5s ease;
+    color: #666666dc;
+}
+#facebookBg:hover{
+    color: #4646fd;
+}
+#faInstagramSquare{
+    transition: all 0.5s ease;
+      color: #666666dc;
+}
+#faInstagramSquare:hover{
+    color: #F04D4D;
+}
+#faYoutubeSquare{
+    transition: all 0.5s ease;
+      color: #666666dc;
+}
+#faYoutubeSquare:hover{
+    color: #F70000;
+}
+#faTwitterSquare{
+    transition: all 0.5s ease;
+      color: #666666dc;
+}
+#faTwitterSquare:hover{
+    color: #4646fd;
+}
+#form{
+    background: #a09d9d1e;
+}
+.slideContact{
+    padding: 10px 35px;
+    background-color: #8b8989b9;
+    color: #fff;
+    border: none;
+    border-radius:0.75rem;
+    font-weight: 600;
+    margin: 10px;
+}
+.slideContact a{
+    text-decoration: none;
+}
+.slideContact:hover{
+    background-color: #EDBB00;
+    transition: 0.5s all;
+   color: #fcfafa;
+   font-weight: 600;
+}
+
+@media  (max-width: 468px) {
+    .map{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
