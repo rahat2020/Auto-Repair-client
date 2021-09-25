@@ -9,6 +9,7 @@ import Home from './components/Home/Home/Home';
 import Contact from './components/Home/Contact/Contact';
 import Aboutus from './components/Aboutus/Aboutus';
 import Footer from './components/Home/Footer/Footer';
+import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 function App() {
   return (
     <Router>
@@ -21,6 +22,9 @@ function App() {
         </Route>
         <Route path="/about">
           <Aboutus />
+        </Route>
+        <Route path="/dashboard">
+          <Dashboard />
         </Route>
       </Switch>
       <Footer/>

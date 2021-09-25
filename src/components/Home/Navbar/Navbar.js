@@ -23,7 +23,7 @@ const Navbar = () => {
                                 <Link class="nav-link active text-warning fw-bold" aria-current="page" to="/">Home</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link text-warning fw-bold" to="/features">Features</Link>
+                                <Link class="nav-link text-warning fw-bold" to="/dashboard">Dashboard</Link>
                             </li>
                             <li class="nav-item">
                                 <Link class="nav-link text-warning fw-bold" to="/services">Services</Link>

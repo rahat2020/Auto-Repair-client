@@ -1,15 +1,23 @@
 import React from 'react'
 import style from './Aboutus.module.css';
 import carVideo from '../../img/carVideo.mp4';
+import signature from '../../img/signature.png';
 import { Link } from 'react-router-dom';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import auto from '../../img/auto.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Carousel } from '@trendyol-js/react-carousel';
+import ReactPlayer from 'react-player';
+import aboutOne from '../../img/aboutOne.jpg';
+import aboutTwo from '../../img/aboutTwo.jpg';
+import aboutThree from '../../img/aboutThree.jpg';
+import aboutFive from '../../img/aboutFive.jpg';
+import aboutSix from '../../img/aboutSix.jpg';
 export default function Aboutus() {
     return (
         <section className="mb-4" id={style.about}>
             <div className="video">
-                <video
+                {/* <video
                     autoPlay
                     loop
                     muted
@@ -27,7 +35,7 @@ export default function Aboutus() {
 
                 >
                     <source src={carVideo} type="video/mp4" />
-                </video>
+                </video> */}
             </div>
             <nav id={style.navbar} class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
@@ -77,6 +85,90 @@ export default function Aboutus() {
                         nibh suscipit lobortis nisl ut aliquip ex ea commodo consequat.</span>
                 </div>
 
+                <div className="mt-4 pt-4 mb-3">
+                    <div className="row">
+                        <div className="col-md-7">
+                            <div className={style.colLeft}>
+                                <h4 className={style.aboutTitle}>WP Theme for Mechanics!</h4>
+                                <p className={style.aboutPara}>Mauris accumsan eros eget libero posuere vulputate. Etiam elit elit, elementum sed varius at, adipiscing vitae est. Sed nec felis pellentesque, lacinia dui sed, ultricies sapien. Pellentesque orci lectus, consectetur vel posuere posuere, rutrum eu ipsum.
+                                    <br />
+                                    <br />
+
+                                    Aliquam eget odio sed ligula iaculis consequat at eget orci. Mauris molestie sit amet metus mattis varius. Donec sit amet ligula eget nisi sodales egestas. Mauris non tempor quam, et lacinia sapien. Aliquam interdum dolor aliquet dolor sollicitudin fermentum. Donec congue lorem a molestie bibendum. Etiam nisi ante, consectetur eget placerat a, tempus a neque. Donec ut elit urna. Etiam venenatis eleifend urna eget scelerisque. Aliquam in nunc quis dui sollicitudin ornare ac vitae lectus.
+                                    <br />
+                                    <br />
+                                    Mauris non tempor quam, et lacinia sapien. Aliquam interdum dolor aliquet dolor sollicitudin fermentum. Donec congue lorem a molestie bibendum. Etiam nisi ante, consectetur eget placerat a, tempus a neque. Donec ut elit urna. Etiam venenatis eleifend urna eget scelerisque. Aliquam in nunc quis dui sollicitudin ornare ac vitae lectus.</p>
+                            </div>
+                            <div className="row mt-4 pt-4">
+                                <div className="col-md-7">
+                                    <div className={style.video}>
+                                        <ReactPlayer
+                                            controls
+                                            width="100%"
+                                            height="15rem"
+                                            borderRadius="2rem"
+                                            url="https://www.youtube.com/watch?v=eWUxqVFBq74" />
+                                    </div>
+                                </div>
+                                <div className="col-md-5 d-flex flex-row-reverse">
+                                    <div className="" id={style.founder}>
+                                        <h4>Kazi Rahat</h4>
+                                        <div className={style.activity}>
+                                            <ul>
+                                                <li>Over 900 Five Star Reviews</li>
+                                                <li>Free Diagnosis & Brake Checks</li>
+                                                <li>No Appointment Necessary</li>
+                                                <li>Free Loaner Cars or Shuttle</li>
+                                            </ul>
+                                            <div className={style.img}>
+                                                <img src={signature} alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-md-5">
+                            <div className="w-100 d-flex flex-row-reverse" id={style.colRight}>
+                                <div className={style.wrapper}>
+                                    <div className={style.featureIcon}>
+                                        <FontAwesomeIcon className={style.icon} icon={faEnvelope} />
+                                    </div>
+                                    <p className={style.FeatureTitle}>free apointments</p> <hr className={style.hr} />
+                                    <ul>
+                                        <li>Free Diagnosis & Brake Checks</li>
+                                        <li>Message with photo and video</li>
+                                        <li>Expect free call from us</li>
+                                    </ul>
+                                    <button className={style.readMore}>Read more </button>
+                                </div>
+                            </div>
+                            <div className="w-100 d-flex flex-row-reverse mt-2" id={style.colRight}>
+                                <div className={style.wrapper} >
+                                    <div className={style.featureIcon}>
+                                        <FontAwesomeIcon className={style.icon} icon={faPhone} />
+                                    </div>
+                                    <h4 className={style.phnNumber}><span>24hr Hotline</span> +880148724875</h4> <hr className={style.hr} />
+                                    <div className={style.phoneText}>
+                                        <p>Mobile: 02 562-958</p>
+                                        <p>Fax: 02 562-95</p>
+                                        <p>Email: autoRepair@example.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id={style.Carousel} className="slider container mt-5">
+                <h1 className={style.CarouselTitle}>Gallery</h1>
+                <Carousel children={true} infinite={true} show={3.5} slide={4} swiping={true} transition={0.5} responsive={true} >
+                    <img className={style.caroImg} src={aboutOne} alt="" />
+                    <img className={style.caroImg} src={aboutTwo} alt="" />
+                    <img className={style.caroImg} src={aboutThree} alt="" />
+                    <img className={style.caroImg} src={aboutFive} alt="" /> 
+                    <img className={style.caroImg} src={aboutSix} alt="" /> 
+                </Carousel>
             </div>
         </section>
     )

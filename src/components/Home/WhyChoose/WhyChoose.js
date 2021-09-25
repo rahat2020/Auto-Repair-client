@@ -56,32 +56,3 @@ const WhyChoose = () => {
 
 export default WhyChoose;
 
-
-// <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-// <div class="carousel-indicators">
-//     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-//     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-//     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-// </div>
-// <div class="carousel-inner">
-//     <div class="carousel-item active">
-//         <img src={sliderFour} class="d-block w-100 rounded-1" alt="..." />
-//         <div class="carousel-caption">
-//             <h2 class={style.slideTitle}>We Are <span>Creative</span></h2>
-//             <h3 class={style.slideText}>Web Design and Development Agency</h3>
-//             <Link to="/">  <button class={style.slideContact}>Contact Now</button> </Link>
-//             <Link to="/">  <button class={style.slideContact}>Book Now</button> </Link>
-//         </div>
-//     </div>
-//     <div class="carousel-item">
-//         <img src={sliderThree} class="d-block w-100 rounded-1" alt="..." />
-//         <div class="carousel-caption">
-//             <h2 class={style.slideTitle}>We Are <span>Creative</span></h2>
-//             <h3 class={style.slideText}>Web Design and Development Agency</h3>
-//             <Link to="/">  <button class={style.slideContact}>Contact Now</button> </Link>
-//             <Link to="/">  <button class={style.slideContact}>Book Now</button> </Link>
-//         </div>
-//     </div>
-
-// </div>
-// </div>

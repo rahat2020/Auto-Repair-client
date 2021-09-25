@@ -58,7 +58,6 @@ const Features = () => {
                             <p>Email: autoRepair@example.com</p>
 
                         </div>
-
                     </div>
                 </div>
             </div>
