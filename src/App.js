@@ -1,5 +1,5 @@
 import './App.css';
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,27 +8,59 @@ import {
 import Home from './components/Home/Home/Home';
 import Contact from './components/Home/Contact/Contact';
 import Aboutus from './components/Aboutus/Aboutus';
-import Footer from './components/Home/Footer/Footer';
+import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
+// import loader from './img/loader.gif';
 function App() {
+
+
+  const [loading, setLoading] = useState(false)
+
+  // useEffect(() => {
+  //   setLoading(true)
+  //   setTimeout(() => {
+  //     setLoading(false)
+  //   }, 8000)
+  // }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 8000);
+    return () => clearTimeout(timer);
+  }, []);
+  // const gifStyle = {
+  //   width: "100vw",
+  //   height: "100vh"
+  // }
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route  path="/contacts">
-          <Contact />
-        </Route>
-        <Route path="/about">
-          <Aboutus />
-        </Route>
-        <Route path="/dashboard">
-          <Dashboard />
-        </Route>
-      </Switch>
-      <Footer/>
-    </Router>
+    <div className="root">
+      {
+        loading ?
+          <ClimbingBoxLoader
+            color={"#EDBB00"}
+            loading={loading}
+            size={10}
+          />
+          :
+          <Router>
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route path="/contacts">
+                <Contact />
+              </Route>
+              <Route path="/about">
+                <Aboutus />
+              </Route>
+              <Route path="/dashboard">
+                <Dashboard />
+              </Route>
+            </Switch>
+          </Router>
+      }
+    </div>
   );
 }
 

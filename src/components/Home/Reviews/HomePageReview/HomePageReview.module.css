@@ -5,9 +5,8 @@
 }
 #container:hover{
     transition: background, color,transform, all 0.5s ease;
-    background:linear-gradient(#f3be003f, #0e0eff4f);
-    transform: scale(10deg); 
-    color: #fffff9;
+    transform: scale(1.1); 
+    color: #fffff9 !important;
     
 }
 

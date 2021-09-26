@@ -235,6 +235,7 @@ ul li{
 @media only screen and (max-width: 468px) {
     #carousel{
         height: 20vh;
+        background-image: none;
     }
 }
 @media only screen and (max-width: 468px) {

@@ -1,0 +1,65 @@
+#Dashboard{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+.dashLogo{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.logo{
+    width:100%;
+    /* height:40px; */
+    font-size: 2rem;
+    color: #1f1ffc;
+    font-weight: 600;
+    font-family: 'Lobster', cursive;
+}
+.logoTwo{
+    font-size: 2rem;
+    color: #EDBB00;
+    font-family: 'Lobster', cursive;
+    font-weight: 600;
+}
+#colLeft{
+    background: #020509de;
+    height:100vh;
+}
+
+#sideBar{
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#sideBar:nth-child(1){
+    background-color: #fff;
+}
+ul li{
+    list-style-type: none;
+}
+.li {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    border-radius: 0.75em;
+    /* border: 1px solid #EDBB00; */
+    transition: all 0.5s ease;
+    box-sizing: border-box;
+    line-height: 1.5rem;
+    margin: 1rem;
+    font-weight: 600;
+    padding:0.75rem;
+    color: #0d0dff !important;
+    background-color: yellow;
+}
+
+.li:hover{
+    background-color: blue;
+    font-weight: 600;
+    color: white !important;
+    border: none;
+}

@@ -4,9 +4,8 @@ import style from './navbar.module.css';
 import sliderFour from '../../../img/sliderFour.jpg';
 import sliderFive from '../../../img/sliderFive.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import sliderThree from '../../../img/sliderThree.jpg';
-import Typical from 'react-typical'
 const Navbar = () => {
     return (
         <div className={style.navContainer}>
@@ -54,29 +53,8 @@ const Navbar = () => {
                     <div class="carousel-item active">
                         <img src={sliderFour} class={style.banner} alt="..." />
                         <div class="carousel-caption">
-                            <h2 class={style.slideTitle}>We {" "}
-                            <Typical
-                                class={style.Typical}
-                                    loop={Infinity}
-                                    speed={300}
-                                    wrapper="b"
-                                    steps={['Are Professional', 5000, 'are dedicated to work', 5000]}
-                                   
-                                />
-                           
-                            
-                            </h2>
-                            <h3 class={style.slideText}>
-                                We {" "}
-                                <Typical
-                                class={style.Typical}
-                                    loop={Infinity}
-                                    speed={400}
-                                    wrapper="b"
-                                    steps={['will modify your car as you want', 5000, 'will fix your car problem', 5000]}
-                                />
-                             
-                            </h3>
+                            <h2 class={style.slideTitle}>We Are Professional </h2>
+                            <h3 class={style.slideText}>e will modify your car as you want will fix your car problem</h3>
                             <Link to="/">  <button class={style.slideContact}>Contact Now</button> </Link>
                             <Link to="/">  <button class={style.slideContact}>Book Now</button> </Link>
                         </div>
@@ -84,15 +62,7 @@ const Navbar = () => {
                     <div class="carousel-item">
                         <img src={sliderFive} class={style.banner} alt="..." />
                         <div class="carousel-caption">
-                            <h2 class={style.slideTitle}>We {" "}
-                            <Typical
-                                class={style.Typical}
-                                    loop={Infinity}
-                                    speed={600}
-                                    wrapper="b"
-                                    steps={['Are Creative', 5000, 'will make you happy', 5000]}
-                                />
-                            </h2>
+                            <h2 class={style.slideTitle}>We are creative</h2>
                             <h3 class={style.slideText}>We will fix your car as you bought dammn new</h3>
                             <Link to="/">  <button class={style.slideContact}>Contact Now</button> </Link>
                             <Link to="/">  <button class={style.slideContact}>Book Now</button> </Link>
@@ -101,7 +71,7 @@ const Navbar = () => {
                     <div class="carousel-item">
                         <img src={sliderThree} class={style.banner} alt="..." />
                         <div class="carousel-caption">
-                            <h2 class={style.slideTitle}>We care about<span> your car as you do</span></h2>
+                            <h2 class={style.slideTitle}>We care your<span> car as you do</span></h2>
                             <h3 class={style.slideText}>We are always dedicated to our client statisfactions</h3>
                             <Link to="/">  <button class={style.slideContact}>Contact Now</button> </Link>
                             <Link to="/">  <button class={style.slideContact}>Book Now</button> </Link>

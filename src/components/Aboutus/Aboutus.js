@@ -13,11 +13,14 @@ import aboutTwo from '../../img/aboutTwo.jpg';
 import aboutThree from '../../img/aboutThree.jpg';
 import aboutFive from '../../img/aboutFive.jpg';
 import aboutSix from '../../img/aboutSix.jpg';
+import Footer from '../Home/Footer/Footer';
 export default function Aboutus() {
+
+    
     return (
         <section className="mb-4" id={style.about}>
             <div className="video">
-                {/* <video
+                <video
                     autoPlay
                     loop
                     muted
@@ -35,7 +38,7 @@ export default function Aboutus() {
 
                 >
                     <source src={carVideo} type="video/mp4" />
-                </video> */}
+                </video>
             </div>
             <nav id={style.navbar} class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
@@ -166,10 +169,11 @@ export default function Aboutus() {
                     <img className={style.caroImg} src={aboutOne} alt="" />
                     <img className={style.caroImg} src={aboutTwo} alt="" />
                     <img className={style.caroImg} src={aboutThree} alt="" />
-                    <img className={style.caroImg} src={aboutFive} alt="" /> 
-                    <img className={style.caroImg} src={aboutSix} alt="" /> 
+                    <img className={style.caroImg} src={aboutFive} alt="" />
+                    <img className={style.caroImg} src={aboutSix} alt="" />
                 </Carousel>
             </div>
+            <Footer />
         </section>
     )
 }
