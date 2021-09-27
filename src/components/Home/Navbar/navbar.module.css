@@ -80,12 +80,14 @@ a{
     font-size: 6rem;
     text-shadow: 3px 0px #ffcc0b;
     color: #EDBB00;
+    background: #302f2f63;
     font-family: 'Lobster', cursive;
 }
 .slideText{
     font-size: 2rem;
     font-family: 'Lobster', cursive;
     color: #ffffffe1;
+    background: #302f2f63;
 }
 .slideContact{
     padding: 10px 35px;
@@ -108,5 +110,9 @@ a{
 @media only screen and (max-width: 468px) {
     #navbar{
         background: #080707d7;
+   }
+   .slideTitle{
+       font-size: 2rem;
+       
    }
 }

@@ -54,7 +54,7 @@ const Navbar = () => {
                         <img src={sliderFour} class={style.banner} alt="..." />
                         <div class="carousel-caption">
                             <h2 class={style.slideTitle}>We Are Professional </h2>
-                            <h3 class={style.slideText}>e will modify your car as you want will fix your car problem</h3>
+                            <h3 class={style.slideText}>we will modify your car as you want will fix your car problem</h3>
                             <Link to="/">  <button class={style.slideContact}>Contact Now</button> </Link>
                             <Link to="/">  <button class={style.slideContact}>Book Now</button> </Link>
                         </div>
@@ -71,8 +71,8 @@ const Navbar = () => {
                     <div class="carousel-item">
                         <img src={sliderThree} class={style.banner} alt="..." />
                         <div class="carousel-caption">
-                            <h2 class={style.slideTitle}>We care your<span> car as you do</span></h2>
-                            <h3 class={style.slideText}>We are always dedicated to our client statisfactions</h3>
+                            <h2 class={style.slideTitle}>We are<span> dedicated</span></h2>
+                            <h3 class={style.slideText}>We care about your car as you do</h3>
                             <Link to="/">  <button class={style.slideContact}>Contact Now</button> </Link>
                             <Link to="/">  <button class={style.slideContact}>Book Now</button> </Link>
                         </div>

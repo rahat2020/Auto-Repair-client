@@ -163,7 +163,7 @@ export default function Aboutus() {
                     </div>
                 </div>
             </div>
-            <div id={style.Carousel} className="slider container mt-5">
+            <div id={style.Carousel} className="slider container mt-5 mb-5">
                 <h1 className={style.CarouselTitle}>Gallery</h1>
                 <Carousel children={true} infinite={true} show={3.5} slide={4} swiping={true} transition={0.5} responsive={true} >
                     <img className={style.caroImg} src={aboutOne} alt="" />

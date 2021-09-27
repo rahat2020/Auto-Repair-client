@@ -4,6 +4,7 @@ import FAQ from '../FAQ/FAQ';
 import Features from '../Features/Features';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
+import OurMotto from '../OurMotto/OurMotto';
 import Reviews from '../Reviews/Reviews';
 import Services from '../Services/Services';
 import TeamMembers from '../TeamMembers/TeamMembers';
@@ -13,6 +14,7 @@ const Home = () => {
     return (
         <div>
             <Header />
+            <OurMotto/>
             <Features />
             <WhyChoose />
             <Services />

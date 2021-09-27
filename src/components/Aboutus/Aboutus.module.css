@@ -189,6 +189,12 @@ ul li{
     text-align: center;
     align-items: center;
 }
+.video{
+    transition: all 0.5s ease;
+}
+.video:hover{
+    transform: scale(1.1);
+}
 
 /* carousel */
 #Carousel{
@@ -233,9 +239,18 @@ ul li{
     }
 }
 @media only screen and (max-width: 468px) {
-    #carousel{
-        height: 20vh;
+    .aboutBox{
+        background: #2e2d2d7a;
         background-image: none;
+    }
+    .logo{
+        transition: all 0.5s ease;
+    }
+    .logo:hover{
+        transform: scale(1.1)
+    }
+    #founder{
+        padding:1rem;
     }
 }
 @media only screen and (max-width: 468px) {
