@@ -20,6 +20,9 @@ export default function Dashboard() {
                                 <Link className={style.li} to={`${url}/addService`}>Add Service</Link>
                             </li>
                             <li>
+                                <Link className={style.li} to={`${url}/admin`}>Admin</Link>
+                            </li>
+                            <li>
                                 <Link className={style.li} to={`${url}/addReview`}>Add Review</Link>
                             </li>
                             <li>

@@ -12,7 +12,7 @@
 .titleText .title{
     margin: auto;
     font-size: 2rem;
-    color: #EDBB00;
+    color: #FB4848 ;
     font-weight: 500;
     /* text-shadow: 2px 0px #EDBB00; */
     position: relative;
@@ -21,13 +21,13 @@
 }
 .titleHalf{
     /* text-shadow: 2px 0px #1f1ffc; */
-    color: #1f1ffc;
+    color: #4b4bff;
 } 
 .titleText .title::after {
     content: "";
     width: 3rem;
     height: 2rem;
-    background: linear-gradient(#3434ff,#f3c41b);
+    background: linear-gradient(#4b4bff,#FB4848);
     position: absolute;
     top: -30px;
     left: 0;

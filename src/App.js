@@ -10,6 +10,7 @@ import Contact from './components/Home/Contact/Contact';
 import Aboutus from './components/Aboutus/Aboutus';
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
+import Login from './components/Login/Login/Login';
 // import loader from './img/loader.gif';
 function App() {
 
@@ -53,6 +54,9 @@ function App() {
               </Route>
               <Route path="/about">
                 <Aboutus />
+              </Route>
+              <Route path="/login">
+                <Login/>
               </Route>
               <Route path="/dashboard">
                 <Dashboard />

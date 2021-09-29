@@ -11,7 +11,7 @@
     width:100%;
     height:40px;
     font-size: 2rem;
-    color: #1f1ffc;
+    color: #ffffffec;
     font-weight: 600;
     font-family: 'Lobster', cursive;
 }
@@ -32,7 +32,7 @@
 
 .logoTwo{
     font-size: 2rem;
-    color: #EDBB00;
+    color: #FB4848 ;
     font-family: 'Lobster', cursive;
     font-weight: 600;
 }
@@ -63,7 +63,6 @@ a{
 	height: 100vh;  
 }
 .carousel-caption{
-   
     position: absolute;
     right: 15%;
     bottom: 1.25rem;
@@ -78,8 +77,8 @@ a{
 }
 .slideTitle{
     font-size: 6rem;
-    text-shadow: 3px 0px #ffcc0b;
-    color: #EDBB00;
+    text-shadow: 3px 0px #FB4848 ;
+    color: #ffffff ;
     background: #302f2f63;
     font-family: 'Lobster', cursive;
 }
@@ -98,11 +97,21 @@ a{
     font-weight: 600;
     margin: 10px;
 }
+#item{
+    color: #FB4848;
+    transition: all 0.5s ease;
+}
+#item:hover{
+    text-decoration: underline;
+   
+    color: #FFF;
+    text-decoration-color: #fff;
+}
 .slideContact a{
     text-decoration: none;
 }
 .slideContact:hover{
-    background-color: #EDBB00;
+    background-color: #FB4848;
     transition: 0.5s all;
    color: #555;
    font-weight: 600;

@@ -117,15 +117,15 @@
 }
 .wrapper:hover{
     transform:translateX(10px);
-    background-color:#EDBB00;
-    color: #fff;
+    background-color:#FB4848 ;
+    color: #fff !important;
 }
 
-ul li{
+/* ul li{
     color:#555;
-}
+} */
 .featureIcon{
-    background: #1f1ffc;
+    /* background: #1f1ffc; */
     max-width: 100%;
     align-items: center;
     display: flex;
@@ -135,18 +135,17 @@ ul li{
 }
 .featureIcon:hover{
     transition: 0.3s all;
-    background: #EDBB00;
-    color: #000000e5;
+    background: #fff;
 }
 .icon{
     font-size: 3rem;
-    color:#fff;
+    color:#1f1ffc;
 }
 .FeatureTitle{
     text-align: center;
     font-size: 1.2rem;
     font-weight: 500;
-    color: #000000b7;
+    /* color: #000000b7; */
     margin-top: 7px;
 }
 .readMore{
@@ -164,26 +163,32 @@ ul li{
     background: #1f1ffc;
 }
 .readMore:hover{
-    background: #EDBB00;
-    color: #000000e5;
+    background: #FB4848 ;
+    color: #fff;
     transition: all 0.5s ease-in-out;
 }
 .li{
     display: flex;
     justify-content:space-between;
     align-items: center;
-    color: #555;
+    /* color: #555; */
     padding-top: 5px;
+}
+.appointText{
+    display: block;
+    justify-content:center;
+    line-height: 0.95rem;
+    /* align-items:center; */
 }
 .phnNumber{
     text-align: center;
     margin-top: 10px;
     font-size: 1.2rem;
-    color: #000000b7;
+    /* color: #000000b7; */
 }
 .phoneText{
     margin-top: 1.5rem;
-   color: #555;
+   /* color: #555; */
     display: block;
     line-height: 10px;
     text-align: center;

@@ -138,11 +138,11 @@ export default function Aboutus() {
                                         <FontAwesomeIcon className={style.icon} icon={faEnvelope} />
                                     </div>
                                     <p className={style.FeatureTitle}>free apointments</p> <hr className={style.hr} />
-                                    <ul>
-                                        <li>Free Diagnosis & Brake Checks</li>
-                                        <li>Message with photo and video</li>
-                                        <li>Expect free call from us</li>
-                                    </ul>
+                                    <div className={style.appointText}>
+                                        <p>Free Diagnosis & Brake Checks</p>
+                                        <p>Message with photo and video</p>
+                                        <p>Expect free call from us</p>
+                                    </div>
                                     <button className={style.readMore}>Read more </button>
                                 </div>
                             </div>

@@ -1,11 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import style from './navbar.module.css';
-import sliderFour from '../../../img/sliderFour.jpg';
-import sliderFive from '../../../img/sliderFive.jpg';
+// import sliderFour from '../../../img/sliderFour.jpg';
+// import sliderFive from '../../../img/sliderFive.jpg';
+// import sliderThree from '../../../img/sliderThree.jpg';
+import carousel from '../../../img/carousel.png';
+import carouselTwo from '../../../img/carouselTwo.jpg';
+import carouselThree from '../../../img/carouselThree.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import sliderThree from '../../../img/sliderThree.jpg';
+
 const Navbar = () => {
     return (
         <div className={style.navContainer}>
@@ -19,28 +23,28 @@ const Navbar = () => {
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto text-center">
                             <li class="nav-item">
-                                <Link class="nav-link active text-warning fw-bold" aria-current="page" to="/">Home</Link>
+                                <Link class="nav-link fw-bold" id={style.item} aria-current="page" to="/">Home</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link text-warning fw-bold" to="/dashboard">Dashboard</Link>
+                                <Link class="nav-link fw-bold" id={style.item}   to="/dashboard">Dashboard</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link text-warning fw-bold" to="/services">Services</Link>
+                                <Link class="nav-link fw-bold"  id={style.item}  to="/services">Services</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link text-warning fw-bold" to="/products">Products</Link>
+                                <Link class="nav-link fw-bold"  id={style.item}  to="/products">Products</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link text-warning fw-bold" to="/blogs">Blogs</Link>
+                                <Link class="nav-link fw-bold"  id={style.item}  to="/blogs">Blogs</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link text-warning fw-bold" to="/about">About</Link>
+                                <Link class="nav-link fw-bold"  id={style.item}   to="/about">About</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link text-warning fw-bold" to="/contacts">Contact</Link>
+                                <Link class="nav-link fw-bold" id={style.item}   to="/contacts">Contact</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link text-warning fw-bold" to="/login">Login</Link>
+                                <Link class="nav-link fw-bold"  id={style.item}  to="/login">Login</Link>
                             </li>
                         </ul>
                     </div>
@@ -51,7 +55,7 @@ const Navbar = () => {
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div id={style.img} class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src={sliderFour} class={style.banner} alt="..." />
+                        <img src={carousel} class={style.banner} alt="..." />
                         <div class="carousel-caption">
                             <h2 class={style.slideTitle}>We Are Professional </h2>
                             <h3 class={style.slideText}>we will modify your car as you want will fix your car problem</h3>
@@ -60,7 +64,7 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src={sliderFive} class={style.banner} alt="..." />
+                        <img src={carouselTwo} class={style.banner} alt="..." />
                         <div class="carousel-caption">
                             <h2 class={style.slideTitle}>We are creative</h2>
                             <h3 class={style.slideText}>We will fix your car as you bought dammn new</h3>
@@ -69,7 +73,7 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src={sliderThree} class={style.banner} alt="..." />
+                        <img src={carouselThree} class={style.banner} alt="..." />
                         <div class="carousel-caption">
                             <h2 class={style.slideTitle}>We are<span> dedicated</span></h2>
                             <h3 class={style.slideText}>We care about your car as you do</h3>
