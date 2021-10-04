@@ -1,9 +1,23 @@
+#navbar{
+    background-color: #5353fd83;
+    transition:all 0.5s ease;
+}
+#navItem:hover {
+    transition: all 0.5s ease;
+    text-decoration: underline;
+}
+#FormBox{
+    box-sizing: border-box;
+   box-shadow: 1px 2px 9px rgb(103 93 93 / 20%);
+}
 .colLeft{
     width:100%;
     height:100%;
-    border: 1px solid #000;
+    display: flex;
+    justify-content:center;
+    align-items:center;
 }
 img{
-    width:400px;
-    height:400px;
+    width:300px;
+    height:300px;
 }
