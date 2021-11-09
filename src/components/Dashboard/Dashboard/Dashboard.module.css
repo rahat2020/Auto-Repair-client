@@ -63,3 +63,10 @@ ul li{
     color: white !important;
     border: none;
 }
+
+/* media querey */
+@media only screen and (max-width: 468px){
+    #colLeft{
+        
+    }
+}
