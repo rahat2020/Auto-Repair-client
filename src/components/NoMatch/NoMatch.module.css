@@ -1,0 +1,23 @@
+.gig{
+    width:100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+.matchGif{
+    width: 20%;
+    height: 30%;
+
+}
+.message{
+    color: #000000af;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.ParaText{
+    color: #000000af;
+    font-weight: 600;
+}

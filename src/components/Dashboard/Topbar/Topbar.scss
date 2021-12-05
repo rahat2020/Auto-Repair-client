@@ -1,0 +1,99 @@
+
+.Topbar{
+    width:100%;
+    height:70px;
+    background: #3434f7c0;
+    // color:#ce07c4;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    transition: all 1s ease;
+
+    .wrapper{
+        padding: 10px 30px; align-items: center;
+        justify-content: space-between;
+        display: flex;
+
+        .left{
+            display: flex;
+            align-items: center;
+            .dashLogo{
+                display: flex;
+                justify-content:center;
+                align-items:center;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+            .logo{
+                // font-size: 40px;
+                // font-weight: 700;
+                // text-decoration: none;
+                // color: inherit;
+                // margin-right: 40px;
+                width:100%;
+                font-size: 2rem;
+                color: #ff0df3;
+                font-weight: 600;
+                font-family: 'Lobster', cursive;
+            }
+            .logoTwo{
+                font-size: 2rem;
+                color: #fff9f9 ;
+                font-family: 'Lobster', cursive;
+                font-weight: 600;
+            }
+            .itemContainer{
+                display: flex;
+                align-items: center;
+                margin-left: 30px;
+            }
+            .icons{
+                font-size: 18px;
+                margin-right: 5px;
+            }
+            span{
+                font-size: 18px;
+               font-weight: 500;
+            }
+        }
+        .right{
+
+            .hamburger{
+                width: 32px;
+                height: 20px;
+                display: flex;
+                flex-direction: column;
+                cursor: pointer;
+                justify-content: space-between;
+            }
+            span{
+                width: 100%; 
+                height: 3px; 
+                background-color: #10022c;
+                transform-origin:left;
+                transition:all 2s ease;
+            }
+        }
+    }
+
+    &.active {
+        background-color: #10022c;
+        color: white;
+
+        .hamburger{
+            span{
+                &:first-child{
+                    background-color: #fff;
+                    transform: rotate(33deg);
+                }
+                &:nth-child(2){
+                    opacity: 0;
+                }
+                &:last-child{
+                    background-color: #fff;
+                    transform: rotate(-30deg);
+                }
+            }
+        }
+    }
+}

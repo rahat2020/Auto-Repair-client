@@ -18,7 +18,7 @@ export default function OurMotto() {
                         <FontAwesomeIcon className={style.arrowOne} icon={faBriefcase} />
                         <div class={style.innerShape} id={style.bkg1}>
                             <div class={style.content}>
-                                <h2>Premium<br />Service</h2>
+                                <h4>Premium<br />Service</h4>
                                 <Link className={style.view} to="/about">View More..</Link>
                             </div>
                         </div>
@@ -29,7 +29,7 @@ export default function OurMotto() {
                         <FontAwesomeIcon className={style.arrowTwo} icon={faUser} />
                         <div class={style.innerShape} id={style.bkg2}>
                             <div class={style.content}>
-                                <h2>User<br />Support</h2>
+                                <h4>User<br />Support</h4>
                                 <Link className={style.view} to="/about">View More..</Link>
                             </div>
                         </div>
@@ -41,7 +41,7 @@ export default function OurMotto() {
                         <FontAwesomeIcon className={style.arrowThree} icon={faHandshake} />
                         <div class={style.innerShape} id={style.bkg3}>
                             <div class={style.content}>
-                                <h2>High<br />Scalability</h2>
+                                <h4>High<br />Scalability</h4>
                                 <Link className={style.view} to="/about">View More..</Link>
                             </div>
                         </div>
@@ -52,7 +52,7 @@ export default function OurMotto() {
                         <FontAwesomeIcon className={style.arrowFour} icon={faLink} />
                         <div class={style.innerShape} id={style.bkg4}>
                             <div class={style.content}>
-                                <h2>Multiple<br />Services</h2>
+                                <h4>Multiple<br />Services</h4>
                                 <Link className={style.view} to="/about">View More..</Link>
                             </div>
                         </div>

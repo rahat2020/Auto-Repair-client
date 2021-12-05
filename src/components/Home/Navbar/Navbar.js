@@ -26,10 +26,10 @@ const Navbar = () => {
                                 <Link class="nav-link fw-bold" id={style.item} aria-current="page" to="/">Home</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link fw-bold" id={style.item}   to="/dashboard">Dashboard</Link>
+                                <Link class="nav-link fw-bold" id={style.item}   to="/dashboard/welcome">Dashboard</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link fw-bold"  id={style.item}  to="/services">Services</Link>
+                                <Link class="nav-link fw-bold"  id={style.item}  to="/allServices">Services</Link>
                             </li>
                             <li class="nav-item">
                                 <Link class="nav-link fw-bold"  id={style.item}  to="/products">Products</Link>

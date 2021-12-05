@@ -51,7 +51,7 @@ export default function Aboutus() {
                                 <Link id={style.navItem} class="nav-link text-white fw-bolder fs-5" aria-current="page" to="/">Home</Link>
                             </li>
                             <li class="nav-item">
-                                <Link id={style.navItem} class="nav-link text-white fw-bold fs-5" aria-current="page" to="/">Services</Link>
+                                <Link id={style.navItem} class="nav-link text-white fw-bold fs-5" aria-current="page" to="/allServices">Services</Link>
                             </li>
                             <li class="nav-item">
                                 <Link id={style.navItem} class="nav-link text-white fw-bold fs-5" aria-current="page" to="/">Products</Link>

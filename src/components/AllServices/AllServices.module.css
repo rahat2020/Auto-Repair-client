@@ -59,20 +59,3 @@
     color: #000000e5;
     transition: all 0.5s ease-in-out;
 }
-.btn{
-    border: none;
-    background-color:#1f1ffc;
-    color: #fff;
-    font-weight: 500;
-    padding: 0.5em 0.9em;
-    border-radius:1rem;
-    font-size: 0.85em;
-    transition: all 0.5s ease;
-}
-.btn:hover{
-    transform: scale(1.1);
-    background-color: #EDBB00;
-    color: #000000e5;
-    font-size: 0.85em;
-    font-weight: 500;
-}

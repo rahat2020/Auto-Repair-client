@@ -11,6 +11,8 @@ import Aboutus from './components/Aboutus/Aboutus';
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import Login from './components/Login/Login/Login';
+import AllServices from './components/AllServices/AllServices';
+import NoMatch from './components/NoMatch/NoMatch';
 // import loader from './img/loader.gif';
 function App() {
 
@@ -60,6 +62,12 @@ function App() {
               </Route>
               <Route path="/dashboard">
                 <Dashboard />
+              </Route>
+              <Route path="/allServices">
+                <AllServices/>
+              </Route>
+              <Route path="*">
+                <NoMatch/>
               </Route>
             </Switch>
           </Router>

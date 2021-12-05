@@ -115,7 +115,7 @@ const Footer = () => {
                                     <li><Link className="text-decoration-none" to="/">Terms</Link></li>
                                     <li><Link className="text-decoration-none" to="/">Privacy</Link></li>
                                     <li><Link className="text-decoration-none" to="/">Policy</Link></li>
-                                    <li><Link className="text-decoration-none" to="/contact">Contact</Link></li>
+                                    <li><Link className="text-decoration-none" to="/contacts">Contact</Link></li>
                                 </ul>
                             </div>
                         </div>

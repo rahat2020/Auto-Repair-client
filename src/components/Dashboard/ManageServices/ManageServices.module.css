@@ -43,9 +43,13 @@
 }
 .cardImg{
     width: 100%;
-    height: 10rem;
+    height: 7rem;
 }
-.btnReadmore{
+.arrow{
+    font-size: 0.89em;
+    margin-left: 0.66em;
+}
+.btnEdit, .btnDelete{
     border: 1px solid #fff;
     color: #ffffffe3;
     padding: 2px 1rem;
@@ -54,25 +58,13 @@
     font-weight: 600;
     background: #1f1ffc;
 }
-.btnReadmore:hover{
+.btnDelete:hover{
     background: #EDBB00;
     color: #000000e5;
     transition: all 0.5s ease-in-out;
 }
-.btn{
-    border: none;
-    background-color:#1f1ffc;
-    color: #fff;
-    font-weight: 500;
-    padding: 0.5em 0.9em;
-    border-radius:1rem;
-    font-size: 0.85em;
-    transition: all 0.5s ease;
-}
-.btn:hover{
-    transform: scale(1.1);
-    background-color: #EDBB00;
+.btnEdit:hover{
+    background: #EDBB00;
     color: #000000e5;
-    font-size: 0.85em;
-    font-weight: 500;
+    transition: all 0.5s ease-in-out;
 }
