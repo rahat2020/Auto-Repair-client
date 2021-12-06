@@ -10,7 +10,7 @@ export default function NoMatch() {
             <div className="d-block justify-content-center align-content-center px-4">
                 <div className={style.gig}>
                     <img className={style.matchGif} src={sadface} alt="" />
-                    <p className={style.message}>[ message: "Error Occurred" ]</p>
+                    <p className={style.message}>[ message: "page not found" ]</p>
                 </div>
                 <div className="text-center">
                     <span className={style.ParaText}>Oops! Something went wrong.</span> <br />  <br />

@@ -21,3 +21,67 @@
     width:300px;
     height:300px;
 }
+
+/* login form box css */
+#title{
+    color: #1d1df8b4;
+    font-style: sans-serif;
+}
+.loginform input{
+    width: 100%;
+    margin-top: 13px;
+    padding: 5px;
+    font-size: 17px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.col-left{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+   
+}
+
+#submitbtn{
+    background-color: #FB4848;
+    border: 1px solid #dbd4d4;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.5s ease;
+}
+#submitbtn:hover{
+    background-color: #fff;
+    color: #000000da;
+    font-weight: 600;
+}
+#socialbtn button{
+    padding: 5px;
+    width: 60%;
+    color: #000000a4;
+    margin-top: 10px;
+    background-color: white;
+    border: 1px solid rgb(141, 133, 133);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.5s ease;
+}
+#socialbtn button:hover{
+    background-color: #FB4848;
+    font-weight: 600;
+    color: #fff;
+}
+.createBtn {
+    border: none !important;
+    background-color: white;
+    color: #1d1df8b4;
+    cursor: pointer;
+    font-weight: bold;
+}
+.createBtn:hover{
+    text-decoration: underline;
+}

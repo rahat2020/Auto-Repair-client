@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,9 +13,11 @@ import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import Login from './components/Login/Login/Login';
 import AllServices from './components/AllServices/AllServices';
 import NoMatch from './components/NoMatch/NoMatch';
+import Payment from './components/Payment/Payment';
+
+export const UserContext = createContext();
 // import loader from './img/loader.gif';
 function App() {
-
 
   const [loading, setLoading] = useState(false)
 
@@ -36,6 +38,7 @@ function App() {
   //   width: "100vw",
   //   height: "100vh"
   // }
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
     <div className="root">
       {
@@ -46,7 +49,7 @@ function App() {
             size={10}
           />
           :
-          <Router>
+          <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
             <Switch>
               <Route exact path="/">
                 <Home />
@@ -57,20 +60,23 @@ function App() {
               <Route path="/about">
                 <Aboutus />
               </Route>
+              <Route path="/payment">
+                < Payment/>
+              </Route>
               <Route path="/login">
-                <Login/>
+                <Login />
               </Route>
               <Route path="/dashboard">
                 <Dashboard />
               </Route>
               <Route path="/allServices">
-                <AllServices/>
+                <AllServices />
               </Route>
               <Route path="*">
-                <NoMatch/>
+                <NoMatch />
               </Route>
             </Switch>
-          </Router>
+          </UserContext.Provider>
       }
     </div>
   );

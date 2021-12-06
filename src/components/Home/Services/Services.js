@@ -24,7 +24,7 @@ const Services = () => {
         <section className="container mt-5 pt-5 mb-5">
             <Typing speed={400}>
                 <div className={style.titleText}>
-                    {/* <h2 className={style.title}>Our<span className={style.titleHalf}> Services</span></h2> */}
+                    <h2 className={style.title}>Our<span className={style.titleHalf}> Services</span></h2>
                 </div>
             </Typing>
 
