@@ -1,0 +1,83 @@
+
+/* products card css */
+.card-title {    
+    font-size: 23px;
+    font-weight: bolder;
+    color: #000000d4;
+}
+#cardShadow{
+    border-radius: 1rem !important;
+    transition:  all 0.5s ease;
+}
+#cardShadow:hover{
+    transform: scale(1.1);
+}
+.cardText{
+    color: gray;
+    font-size: 0.9rem;
+    text-align: justify;
+    margin: 17px 5px 33px 10px;
+}
+.sneakar{
+    min-height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    transition: transform 0.5s;
+}
+.sneakar:hover{
+    transform: scale(1.1);
+}
+ .cardImg{
+    width:10rem;
+    border-radius: 1rem;
+    z-index: 1;
+    transition: transform 0.5s;
+}
+.circle{
+    position: absolute;
+    width:12rem;
+    height:8rem;
+    border:none;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    background: linear-gradient(45deg, #ececc5, #f17949);
+}
+#sizes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.btnSizes{
+    background:none;
+    border: none;
+    padding: 3px;
+    color: gray;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    width: 55px;
+}
+#active{
+    background: gray;
+    color: #fff;
+}
+#purchase{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+
+}
+.btnPurchase{
+    background: tomato;
+    border: none;
+    border-radius: 1rem;
+    padding: 3px 7px 3px 7px;
+    transition: background 0.5s;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 700;
+
+}
+.btnPurchase:hover{
+    background: gray;
+}

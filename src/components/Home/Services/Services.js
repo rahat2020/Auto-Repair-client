@@ -22,11 +22,11 @@ const Services = () => {
     })
     return (
         <section className="container mt-5 pt-5 mb-5">
-            <Typing speed={400}>
+            {/* <Typing speed={100}>
+            </Typing> */}
                 <div className={style.titleText}>
                     <h2 className={style.title}>Our<span className={style.titleHalf}> Services</span></h2>
                 </div>
-            </Typing>
 
             <div className="row">
 

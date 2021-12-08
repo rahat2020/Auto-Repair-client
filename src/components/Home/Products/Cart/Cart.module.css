@@ -1,0 +1,35 @@
+.CartTitle{
+    color: #000000cc;
+    font-size: 1.9em;
+    font-weight: 500;
+}
+.title{
+    font-weight: 600;
+    font-size: 0.9em;
+}
+#rupee{
+    font-size: 0.9em;
+}
+.length{
+    font-size: 0.8em;
+    color: #7e808c;
+}
+.charge{
+    font-size: 0.7em;
+    color: #7e808c;
+    font-weight: 600;
+}
+.btnAdd{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9em;
+    border: none;
+    background-color: #60b246;
+    color: #ffffff;
+    padding:0.6em 6.5em;
+}
