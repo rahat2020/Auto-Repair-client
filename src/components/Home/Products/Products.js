@@ -22,6 +22,7 @@ export default function Products() {
     }
     return (
         <section className="mt-5 pt-5" id={style.Products}>
+
             <Typing speed={400}>
                 <div className={style.titleText}>
                     <h2 className={style.title}>Our<span className={style.titleHalf}> Products</span></h2>
@@ -29,18 +30,22 @@ export default function Products() {
             </Typing>
             <div className="container">
                 <div className="row">
-                    <div className="col-md-10">
-                    {
-                        PdItem.slice(0,3).map((item) => (
-                            <ProductItem item={item} handleAddItem={handleAddItem} />
-                        ))
-                    }
+                    <div className="col-md-9 mt-5">
+                        <div className="row">
+                                {
+                                    PdItem.slice(0, 4).map((item) => (
+                                        <ProductItem item={item} handleAddItem={handleAddItem} />
+                                    ))
+                                }
+                        </div>
                     </div>
-                    <div className="col-md-2">
-                           <Cart cart={cart}/>
+                    <div className="col-md-3 mt-5">
+                        <Cart cart={cart} />
                     </div>
                 </div>
             </div>
+
         </section>
+
     )
 }

@@ -29,7 +29,22 @@
     font-weight: 600;
     font-size: 0.9em;
     border: none;
-    background-color: #60b246;
+    background-color: #f86b52;
     color: #ffffff;
     padding:0.6em 6.5em;
+    transition: all 0.5s ease;
+}
+.btnAdd:hover{
+    color: #000000e5;
+    font-weight: 600;
+    background-color: #b4b4b6;
+    color: #ffffff;
+}
+#dollar{
+ font-weight: 600;
+ color: #000000cc;
+ font-size: 0.9em;
+}
+.CheckBtn{
+    margin-left: 0.3em;
 }

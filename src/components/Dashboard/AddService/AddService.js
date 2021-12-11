@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React,{useState} from 'react';
 import Swal from 'sweetalert2';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 export default function AddService() {
     const [service, setService] = useState({
@@ -11,6 +11,7 @@ export default function AddService() {
         price:'',
         imgURL:'',
     })
+
     
     const handleBlur = event => {
         console.log(event.target.name, event.target.value) 
@@ -22,8 +23,8 @@ export default function AddService() {
     const handleImgUpload = event => {
         console.log(event.target.files)
         const imgData = new FormData();
-        imgData.set('key', '4eb494ddc3d3fb6d479157f6d2a04273');
-        imgData.append('image', event.target.files[0])
+        imgData.set('key', '4736cf1b61e48463e33fb409001a3ac2');
+        imgData.append('image', event.target.files[0]);
 
         axios.post('https://api.imgbb.com/1/upload', imgData)
             .then(function (response) {

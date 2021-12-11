@@ -53,6 +53,7 @@
     border: none;
     padding: 3px;
     color: gray;
+    font-size: 0.7rem;
     box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
     border-radius: 15px;
     width: 55px;
@@ -74,10 +75,13 @@
     padding: 3px 7px 3px 7px;
     transition: background 0.5s;
     color: white;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     font-weight: 700;
 
 }
 .btnPurchase:hover{
     background: gray;
+}
+#btnIcon{
+    margin-right: 0.2rem;
 }

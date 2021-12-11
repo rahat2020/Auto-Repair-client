@@ -7,9 +7,9 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 export default function ProductItem(props) {
     const { name, price, img } = props.item
     return (
-        <section>
-            <div className=" " id={style.cardContainer}>
-                <Link to="checkout">
+        <section className="col-md-3">
+            <div className="" id={style.cardContainer}>
+                {/* <Link to="checkout"> */}
                     <div className="card h-75 w-100 shadow border-0" id={style.cardShadow}>
                         <div className={style.sneakar}>
                             <div className={style.circle} />
@@ -29,7 +29,7 @@ export default function ProductItem(props) {
                             </div>
                         </div>
                     </div>
-                </Link>
+                {/* </Link> */}
             </div>
         </section>
     )
