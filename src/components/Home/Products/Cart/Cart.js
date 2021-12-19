@@ -1,6 +1,7 @@
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import style from './Cart.module.css';
 
 export default function Cart(props) {
@@ -20,7 +21,9 @@ export default function Cart(props) {
                 <span className="ms-auto" id={style.dollar}>${total}</span>
             </div>
             <div className="d-flex justify-content-start align-items-center">
-                <button className={style.btnAdd}>checkout <FontAwesomeIcon icon={faArrowRight} className={style.CheckBtn}/></button>
+                <Link to="/payment">
+                    <button className={style.btnAdd}>checkout <FontAwesomeIcon icon={faArrowRight} className={style.CheckBtn} /></button>
+                </Link>
             </div>
         </section>
     )

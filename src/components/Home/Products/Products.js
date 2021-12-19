@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookSquare, faTwitterSquare, faYoutubeSquare, faInstagramSquare } from '@fortawesome/free-brands-svg-icons';
 import Typing from 'react-typing-animation';
 import Cart from './Cart/Cart';
-import pdt from '../../../Data/products';
+// import pdt from '../../../Data/products';
 import ProductItem from './ProductItem/ProductItem';
 
 export default function Products() {
@@ -12,7 +12,11 @@ export default function Products() {
     const [PdItem, setPdItem] = useState([])
     const [cart, setCart] = useState([])
     useEffect(() => {
-        setPdItem(pdt)
+        // setPdItem(pdt)
+        const url = 'http://localhost:5000/showProducts'
+        fetch(url)
+        .then(response => response.json())
+        .then(data => setPdItem(data))
     }, [])
 
     const handleAddItem = (foodItem) => {
@@ -33,7 +37,7 @@ export default function Products() {
                     <div className="col-md-9 mt-5">
                         <div className="row">
                                 {
-                                    PdItem.slice(0, 4).map((item) => (
+                                    PdItem.slice(0, 8).map((item) => (
                                         <ProductItem item={item} handleAddItem={handleAddItem} />
                                     ))
                                 }

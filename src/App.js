@@ -14,6 +14,7 @@ import Login from './components/Login/Login/Login';
 import AllServices from './components/AllServices/AllServices';
 import NoMatch from './components/NoMatch/NoMatch';
 import Payment from './components/Payment/Payment';
+import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
 // import loader from './img/loader.gif';
@@ -60,9 +61,9 @@ function App() {
               <Route path="/about">
                 <Aboutus />
               </Route>
-              <Route path="/payment">
+              <PrivateRoute path="/payment">
                 < Payment/>
-              </Route>
+              </PrivateRoute>
               <Route path="/login">
                 <Login />
               </Route>

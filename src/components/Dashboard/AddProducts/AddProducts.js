@@ -1,6 +1,7 @@
 import { useState} from 'react';
 import Swal from 'sweetalert2';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function AddProducts() {
     const [product, setProduct] = useState({
@@ -9,7 +10,7 @@ export default function AddProducts() {
         price:'',
         imgURL:'',
     })
-
+    const history = useHistory();
     const handleBlur = event => {
         console.log(event.target.name, event.target.value)
         const newData = {...product}
@@ -75,22 +76,43 @@ export default function AddProducts() {
 
 //       }
 //   }
+
   const handleUpload = (event) => {
     event.preventDefault();
     if (product.imgURL !== '') {
-        
-        const url = `http://localhost5000/addProducts`
+        console.log(product)
+        const url = `http://localhost:5000/addProducts`
         fetch(url, {
-            mode: 'no-cors',
+            // mode: 'no-cors',
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(product)
         })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
+            // .then(response => response.json())
+            // .then(data => {
+            //     console.log(data);
+            // })
+            .then(response => {
+                response.json()
+                    .then((response) => {
+                        if (response.status === 200) {
+                            Swal.fire({
+                                title: 'Hey yooo dude!',
+                                text: 'Your have added new product!',
+                                icon: 'success'
+                            }).then((result) => {
+                                if (result) {
+                                    history.push('/dashboard')
+                                    console.log(result)
+                                }
+                            })
+                        }
+                        if (response.status === 401) {
+                            alert('data is not uploaded')
+                        }
+                    })
             })
-        alert('product added to the database successfully')
+        // alert('product added to the database successfully')
     }
 }
     return (
