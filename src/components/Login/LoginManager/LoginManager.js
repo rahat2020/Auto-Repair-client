@@ -1,5 +1,5 @@
 import firebase from "firebase/compat/app";
-import "firebase/auth";
+import "firebase/compat/auth";
 import firebaseConfig from "./firebase.config";
 
 export const firebaseConfigFrameWork = () => {
@@ -11,19 +11,40 @@ export const firebaseConfigFrameWork = () => {
     }
 }
 
+
 // Google sign in
+// export const handleGoogleSignIn = () => {
+//     const googleProvider = new firebase.auth.GoogleAuthProvider();
+//     return firebase.auth()
+//   .signInWithPopup(googleProvider)
+//   .then((result) => {
+//     const user = result.user;
+//     return user;
+//   }).catch((error) => {
+//     // Handle Errors here.
+//     const errorMessage = error.message;
+//     console.log(errorMessage);
+//   });
+// }
+
 export const handleGoogleSignIn = () => {
-    const googleProvider = new firebase.auth.GoogleAuthProvider();
-    return firebase.auth()
-  .signInWithPopup(googleProvider)
-  .then((result) => {
-    const user = result.user;
-    return user;
-  }).catch((error) => {
-    // Handle Errors here.
-    const errorMessage = error.message;
-    console.log(errorMessage);
-  });
+  const googleProvider = new firebase.auth.GoogleAuthProvider();
+  return firebase.auth().signInWithPopup(googleProvider)
+  .then(res => {
+    const {displayName, photoURL, email} = res.user;
+    const signedInUser = {
+      isSignedIn: true,
+      name: displayName,
+      email: email,
+      photo: photoURL,
+      success: true
+    };
+    return signedInUser;
+  })
+  .catch(err => {
+    console.log(err);
+    console.log(err.message);
+  })
 }
 
 // For user login

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import style from './Aboutus.module.css';
 import carVideo from '../../img/carVideo.mp4';
 import signature from '../../img/signature.png';
@@ -14,9 +14,12 @@ import aboutThree from '../../img/aboutThree.jpg';
 import aboutFive from '../../img/aboutFive.jpg';
 import aboutSix from '../../img/aboutSix.jpg';
 import Footer from '../Home/Footer/Footer';
+import { UserContext } from '../../App';
+
 export default function Aboutus() {
 
-    
+    const [total, setTotal] = useContext(UserContext)
+    console.log('from about', total )
     return (
         <section className="mb-4" id={style.about}>
             <div className="video">

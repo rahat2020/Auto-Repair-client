@@ -15,6 +15,7 @@ import AllServices from './components/AllServices/AllServices';
 import NoMatch from './components/NoMatch/NoMatch';
 import Payment from './components/Payment/Payment';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
+import WelcomePage from './components/Dashboard/WelcomePage/WelcomePage';
 
 export const UserContext = createContext();
 // import loader from './img/loader.gif';
@@ -40,6 +41,7 @@ function App() {
   //   height: "100vh"
   // }
   const [loggedInUser, setLoggedInUser] = useState({});
+  const [total, setTotal] = useState([]);
   return (
     <div className="root">
       {
@@ -50,13 +52,16 @@ function App() {
             size={10}
           />
           :
-          <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+          <UserContext.Provider value={[loggedInUser, setLoggedInUser, total, setTotal]}>
             <Switch>
               <Route exact path="/">
                 <Home />
               </Route>
               <Route path="/contacts">
                 <Contact />
+              </Route>
+              <Route path="/welcome">
+                <WelcomePage/>
               </Route>
               <Route path="/about">
                 <Aboutus />
@@ -67,9 +72,9 @@ function App() {
               <Route path="/login">
                 <Login />
               </Route>
-              <Route path="/dashboard">
+              <PrivateRoute path="/dashboard/welcome">
                 <Dashboard />
-              </Route>
+              </PrivateRoute>
               <Route path="/allServices">
                 <AllServices />
               </Route>

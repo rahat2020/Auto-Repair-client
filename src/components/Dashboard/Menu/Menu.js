@@ -29,6 +29,9 @@ const Menu = ({isOpen, setOpen}) => {
                 <li onClick={()=> setOpen(false)}>
                     <Link to={`${url}/addService`}>Order list</Link>
                 </li>
+                <li onClick={()=> setOpen(false)}>
+                    <Link to={`${url}/addService`}>Log out</Link>
+                </li>
             </ul>
         </div>
     );

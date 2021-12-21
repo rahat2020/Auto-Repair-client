@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import style from './Services.module.css';
-import Typing from 'react-typing-animation';
+// import Typing from 'react-typing-animation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import AOS from 'aos';
@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 // import services from '../../../Data/Services';
 const Services = () => {
     const [service, setService] = useState([])
-    console.log(service)
+    // console.log(service)
     useEffect(() => {
         const url = `http://localhost:5000/showService`
         fetch(url)
@@ -38,7 +38,7 @@ const Services = () => {
                                     <h5 className="fs-4">{item.name}</h5>
                                 </div>
                                 <div className="card-img">
-                                    <img src={item.img} alt="" className={style.cardImg} />
+                                    <img src={item.imgURL} alt="" className={style.cardImg} />
                                 </div>
                                 <div className="card-body">
                                     <p className={style.cardText}>{item.description}</p>

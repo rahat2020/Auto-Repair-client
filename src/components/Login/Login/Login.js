@@ -8,6 +8,7 @@ import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { firebaseConfigFrameWork, handleGoogleSignIn, handleLogIn, handleSignUp } from '../LoginManager/LoginManager';
 import { UserContext } from '../../../App';
 import GlobalNavbar from '../../../components/GlobalNavbar/GlobalNavbar';
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function Login() {
 
@@ -16,6 +17,9 @@ export default function Login() {
     const [newUser, setNewUser] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const history = useHistory();
+    const location = useLocation();
+    let { from } = location.state || { from: { pathname: "/" } };
     const [user, setUser] = useState({
         name: '',
         email: '',
@@ -26,25 +30,38 @@ export default function Login() {
         confirmPasswordValid: true,
         error: ''
     });
-    const history = useHistory();
 
     // For using sign in with google
+
     const googleSignIn = () => {
-        setIsLoading(true);
         handleGoogleSignIn()
             .then(res => {
-                if (res.email) {
-                    handleLogInUser(res, true);
-                }
-                else {
-                    const newUser = {
-                        error: res
-                    }
-                    setLoggedInUser(newUser);
-                    setIsLoading(false);
-                }
+                handleResponse(res, true);
             })
     }
+    const handleResponse = (res, redirect) => {
+        setUser(res);
+        setLoggedInUser(res);
+        if (redirect) {
+            history.replace(from);
+        }
+    }
+    // const googleSignIn = () => {
+    //     setIsLoading(true);
+    //     handleGoogleSignIn()
+    //         .then(res => {
+    //             if (res.email) {
+    //                 handleLogInUser(res, true);
+    //             }
+    //             else {
+    //                 const newUser = {
+    //                     error: res
+    //                 }
+    //                 setLoggedInUser(newUser);
+    //                 setIsLoading(false);
+    //             }
+    //         })
+    // }
 
     // For using login and signup
     const handleSubmit = (event) => {
@@ -65,7 +82,7 @@ export default function Login() {
                 })
         }
         if (newUser && user.email && user.password && user.confirmPassword) {
-            setIsLoading(true);
+            // setIsLoading(true);
             if (user.password.length === user.confirmPassword.length) {
                 handleSignUp(user.name, user.email, user.confirmPassword)
                     .then(res => {
@@ -140,7 +157,7 @@ export default function Login() {
                 }
                 setLoggedInUser(newUser);
                 setIsLoading(false);
-                isReplace && history.replace('/dashboard');
+                isReplace && history.replace('/dashboard/welcome');
             })
     }
 
@@ -222,7 +239,7 @@ export default function Login() {
                                             <h5 className="text-center text-lg">Or</h5>
                                             <hr />
                                             <div className="text-center" id={style.socialbtn}>
-                                                <button  onClick={googleSignIn}><FontAwesomeIcon icon={faGoogle} size="lg" /> Continue With Google</button><br />
+                                                <button onClick={googleSignIn}><FontAwesomeIcon icon={faGoogle} size="lg" /> Continue With Google</button><br />
                                             </div>
                                         </div>
                                     </div>
@@ -230,6 +247,7 @@ export default function Login() {
                             </div>
                         </div>
                     </div>
+
                 </div>
             </section>
 

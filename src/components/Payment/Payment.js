@@ -7,7 +7,10 @@ import { faAmazon, faCcVisa, faPaypal } from '@fortawesome/free-brands-svg-icons
 import { useContext } from 'react';
 import {UserContext} from '../../App';
 export default function Payment() {
+    const [total, setTotal] =useContext(UserContext)
+    console.log('this is total',total)
     const [loggedInUser, setLoggedInUser] =useContext(UserContext)
+    console.log('this is logged in', loggedInUser)
     return (
         <>
             <GlobalNavbar />
@@ -45,7 +48,7 @@ export default function Payment() {
                                         <input type="email" className="form-control" id="inputEmail4" placeholder="full name" value={`${loggedInUser.name ? loggedInUser.name : " "}`}/>
                                     </div>
                                     <div className="col-md-12">
-                                        <input type="email" className="form-control" id="inputEmail4" placeholder="Email"/>
+                                        <input type="email" className="form-control" id="inputEmail4" placeholder="Email" value={`${loggedInUser.email ? loggedInUser.email : " "}`}/>
                                     </div>
                                     <div className="col-12">
                                         <input type="text" className="form-control" id="inputAddress" placeholder="Address - 1234 Main St" />

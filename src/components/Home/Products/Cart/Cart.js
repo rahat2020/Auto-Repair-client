@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import style from './Cart.module.css';
 
 export default function Cart(props) {
+    
     const cart = props.cart;
     const total = cart.reduce((initialPrice, allFoodItem) => initialPrice + allFoodItem.price, 0);
     return (

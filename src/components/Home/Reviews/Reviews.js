@@ -7,7 +7,7 @@ import HomePageReview from './HomePageReview/HomePageReview';
 const Reviews = () => {
     
     const [review, setReview] = useState([])
-    console.log(review)
+    // console.log(review)
     useEffect(() => {
         setReview(allReviews)
     }, [setReview])
