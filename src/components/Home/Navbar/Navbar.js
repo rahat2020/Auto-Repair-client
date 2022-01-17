@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
+    
     return (
         <div className={style.navContainer}>
             <nav id={style.navbar} class="navbar navbar-expand-lg fixed-top  navbar-light navbar-inverse">

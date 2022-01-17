@@ -25,9 +25,6 @@
     justify-content:center;
     transition: transform 0.5s;
 }
-.sneakar:hover{
-    transform: scale(1.1);
-}
  .cardImg{
     width:10rem;
     border-radius: 1rem;
@@ -41,7 +38,8 @@
     border:none;
     border-radius: 1rem;
     box-sizing: border-box;
-    background: linear-gradient(45deg, #ececc5, #f17949);
+    /* background: linear-gradient(45deg, #ececc5, #f17949); */
+    background: linear-gradient(45deg, #edba0036, #1f1ffc);
 }
 #sizes {
     display: flex;
@@ -69,7 +67,7 @@
 
 }
 .btnPurchase{
-    background: tomato;
+    background: #1f1ffc;
     border: none;
     border-radius: 1rem;
     padding: 3px 7px 3px 7px;
@@ -80,7 +78,7 @@
 
 }
 .btnPurchase:hover{
-    background: gray;
+    background: #EDBB00;
 }
 #btnIcon{
     margin-right: 0.2rem;

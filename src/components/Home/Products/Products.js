@@ -50,7 +50,7 @@ export default function Products() {
                         </div>
                     </div>
                     <div className="col-md-3 mt-5">
-                        <Cart cart={cart}/>
+                        <Cart cart={cart} />
                     </div>
                 </div>
             </div>

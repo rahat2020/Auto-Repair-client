@@ -24,9 +24,9 @@ const Services = () => {
         <section className="container mt-5 pt-5 mb-5">
             {/* <Typing speed={100}>
             </Typing> */}
-                <div className={style.titleText}>
-                    <h2 className={style.title}>Our<span className={style.titleHalf}> Services</span></h2>
-                </div>
+            <div className={style.titleText}>
+                <h2 className={style.title}>Our<span className={style.titleHalf}> Services</span></h2>
+            </div>
 
             <div className="row">
 
@@ -42,9 +42,11 @@ const Services = () => {
                                 </div>
                                 <div className="card-body">
                                     <p className={style.cardText}>{item.description}</p>
-                                    <button className={style.btnReadmore}>
-                                        Read more <FontAwesomeIcon className={style.arrow} icon={faArrowRight} />
-                                    </button>
+                                    <Link to={`/details/${item._id}`}>
+                                        <button className={style.btnReadmore}>
+                                            Read more <FontAwesomeIcon className={style.arrow} icon={faArrowRight} />
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

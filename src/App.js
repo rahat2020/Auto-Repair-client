@@ -16,6 +16,7 @@ import NoMatch from './components/NoMatch/NoMatch';
 import Payment from './components/Payment/Payment';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import WelcomePage from './components/Dashboard/WelcomePage/WelcomePage';
+import ServiceDetails from './components/ServaiceDetails/ServiceDetails';
 
 export const UserContext = createContext();
 // import loader from './img/loader.gif';
@@ -77,6 +78,9 @@ function App() {
               </PrivateRoute>
               <Route path="/allServices">
                 <AllServices />
+              </Route>
+              <Route path="/details/:id">
+                <ServiceDetails/>
               </Route>
               <Route path="*">
                 <NoMatch />

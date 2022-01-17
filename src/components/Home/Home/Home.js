@@ -1,5 +1,6 @@
 import React from 'react';
 import PopularNews from '../../News/PopularNews/PopularNews';
+import Appointment from '../Appointment/Appointment';
 import FAQ from '../FAQ/FAQ';
 import Features from '../Features/Features';
 import Footer from '../Footer/Footer';
@@ -24,6 +25,7 @@ const Home = () => {
             <PopularNews />
             <Reviews/>
             <TeamMembers/>
+            <Appointment/>
             <Footer />
         </div>
     );

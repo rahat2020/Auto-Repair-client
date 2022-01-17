@@ -41,7 +41,11 @@
 .details{
     transition: 0.5s;
 }
-
+.FormTitle{
+    font-weight: 400;
+    color: #4a4f55;
+    font-family: serif;
+}
 .btnReadmore{
     border: 1px solid #fff;
     color: #ffffffe3;
