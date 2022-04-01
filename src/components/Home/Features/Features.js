@@ -8,8 +8,10 @@ const Features = () => {
             <div data-aos="fade-up" className="row bg-gradient ">
                 <div className="col-md-4">
                     <div className={style.wrapper}>
-                        <div className={style.featureIcon}>
-                            <FontAwesomeIcon className={style.icon} icon={faEnvelope} />
+                        <div className="d-flex justify-content-center align-items-center">
+                            <div className={style.featureIcon}>
+                                <FontAwesomeIcon className={style.MesgIcon} icon={faEnvelope} />
+                            </div>
                         </div>
                         <p className={style.FeatureTitle}>free apointments</p> <hr className={style.hr} />
                         <ul>
@@ -17,15 +19,17 @@ const Features = () => {
                             <li>Message with photo and video</li>
                             <li>Expect free call from us</li>
                         </ul>
-                        <button className={style.btnReadmore}>
-                            <FontAwesomeIcon className={style.arrow} icon={faArrowRight} /> Read more
-                        </button>
+                        <div className="d-flex justify-content-center align-items-center mt-4">
+                            <button className={style.btnReadmore}> Read more </button>
+                        </div>
                     </div>
                 </div>
                 <div className="col-md-4">
                     <div className={style.wrapper} >
-                        <div className={style.featureIcon} id={style.yellow}>
-                            <FontAwesomeIcon className={style.icon} icon={faClock} />
+                        <div className="d-flex justify-content-center align-items-center">
+                            <div className={style.featureTimeIcon} id={style.yellow}>
+                                <FontAwesomeIcon className={style.timeIcon} icon={faClock} />
+                            </div>
                         </div>
                         <p className={style.FeatureTitle}>Working time</p><hr className={style.hr} />
                         <div className={style.li}>
@@ -48,13 +52,15 @@ const Features = () => {
                 </div>
                 <div className="col-md-4">
                     <div className={style.wrapper} >
-                        <div className={style.featureIcon}>
-                            <FontAwesomeIcon className={style.icon} icon={faPhone} />
+                        <div className="d-flex justify-content-center align-items-center">
+                            <div className={style.featurePhnIcon}>
+                                <FontAwesomeIcon className={style.phnIcon} icon={faPhone} />
+                            </div>
                         </div>
                         <h4 className={style.phnNumber}>+880148724875</h4> <hr className={style.hr} />
                         <div className={style.phoneText}>
                             <p>Mobile: 02 562-958</p>
-                            <p>Fax: 02 562-95</p>
+                            <p>Fax: 02 562-95-3333</p>
                             <p>Email: autoRepair@example.com</p>
 
                         </div>

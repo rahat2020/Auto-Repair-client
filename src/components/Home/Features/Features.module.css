@@ -2,87 +2,136 @@
     box-sizing: border-box;
     height: 100%;
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 1rem .8rem 1rem 1rem;
     transition: transform 0.4s;
-    box-shadow: 2px 2px 10px 0px #888484;
+    box-shadow: 10px 10px 37px -14px rgba(0,0,0,0.41);
+    -webkit-box-shadow: 10px 10px 37px -14px rgba(0,0,0,0.41);
+    -moz-box-shadow: 10px 10px 37px -14px rgba(0,0,0,0.41);
 }
 .wrapper:hover{
     transform:translateY(10px);
 }
-.wrapper:nth-child(2){
-    background-color: #EDBB00;
-}
-#yellow{
-    background-color: #EDBB00;
-}
+
 ul li{
-    color:#555;
+    color:#555555d0;
+    font-size: .98rem;
 }
 
 .featureIcon{
-    background: #1f1ffc;
+    background: #a4a4ff70;
     max-width: 100%;
     align-items: center;
     display: flex;
-    padding: 7px;
-    border-radius:1rem;
     justify-content: center;
+    padding: 20px;
+    align-items: center;
+    border-radius: 180px 323px 3px 264px;
+    justify-content: center;
+    box-shadow: 10px 10px 37px -14px rgba(0,0,0,0.41);
+    -webkit-box-shadow: 10px 10px 37px -14px rgba(0,0,0,0.41);
+    -moz-box-shadow: 10px 10px 37px -14px rgba(0,0,0,0.41);
+    transition:all 0.5s ease;
 }
-.featureIcon:hover{
-    transition: 0.3s all;
-    background: #EDBB00;
-    color: #000000e5;
+.featureTimeIcon{
+    background: #FAF4FF;
+    max-width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    align-items: center;
+    border-radius: 180px 323px 3px 264px;
+    justify-content: center;
+    box-shadow: 10px 10px 37px -14px rgba(0,0,0,0.41);
+    -webkit-box-shadow: 10px 10px 37px -14px rgba(0,0,0,0.41);
+    -moz-box-shadow: 10px 10px 37px -14px rgba(0,0,0,0.41);
+    transition:all 0.5s ease;
 }
-.icon{
-    font-size: 3rem;
-    color:#fff;
+.featurePhnIcon{
+    background: #FFF2F2;
+    max-width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    align-items: center;
+    border-radius: 180px 323px 3px 264px;
+    justify-content: center;
+    box-shadow: 10px 10px 37px -14px rgba(0,0,0,0.41);
+    -webkit-box-shadow: 10px 10px 37px -14px rgba(0,0,0,0.41);
+    -moz-box-shadow: 10px 10px 37px -14px rgba(0,0,0,0.41);
+    transition:all 0.5s ease;
+}
+.wrapper:hover .featureIcon{
+    border-radius: 18px 32px 50px 26px;
+}
+.wrapper:hover .featureTimeIcon{
+    border-radius: 18px 32px 50px 26px;
+}
+.wrapper:hover .featurePhnIcon{
+    border-radius: 18px 32px 50px 26px;
+}
+
+.MesgIcon{
+    font-size: 1.60rem;
+    color: #5858f5b7;
+}
+.timeIcon{
+    font-size: 1.60rem;
+    color: #D57CD1;
+}
+.phnIcon{
+    font-size: 1.60rem;
+    color: #ffb9b9;
 }
 .FeatureTitle{
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-top: 7px;
+    font-weight: 600;
+    color: #000000c0;
 }
 .btnReadmore{
-    border: 1px solid #fff;
-    color: #ffffffe3;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border: 1px solid #666666dc;
+    color: #000000e5;
     padding: 5px 1rem;
     margin-top: 11px;
     border-radius: 1rem;
+    font-size:.9rem;
     font-weight: 600;
-    background: #1f1ffc;
+    background: #ffffffe3;
 }
 .btnReadmore:hover{
-    background: #EDBB00;
-    color: #000000e5;
-    transition: all 0.5s ease-in-out;
-}
-.arrow{
+    background: #1f1fecd8;
     color: #fff;
-    display: inline-block;
-    margin-right:5px;
-}
-.arrow:hover{
-    background: #EDBB00;
-    color: #000000e5;
+    transition: all 0.5s ease-in-out;
 }
 
 .li{
     display: flex;
     justify-content:space-between;
     align-items: center;
-    color: #555;
+    color: #6d6969c9;
     padding-top: 5px;
+    font-size: .98rem;
 }
 .phnNumber{
     text-align: center;
+    font-size: 1.2rem;
     margin-top: 10px;
+    font-weight: 600;
+    color: #000000c0;
 }
 .phoneText{
     margin-top: 1.5rem;
-   color: #555;
+    color: #6d6969c9;
     display: block;
     text-align: center;
     align-items: center;
+    font-size: .98rem;
 }
 @media only screen and (max-width: 468px) {
     .wrapper{

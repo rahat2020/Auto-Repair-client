@@ -1,7 +1,6 @@
 import './App.css';
 import { createContext, useEffect, useState } from "react";
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
@@ -17,6 +16,7 @@ import Payment from './components/Payment/Payment';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import WelcomePage from './components/Dashboard/WelcomePage/WelcomePage';
 import ServiceDetails from './components/ServaiceDetails/ServiceDetails';
+import Products from './components/Home/Products/Products';
 
 export const UserContext = createContext();
 // import loader from './img/loader.gif';
@@ -73,13 +73,19 @@ function App() {
               <Route path="/login">
                 <Login />
               </Route>
-              <PrivateRoute path="/dashboard/welcome">
+              <PrivateRoute path="/dashboard">
                 <Dashboard />
+              </PrivateRoute>
+              <PrivateRoute path="/dashboard/welcome">
+                <WelcomePage />
               </PrivateRoute>
               <Route path="/allServices">
                 <AllServices />
               </Route>
-              <Route path="/details/:id">
+              <Route path="/products">
+                <Products />
+              </Route>
+              <Route path="/details/:_id">
                 <ServiceDetails/>
               </Route>
               <Route path="*">

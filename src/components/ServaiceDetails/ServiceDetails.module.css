@@ -1,0 +1,62 @@
+.imgContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content:flex-end;
+    align-items:center;
+}
+.img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.dataContainer{
+    border: 1px solid #000;
+    padding: 10px;
+}
+.h3{
+  font-weight: 700;  
+  letter-spacing:2px;
+  font-size: 2em;
+  color: #000000d2;
+}
+.type{
+    color: #999;
+    letter-spacing:2px;
+}
+.description{
+    color: #000000b4;
+    font-weight: 500;
+    font-size: .94em;
+}
+.buyContainer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.price{
+    color: #000000d2;
+    font-weight: 500;
+    font-size: 1.56em;
+}
+.btn{
+    margin-left: 30px;
+    border: 1px solid #999;
+    background-color: #fff;
+    padding: 3px 20px;
+    font-weight: 600;
+    font-size: .80rem;
+    transition: all 0.5s ease;
+    border-radius: 10px;
+}
+.btn:hover{
+    background-color: #2f2ff5da;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    border: 1px solid #fff;
+} 
+
+
+
+
