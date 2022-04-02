@@ -40,6 +40,11 @@
     font-size: 1em;
     font-family: 'Lora', serif;
     color: #555;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 .cardImg{
     width: 100%;

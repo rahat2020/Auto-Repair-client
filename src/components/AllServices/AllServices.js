@@ -38,7 +38,7 @@ const AllServices = () => {
                                         <h5 className="fs-4">{item.name}</h5>
                                     </div>
                                     <div className="card-img">
-                                        <img src={item.img} alt="" className={style.cardImg} />
+                                        <img src={item.imgURL} alt="" className={style.cardImg} />
                                     </div>
                                     <div className="card-body">
                                         <p className={style.cardText}>{item.description}</p>

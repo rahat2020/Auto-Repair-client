@@ -46,22 +46,6 @@ export default function Login() {
             history.replace(from);
         }
     }
-    // const googleSignIn = () => {
-    //     setIsLoading(true);
-    //     handleGoogleSignIn()
-    //         .then(res => {
-    //             if (res.email) {
-    //                 handleLogInUser(res, true);
-    //             }
-    //             else {
-    //                 const newUser = {
-    //                     error: res
-    //                 }
-    //                 setLoggedInUser(newUser);
-    //                 setIsLoading(false);
-    //             }
-    //         })
-    // }
 
     // For using login and signup
     const handleSubmit = (event) => {
@@ -157,7 +141,7 @@ export default function Login() {
                 }
                 setLoggedInUser(newUser);
                 setIsLoading(false);
-                isReplace && history.replace('/dashboard/welcome');
+                isReplace && history.replace(from);
             })
     }
 

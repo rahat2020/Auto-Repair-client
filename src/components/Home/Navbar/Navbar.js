@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import style from './navbar.module.css';
 // import sliderFour from '../../../img/sliderFour.jpg';
@@ -9,8 +9,10 @@ import carouselTwo from '../../../img/carouselTwo.jpg';
 import carouselThree from '../../../img/carouselThree.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { UserContext } from '../../../App';
 
 const Navbar = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     
     return (
         <div className={style.navContainer}>
@@ -45,7 +47,14 @@ const Navbar = () => {
                                 <Link class="nav-link fw-bold" id={style.item}   to="/contacts">Contact</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link fw-bold"  id={style.item}  to="/login">Login</Link>
+                                {
+                                    loggedInUser.email ?
+                                    <Link class="nav-link fw-bold"  id={style.item}  to="/" style={{color: 'white'}}>
+                                        {loggedInUser.name}
+                                    </Link>
+                                    :
+                                    <Link class="nav-link fw-bold"  id={style.item}  to="/login">Login</Link>
+                                }
                             </li>
                         </ul>
                     </div>

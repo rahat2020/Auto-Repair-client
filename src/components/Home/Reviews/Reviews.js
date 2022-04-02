@@ -5,7 +5,7 @@ import allReviews from '../../../Data/allReviews.js';
 import HomePageReview from './HomePageReview/HomePageReview';
 
 const Reviews = () => {
-    
+
     const [review, setReview] = useState([])
     // console.log(review)
     useEffect(() => {
@@ -17,21 +17,21 @@ const Reviews = () => {
                 <div className={style.titleText}>
                     <h2 className={style.title}>What Customer<span className={style.titleHalf}> Says About Us</span></h2>
                 </div>
-                <div className={style.popularBlog}>
-                    <div className="row">
-                        {
-                            review?.slice(0, 3).map((item) =>
-                                <div className="col-md-4">
-                                    <HomePageReview key={item.id} item={item} />
-                                </div>
+            </Typing>
+            <div className={style.popularBlog}>
+                <div className="row">
+                    {
+                        review?.slice(0, 3).map((item) =>
+                            <div className="col-md-4">
+                                <HomePageReview key={item.id} item={item} />
+                            </div>
 
                         )}
-                    </div>
-                    <div className="blogs-button text-center">
-                        <button data-aos="fade-right" className={style.btnReadmore}>All Reviews</button>
-                    </div>
                 </div>
-            </Typing>
+                <div className="blogs-button text-center">
+                    <button data-aos="fade-right" className={style.btnReadmore}>All Reviews</button>
+                </div>
+            </div>
         </section>
     );
 };

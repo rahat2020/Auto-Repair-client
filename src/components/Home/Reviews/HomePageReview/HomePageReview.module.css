@@ -1,50 +1,87 @@
-
-#container{
-
-    transition: all 0.s ease;
+#card{
+    border: none;
+    box-shadow: 10px 10px 37px -14px rgba(0,0,0,0.41);
+    -webkit-box-shadow: 10px 10px 37px -14px rgba(0,0,0,0.41);
+    -moz-box-shadow: 10px 10px 37px -14px rgba(0,0,0,0.41);
 }
-#container:hover{
-    transition: background, color,transform, all 0.5s ease;
-    transform: scale(1.1); 
-    color: #fffff9 !important;
-    
+.icon{
+    font-size: 1.2rem;
+    margin-left: 15px;
+    margin-top: 10px;
+    color: #0099FF;
 }
-
-.blogTitle{
+.date{
+    font-size: .79rem;
+    margin-right: 15px;
     color: #000000c7;
-    font-size: 17px;
+    letter-spacing:2px;
+    font-weight: 400;
+}
+.reviewParagraph{
+    padding: 13px;
+    color: #999;
+    text-align: justify;
+    font-size: .88rem;
 }
 
-.blogIcon{
-    margin-right: 5px;
-    color: gray;
-}
-.blogger,.blogDate{
-    color: #635f5f;
-    font-family: serif;
-    letter-spacing: 1px;
-    font-size: 0.75em;
-}
-.socialIcon{
-    cursor: pointer;
+#cardBody{
     display: flex;
-    justify-content:space-evenly;
+    flex-direction: column;
+    justify-content:center;
     align-items:center;
-    font-size: 2rem;
 }
-.icon:hover{
-    color: #1a80e0;
-    transition: all 0.5s ease;
-    transform: scale(1.5);
+.Sicons{
+    margin: 10px;
+    font-size: 1.44rem;
+    margin-top: -6px;
+    margin-bottom: -4px;
+    cursor: pointer;
 }
-.blogger{
-    margin-left: 20px;
+#facebook{
+    color: #3030f8; 
+    border-radius: 50%;
 }
-.blogs{
-    font-family: serif;
-    letter-spacing: 3px;
+#instagram{
+    color: #ff0055;
+    border-radius: 10px;
+}
+#twitter{
+    color: #0099FF;
+    border-radius: 10px;
+}
+.name{
+    letter-spacing:2px;
+    font-weight: 700;
+    color:#000000c7;
+}
+.position{
+    font-size: .7rem;
+    color: #000000c7;
+    letter-spacing:2px;
 
 }
-.reviewImage{
-    width:20%;height:50px;
+#reviewImgContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+.overlay{
+    width: 100px;
+    height: 100px;
+    border-radius: 1px 60px 0px 55px;
+    background-color: #c0ceef52;
+    transition: all 0.5s ease-in-out;
+}
+.reviewImg{
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+}
+#card:hover .overlay{
+    border-radius: 10px 10px 10px 10px;
+}
+#card:hover{
+    background-color: #eefbfd38;
 }

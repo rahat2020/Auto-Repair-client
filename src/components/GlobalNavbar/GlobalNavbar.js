@@ -1,10 +1,12 @@
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 import style from './GlobalNavbar.module.css';
 
 export default function GlobalNavbar() {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     return (
         <section className="mb-5">
             <nav id={style.navbar} class="navbar navbar-expand-lg fixed-top  navbar-light navbar-inverse">
@@ -38,7 +40,14 @@ export default function GlobalNavbar() {
                                 <Link class="nav-link fw-bold" id={style.item}   to="/contacts">Contact</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link fw-bold"  id={style.item}  to="/login">Login</Link>
+                            {
+                                    loggedInUser.email ?
+                                    <Link class="nav-link fw-bold"  id={style.item}  to="/" style={{color: 'white'}}>
+                                        {loggedInUser.name}
+                                    </Link>
+                                    :
+                                    <Link class="nav-link fw-bold"  id={style.item}  to="/login">Login</Link>
+                                }
                             </li>
                         </ul>
                     </div>

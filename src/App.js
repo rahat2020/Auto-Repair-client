@@ -43,6 +43,14 @@ function App() {
   // }
   const [loggedInUser, setLoggedInUser] = useState({});
   const [total, setTotal] = useState([]);
+
+  useEffect(() => {
+    const USER = JSON.parse(sessionStorage.getItem('user'));
+    if (USER) {
+      setLoggedInUser(USER)
+    }
+    console.log(USER)
+  }, [loggedInUser.role])
   return (
     <div className="root">
       {
