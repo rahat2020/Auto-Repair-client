@@ -8,7 +8,7 @@ const team = [
     },
     {
         name: 'Robert Muller',
-        img:'https://i.ibb.co/jTDqhsn/teamOne.webp',
+        img:'https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=600',
         phone: '+880189784654',
         email: 'Robert@gmail.com',
         position: 'MAIN MECHANIC'
@@ -21,10 +21,10 @@ const team = [
         position: 'MECHANIC'
     },
     {
-        name: 'Johnathon',
-        img:'https://i.ibb.co/D1qMr7F/teamTwo.jpg',
+        name: 'Julia',
+        img:'https://images.pexels.com/photos/279949/pexels-photo-279949.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         phone: '+880173333333',
-        email: 'Jonaton@gmail.com',
+        email: 'Julian@gmail.com',
         position: 'MECHANIC'
     },
 ]

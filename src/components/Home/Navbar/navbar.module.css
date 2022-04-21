@@ -2,7 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 #navbar{
    background-color: #5353fd83;
-     box-shadow: 0 0 10px rgba(0,0,0,0.4);
+   height: 70px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+#navbarBG{
+    background-color: #5353fde3;
+    transition: all 0.5s ease;
+}
+#liColor{
+    color: #fff;
 }
 #img{
   filter: opacity(90%);
@@ -103,7 +111,6 @@ a{
 }
 #item:hover{
     text-decoration: underline;
-   
     color: #FFF;
     text-decoration-color: #fff;
 }

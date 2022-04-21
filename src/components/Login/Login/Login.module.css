@@ -45,7 +45,7 @@
 }
 
 #submitbtn{
-    background-color: #FB4848;
+    background-color: #5353fde3;
     border: 1px solid #dbd4d4;
     border-radius: 4px;
     color: white;
@@ -61,19 +61,20 @@
 #socialbtn button{
     padding: 5px;
     width: 60%;
-    color: #000000a4;
+    color: #000000d0;
     margin-top: 10px;
     background-color: white;
-    border: 1px solid rgb(141, 133, 133);
+    border: 1px solid #5353fde3;
     border-radius: 10px;
     font-weight: 600;
     font-size: 18px;
     transition: all 0.5s ease;
 }
 #socialbtn button:hover{
-    background-color: #FB4848;
+    background-color: #5353fde3;
     font-weight: 600;
     color: #fff;
+    border: 0.5px solid #fff;
 }
 .createBtn {
     border: none !important;

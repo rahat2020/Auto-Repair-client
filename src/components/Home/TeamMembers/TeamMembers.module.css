@@ -114,7 +114,9 @@ a:nth-child(3){
   .our-team .container-fluid {
     padding: 0 50px;
   }
-  
+  #img{
+    object-fit: cover;
+  }
   .teamImg #img {
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;

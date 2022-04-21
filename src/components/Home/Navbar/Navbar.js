@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import style from './navbar.module.css';
 // import sliderFour from '../../../img/sliderFour.jpg';
@@ -13,10 +13,19 @@ import { UserContext } from '../../../App';
 
 const Navbar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    
+    const [color, setColor] = useState(false)
+
+    const changeColor = () => {
+        if(window.scrollY >= 70){
+            setColor(true);
+        }else{
+            setColor(false);
+        }
+    }
+    window.addEventListener('scroll', changeColor)
     return (
         <div className={style.navContainer}>
-            <nav id={style.navbar} class="navbar navbar-expand-lg fixed-top  navbar-light navbar-inverse">
+            <nav id={color ? style.navbar && style.navbarBG : style.navbar} class="navbar navbar-expand-lg fixed-top  navbar-light navbar-inverse">
                 <div class="container-fluid">
                     <Link to="/"> <span className={style.logo}>Auto</span><span className={style.logoTwo}>Repair</span> </Link>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,34 +35,34 @@ const Navbar = () => {
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto text-center">
                             <li class="nav-item">
-                                <Link class="nav-link fw-bold" id={style.item} aria-current="page" to="/">Home</Link>
+                                <Link class="nav-link fw-bold" id={color ? style.item && style.liColor : style.item} aria-current="page" to="/">Home</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link fw-bold" id={style.item}   to="/dashboard/welcome">Dashboard</Link>
+                                <Link class="nav-link fw-bold" id={color ? style.item && style.liColor : style.item}   to="/dashboard/welcome">Dashboard</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link fw-bold"  id={style.item}  to="/allServices">Services</Link>
+                                <Link class="nav-link fw-bold"  id={color ? style.item && style.liColor : style.item}  to="/allServices">Services</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link fw-bold"  id={style.item}  to="/products">Products</Link>
+                                <Link class="nav-link fw-bold"  id={color ? style.item && style.liColor : style.item}  to="/products">Products</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link fw-bold"  id={style.item}  to="/blogs">Blogs</Link>
+                                <Link class="nav-link fw-bold"  id={color ? style.item && style.liColor : style.item}  to="/blogs">Blogs</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link fw-bold"  id={style.item}   to="/about">About</Link>
+                                <Link class="nav-link fw-bold"  id={color ? style.item && style.liColor : style.item}   to="/about">About</Link>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link fw-bold" id={style.item}   to="/contacts">Contact</Link>
+                                <Link class="nav-link fw-bold" id={color ? style.item && style.liColor : style.item}   to="/contacts">Contact</Link>
                             </li>
                             <li class="nav-item">
                                 {
                                     loggedInUser.email ?
-                                    <Link class="nav-link fw-bold"  id={style.item}  to="/" style={{color: 'white'}}>
+                                    <Link class="nav-link fw-bold"  id={color ? style.item && style.liColor : style.item}  to="/" style={{color: 'white'}}>
                                         {loggedInUser.name}
                                     </Link>
                                     :
-                                    <Link class="nav-link fw-bold"  id={style.item}  to="/login">Login</Link>
+                                    <Link class="nav-link fw-bold"  id={color ? style.item && style.liColor : style.item}  to="/login">Login</Link>
                                 }
                             </li>
                         </ul>

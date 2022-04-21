@@ -1,5 +1,5 @@
 import './App.css';
-import { createContext, useEffect, useState } from "react";
+import { createContext,useEffect,useState } from "react";
 import {
   Switch,
   Route,
@@ -7,7 +7,6 @@ import {
 import Home from './components/Home/Home/Home';
 import Contact from './components/Home/Contact/Contact';
 import Aboutus from './components/Aboutus/Aboutus';
-import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import Login from './components/Login/Login/Login';
 import AllServices from './components/AllServices/AllServices';
@@ -17,33 +16,15 @@ import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import WelcomePage from './components/Dashboard/WelcomePage/WelcomePage';
 import ServiceDetails from './components/ServaiceDetails/ServiceDetails';
 import Products from './components/Home/Products/Products';
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
 export const UserContext = createContext();
-// import loader from './img/loader.gif';
+
 function App() {
-
-  const [loading, setLoading] = useState(false)
-
-  // useEffect(() => {
-  //   setLoading(true)
-  //   setTimeout(() => {
-  //     setLoading(false)
-  //   }, 8000)
-  // }, []);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false)
-    }, 8000);
-    return () => clearTimeout(timer);
-  }, []);
-  // const gifStyle = {
-  //   width: "100vw",
-  //   height: "100vh"
-  // }
   const [loggedInUser, setLoggedInUser] = useState({});
   const [total, setTotal] = useState([]);
 
+  //adding user to the session storage
   useEffect(() => {
     const USER = JSON.parse(sessionStorage.getItem('user'));
     if (USER) {
@@ -51,17 +32,12 @@ function App() {
     }
     console.log(USER)
   }, [loggedInUser.role])
+
+  const user = JSON.parse(sessionStorage.getItem("user"));
+
   return (
     <div className="root">
-      {
-        loading ?
-          <ClimbingBoxLoader
-            color={"#EDBB00"}
-            loading={loading}
-            size={10}
-          />
-          :
-          <UserContext.Provider value={[loggedInUser, setLoggedInUser, total, setTotal]}>
+     <UserContext.Provider value={[loggedInUser, setLoggedInUser, total, setTotal]}>
             <Switch>
               <Route exact path="/">
                 <Home />
@@ -101,7 +77,6 @@ function App() {
               </Route>
             </Switch>
           </UserContext.Provider>
-      }
     </div>
   );
 }

@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Menu.scss';
 import { useRouteMatch } from 'react-router';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../../App';
 
 const Menu = ({isOpen, setOpen}) => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+
+const handleLogout = () => {
+    // sessionStorage.removeItem('user');
+    // setLoggedInUser({})
+    console.log(setLoggedInUser)
+}
+
+
     let { url } = useRouteMatch();
     return (
         <div className={"menu " + (isOpen && "active")} id="menu">
@@ -30,7 +40,10 @@ const Menu = ({isOpen, setOpen}) => {
                     <Link to={`${url}/addService`}>Order list</Link>
                 </li>
                 <li onClick={()=> setOpen(false)}>
-                    <Link to={`${url}/addService`}>Log out</Link>
+                    <Link>{loggedInUser? loggedInUser.name : "why r u here?"}</Link>
+                </li>
+                <li onClick={()=> setOpen(false)}>
+                    <Link onClick={handleLogout}>Log out</Link>
                 </li>
             </ul>
         </div>

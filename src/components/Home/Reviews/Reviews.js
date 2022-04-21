@@ -11,6 +11,8 @@ const Reviews = () => {
     useEffect(() => {
         setReview(allReviews)
     }, [setReview])
+
+      
     return (
         <section className="container mt-5 pt-5 mb-5">
             <Typing speed={400}>
@@ -23,12 +25,12 @@ const Reviews = () => {
                     {
                         review?.slice(0, 3).map((item) =>
                             <div className="col-md-4">
-                                <HomePageReview key={item.id} item={item} />
+                                    <HomePageReview key={item.id} item={item} />
                             </div>
 
                         )}
                 </div>
-                <div className="blogs-button text-center">
+                <div className="blogs-button text-center mt-5">
                     <button data-aos="fade-right" className={style.btnReadmore}>All Reviews</button>
                 </div>
             </div>

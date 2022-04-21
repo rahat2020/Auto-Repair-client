@@ -77,6 +77,7 @@ export default function Aboutus() {
                         <Link to="/service">
                             <button className={style.btnReadmore}>Book</button>
                         </Link>
+                   
                     </div>
                 </div>
             </div>

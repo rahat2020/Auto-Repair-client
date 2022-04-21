@@ -1,14 +1,10 @@
 import { faFacebookSquare, faInstagramSquare, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
 import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
 import style from './HomePageReview.module.css'
 
 
 const HomePageReview = ({ item: { img, position, description, name, date } }) => {
-    // const truncate = (text, n) => {
-    //     return text?.length > n ? text.substr(0, n - 1) + " ..." : text;
-    // }
     return (
         <section className="container mt-5 pt-5 mb-5">
             <div className="card" id={style.card}>

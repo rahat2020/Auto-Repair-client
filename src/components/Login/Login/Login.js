@@ -141,6 +141,7 @@ export default function Login() {
                 }
                 setLoggedInUser(newUser);
                 setIsLoading(false);
+                sessionStorage.setItem('user', JSON.stringify(data))
                 isReplace && history.replace(from);
             })
     }
