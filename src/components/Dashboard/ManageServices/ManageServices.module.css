@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap');
-.titleText{
+
+.titleText {
     text-align: center;
     justify-content: center;
     align-items: center;
     display: flex;
     font-family: 'Lobster', cursive;
 }
-.titleText .title{
+
+.titleText .title {
     margin: auto;
     font-size: 2rem;
     color: #EDBB00;
@@ -15,41 +17,60 @@
     position: relative;
     z-index: 1;
 }
-.titleHalf{
+
+.titleHalf {
     /* text-shadow: 2px 0px #1f1ffc; */
     color: #1f1ffc;
-} 
+}
+
 .titleText .title::after {
     content: "";
     width: 3rem;
     height: 2rem;
-    background: linear-gradient(#3434ff,#f3c41b);
+    background: linear-gradient(#3434ff, #f3c41b);
     position: absolute;
     top: -30px;
     left: 0;
-    z-index:-1;
+    z-index: -1;
     transform: rotate(3deg);
     border-top-left-radius: 62px;
     border-bottom-right-radius: 55px;
 }
-.title{
+
+.title {
     color: #555;
     font-size: 1.5rem;
 }
-.cardText{
+
+.cardTitle {
     font-size: 1em;
     font-family: 'Lora', serif;
     color: #555;
 }
-.cardImg{
-    width: 100%;
-    height: 7rem;
+.cardHalfTitle{
+    font-size: .77em;
+    font-family: 'Lora', serif;
+    color: #555;
 }
-.arrow{
+.cardText {
+    font-size: 1em;
+    font-family: 'Lora', serif;
+    color: #555;
+}
+
+.cardImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.arrow {
     font-size: 0.89em;
     margin-left: 0.66em;
 }
-.btnEdit, .btnDelete{
+
+.btnEdit,
+.btnDelete {
     border: 1px solid #fff;
     color: #ffffffe3;
     padding: 2px 1rem;
@@ -58,12 +79,14 @@
     font-weight: 600;
     background: #1f1ffc;
 }
-.btnDelete:hover{
+
+.btnDelete:hover {
     background: #EDBB00;
     color: #000000e5;
     transition: all 0.5s ease-in-out;
 }
-.btnEdit:hover{
+
+.btnEdit:hover {
     background: #EDBB00;
     color: #000000e5;
     transition: all 0.5s ease-in-out;

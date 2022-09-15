@@ -59,7 +59,7 @@ ul {
 .footerLogo .logo {
     height: 100px;
 }
-.footerText p {
+#footerText p {
   margin-bottom: 14px;
   font-size: 14px;
       color: #7e7e7e;
@@ -83,7 +83,7 @@ ul {
     justify-content: space-between;
     align-items: center;
 }
-.footerSocialIcon .SocialIcon{
+.footerSocialIcon #SocialIcon{
     height: 40px;
     width: 40px;
     text-align: center;
@@ -117,7 +117,7 @@ ul {
 }
 .footerWdget ul li {
   display: inline-block;
-  float: left;
+  /* float: left; */
   width: 50%;
   margin-bottom: 12px;
 }

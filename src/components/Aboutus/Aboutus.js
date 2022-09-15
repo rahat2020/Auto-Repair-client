@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import style from './Aboutus.module.css';
 import carVideo from '../../img/carVideo.mp4';
 import signature from '../../img/signature.png';
 import { Link } from 'react-router-dom';
-import { faBars, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 import auto from '../../img/auto.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Carousel } from '@trendyol-js/react-carousel';
@@ -14,12 +14,11 @@ import aboutThree from '../../img/aboutThree.jpg';
 import aboutFive from '../../img/aboutFive.jpg';
 import aboutSix from '../../img/aboutSix.jpg';
 import Footer from '../Home/Footer/Footer';
-import { UserContext } from '../../App';
+import GlobalNavbar from '../GlobalNavbar/GlobalNavbar';
 
 export default function Aboutus() {
 
-    const [total, setTotal] = useContext(UserContext)
-    console.log('from about', total )
+   
     return (
         <section className="mb-4" id={style.about}>
             <div className="video">
@@ -43,29 +42,7 @@ export default function Aboutus() {
                     <source src={carVideo} type="video/mp4" />
                 </video>
             </div>
-            <nav id={style.navbar} class="navbar navbar-expand-lg navbar-light">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <FontAwesomeIcon className={style.arrow} icon={faBars} />
-                    </button>
-                    <div class="collapse navbar-collapse justify-content-center text-center" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <Link id={style.navItem} class="nav-link text-white fw-bolder fs-5" aria-current="page" to="/">Home</Link>
-                            </li>
-                            <li class="nav-item">
-                                <Link id={style.navItem} class="nav-link text-white fw-bold fs-5" aria-current="page" to="/allServices">Services</Link>
-                            </li>
-                            <li class="nav-item">
-                                <Link id={style.navItem} class="nav-link text-white fw-bold fs-5" aria-current="page" to="/">Products</Link>
-                            </li>
-                            <li class="nav-item">
-                                <Link id={style.navItem} class="nav-link text-white fw-bold fs-5" aria-current="page" to="/">Login</Link>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+            <GlobalNavbar/>
             <div className="container" id={style.aboutContainer}>
                 <div className={style.aboutBox}>
                     <h1 className={style.slideTitle}> We care your car as you do</h1> <br />

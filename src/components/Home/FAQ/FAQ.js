@@ -14,7 +14,7 @@ const FAQ = () => {
 
             <div className="row mt-5 pt-4 mb-5">
                 <div className="col-md-6">
-                    <div data-aos="zoom-in" className="col-12 bg-white p-5 rounded" className={style.faqQue}>
+                    <div data-aos="zoom-in" className="col-12 bg-white p-5 rounded" id={style.faqQue}>
                         <h2>FaQ's</h2>
                         <details className="mt-5" id={style.details}>
                             <summary><strong>How we can help you?</strong></summary>
@@ -43,27 +43,27 @@ const FAQ = () => {
                 </div>
                 <div data-aos="zoom-in" className="col-md-6" >
                     <h2 className={style.FormTitle}>Ask a question</h2>
-                    <form class="row g-3 mt-2">
-                        <div class="col-md-6">
+                    <form className="row g-3 mt-2">
+                        <div className="col-md-6">
 
-                            <input type="email" class="form-control" placeholder="your email" />
+                            <input type="email" className="form-control" placeholder="your email" />
                         </div>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="your name" />
+                        <div className="col-md-6">
+                            <input type="text" className="form-control" placeholder="your name" />
                         </div>
-                        <div class="col-12">
+                        <div className="col-12">
 
-                            <textarea type="text" class="form-control" rows="5" id="inputAddress" placeholder="your questions" />
+                            <textarea type="text" className="form-control" rows="5" id="inputAddress" placeholder="your questions" />
                         </div>
-                        <div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck" />
-                                <label class="form-check-label" for="gridCheck">
+                        <div className="col-12">
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" id="gridCheck" />
+                                <label className="form-check-label" id="gridCheck">
                                     Check me out
                                 </label>
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div className="col-12">
                         <button className={style.btnReadmore}>
                             <FontAwesomeIcon className={style.arrow} icon={faArrowRight} /> Submit
                         </button>

@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+.titleText {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: 'Lobster', cursive;
+}
+
+.titleText .title {
+    margin: auto;
+    font-size: 2rem;
+    color: #EDBB00;
+    font-weight: 500;
+    /* text-shadow: 2px 0px #EDBB00; */
+    position: relative;
+    z-index: 1;
+}
+
+.titleHalf {
+    /* text-shadow: 2px 0px #1f1ffc; */
+    color: #1f1ffc;
+}
+
+.titleText .title::after {
+    content: "";
+    width: 3rem;
+    height: 2rem;
+    background: linear-gradient(#3434ff, #f3c41b);
+    position: absolute;
+    top: -30px;
+    left: 0;
+    z-index: -1;
+    transform: rotate(3deg);
+    border-top-left-radius: 62px;
+    border-bottom-right-radius: 55px;
+}
+
+.title {
+    color: #555;
+    font-size: 1.5rem;
+}
+
+#order__container{
+    border: 1px solid #ffffffe5;
+    height: 100%;
+    padding: 1rem;
+    margin-bottom: 3rem;
+    
+}
+.orderpd__img{
+    width: 4.78rem;
+    height: 3rem;
+    object-fit: cover;
+    border-radius:10px;
+}
+#order__title{
+    color: #000000d5;
+    letter-spacing: 1px;
+}
+.orderBtn__edit{
+    border: none;
+    background-color: #2c80ee;
+    padding:5px 10px;
+    /* height: 2rem; */
+    color: #fff;
+    font-weight: 600;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+#formSelect{
+    padding: 5px 2px !important;
+}
+.orderBtn__erase{
+    border: none;
+    background-color: #f34121;
+    padding:5px 10px;
+    /* height: 2rem; */
+    color: #fff;
+    font-weight: 600;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+.orderBtn__delete{
+    border: none;
+    background-color: #FB4848;
+    padding: 7px 10px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+.order__userData{
+    color: #000000d5;
+    font-weight: 600;
+}
+.ordered__user{
+    display: flex;
+    justify-content: flex-start;
+}
+.ordered__user .ol__left{
+    color: #000000d5;
+}
+.ordered__user .ol__right{
+    color: #666;
+}
+.ol__right .olrght__data{
+    margin-left: 1rem;   
+}
+.ol__right .olright__img{
+    width: 3em;
+    height: 1.82rem;
+    object-fit: cover;
+}

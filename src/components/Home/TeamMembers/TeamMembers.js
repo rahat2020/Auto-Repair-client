@@ -5,7 +5,7 @@ import Typing from 'react-typing-animation';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookSquare, faTwitterSquare, faInstagramSquare } from '@fortawesome/free-brands-svg-icons';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+
 const TeamMembers = () => {
     const [members, setMembers] = useState([])
     useEffect(() => {
@@ -20,8 +20,8 @@ const TeamMembers = () => {
             </Typing>
             <div className="row mt-5 pt-5" id={style.CardDetails}>
                 {
-                    members.map((member) => (
-                        <div className="col-md-3 col-sm-6 team-wrap">
+                    members.map((member, index) => (
+                        <div className="col-md-3 col-sm-6 team-wrap" key={index}>
                             <div className="text-center" id={style.teamMember}>
                                 <div className={style.teamImg}>
                                     <img src={member.img} id={style.img} alt="mechanics"/>

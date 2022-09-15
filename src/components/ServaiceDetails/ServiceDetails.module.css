@@ -75,13 +75,28 @@
     font-size: .80rem;
     transition: all 0.5s ease;
     border-radius: 10px;
+    position: relative;
 }
-.btn:hover{
-    background-color: #2f2ff5da;
+.btn::before{
+    content: "Buy now";
+    top: 0;
+    left: 0;
+    position: absolute;
+    padding: 5px 20px;
     font-weight: 600;
+    font-size: .80rem;
+    transition: all 0.5s ease;
+    border-radius: 10px;
+    background-color: #2f2ff5da;
+    /* border: 1px solid #2f2ff5da; */
+    transition: all 0.5s ease;
+    transform:rotateX(270deg);
+    transform-origin: bottom;
+}
+.btn:hover::before{
+    transform:rotateX(0deg);
+    border: 1px solid #2f2ff5da;
     color: #fff;
-    border: none;
-    border: 1px solid #fff;
 } 
 
 /* responsive styles */

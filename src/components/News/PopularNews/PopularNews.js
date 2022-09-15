@@ -9,7 +9,8 @@ const PopularNews = () => {
     const [news, setNews] = useState([])
     useEffect(() => {
         setNews(fakeNews)
-    })
+    },[])
+
     return (
         <section className="container mt-5 pt-5 mb-5">
             <Typing speed={400}>
@@ -21,8 +22,8 @@ const PopularNews = () => {
                 <div className="row">
 
                     {
-                        news?.slice(0, 3).map((blog) =>
-                            <div className="col-md-4">
+                        news?.slice(0, 3).map((blog, index) =>
+                            <div className="col-md-4" key={index}>
                                 <News key={blog.id} blog={blog} />
                             </div>
 

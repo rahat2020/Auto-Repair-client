@@ -11,7 +11,7 @@ const AllServices = () => {
     const [service, setService] = useState([])
     console.log(service)
     useEffect(() => {
-        const url = `http://localhost:5000/showService`
+        const url = `http://localhost:5000/service/get`
         fetch(url)
             .then(res => res.json())
             .then(data => setService(data))
@@ -31,17 +31,17 @@ const AllServices = () => {
                 <div className="row">
 
                     {
-                        service.map((item) => (
-                            <div data-aos="fade-up" className="col-md-3 mt-5 pt-4 mb-5">
+                        service.map((item, index) => (
+                            <div data-aos="fade-up" className="col-md-3 mt-5 pt-4 mb-5" key={index}>
                                 <div className="card border-0 shadow">
                                     <div className="card-title text-secondary p-1">
                                         <h5 className="fs-4">{item.name}</h5>
                                     </div>
                                     <div className="card-img">
-                                        <img src={item.imgURL} alt="" className={style.cardImg} />
+                                        <img src={item.img} alt="" className={style.cardImg} />
                                     </div>
                                     <div className="card-body">
-                                        <p className={style.cardText}>{item.description}</p>
+                                        <p className={style.cardText}>{item.details}</p>
 
                                         <button className={style.btnReadmore}>
                                             Read more <FontAwesomeIcon className={style.arrow} icon={faArrowRight} />

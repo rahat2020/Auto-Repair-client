@@ -6,32 +6,32 @@ import { faMapMarkerAlt, faPhone, faEnvelope, faPaperPlane } from '@fortawesome/
 import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
-        <footer class={style.footerSection}>
-            <div class="container">
-                <div class={style.footerCta} className="pt-5 pb-5">
-                    <div class="row">
-                        <div class="col-xl-4 col-md-4 mb-30">
-                            <div class={style.singleCta}>
+        <footer className={style.footerSection}>
+            <div className="container">
+                <div className="pt-5 pb-5">
+                    <div className="row">
+                        <div className="col-xl-4 col-md-4 mb-30">
+                            <div className={style.singleCta}>
                                 <FontAwesomeIcon className={style.fas} icon={faMapMarkerAlt} />
-                                <div class={style.ctaText}>
+                                <div className={style.ctaText}>
                                     <h4 className="text-start">Find us</h4>
                                     <span>1010 Avenue, Badda - Dhaka</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-md-4 mb-30">
-                            <div class={style.singleCta}>
+                        <div className="col-xl-4 col-md-4 mb-30">
+                            <div className={style.singleCta}>
                                 <FontAwesomeIcon className={style.fas} icon={faPhone} />
-                                <div class={style.ctaText}>
+                                <div className={style.ctaText}>
                                     <h4 className="text-start">Call us</h4>
                                     <span>9876543210 0</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-md-4 mb-30">
-                            <div class={style.singleCta}>
+                        <div className="col-xl-4 col-md-4 mb-30">
+                            <div className={style.singleCta}>
                                 <FontAwesomeIcon className={style.fas} icon={faEnvelope} />
-                                <div class={style.ctaText}>
+                                <div className={style.ctaText}>
                                     <h4 className="text-start">Mail us</h4>
                                     <span>Auto-Repair@gmail.com</span>
                                 </div>
@@ -39,32 +39,32 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div class={style.footerContent} className="mt-5 pb-5">
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-4 mb-50">
-                            <div class={style.footerWdget}>
-                                <div class={style.footerLogo}>
+                <div className="mt-5 pb-5">
+                    <div className="row">
+                        <div className="col-xl-4 col-lg-4 mb-50">
+                            <div className={style.footerWdget}>
+                                <div className={style.footerLogo}>
                                     <Link to="/"> <span className={style.logo}>Auto</span><span className={style.logoTwo}>Repair</span> </Link>
                                 </div>
-                                <div class={style.footerText}>
+                                <div className={style.footerText}>
                                     <p className="text-sm-start">E-Sheba is here to give you the best service with refundable policies, here you may get all kind of services as you see fit.</p>
                                 </div>
-                                <div class={style.footerSocialIcon}>
+                                <div className={style.footerSocialIcon}>
                                     <span>Follow us</span>
-                                    <Link to="/"><FontAwesomeIcon className={style.facebookBg} className={style.SocialIcon} icon={faFacebookSquare} /></Link>
-                                    <Link to="/"><FontAwesomeIcon className={style.twitterBg} className={style.SocialIcon} icon={faTwitterSquare} /></Link>
-                                    <Link to="/"><FontAwesomeIcon className={style.youtubeBg} className={style.SocialIcon} icon={faYoutubeSquare} /></Link>
-                                    <Link to="/"><FontAwesomeIcon className={style.youtubeBg} className={style.SocialIcon} icon={faInstagramSquare} /></Link>
-                                    <Link to="/"><FontAwesomeIcon className={style.youtubeBg} className={style.SocialIcon} icon={faLinkedinIn} /></Link>
+                                    <Link to="/"><FontAwesomeIcon className={style.facebookBg} id={style.SocialIcon} icon={faFacebookSquare} /></Link>
+                                    <Link to="/"><FontAwesomeIcon className={style.twitterBg} id={style.SocialIcon} icon={faTwitterSquare} /></Link>
+                                    <Link to="/"><FontAwesomeIcon className={style.youtubeBg} id={style.SocialIcon} icon={faYoutubeSquare} /></Link>
+                                    <Link to="/"><FontAwesomeIcon className={style.youtubeBg} id={style.SocialIcon} icon={faInstagramSquare} /></Link>
+                                    <Link to="/"><FontAwesomeIcon className={style.youtubeBg} id={style.SocialIcon} icon={faLinkedinIn} /></Link>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
-                            <div class={style.footerWdget}>
-                                <div class={style.footerWdgetHeading}>
+                        <div className="col-xl-4 col-lg-4 col-md-6 mb-30">
+                            <div className={style.footerWdget}>
+                                <div className={style.footerWdgetHeading}>
                                     <h3 className="text-start">Useful Links</h3>
                                 </div>
-                                <div className="d-flex">
+                                {/* <div className="d-flex">
                                 <ul className={style.li} className="text-start text-decoration-none">
                                     <li><Link to="/" className="text-decoration-none">Home</Link></li>
                                     <li><Link to="/about" className="text-decoration-none">About Us</Link></li>
@@ -77,19 +77,19 @@ const Footer = () => {
                                     <li><Link to="/contact" className="text-decoration-none">Contact us</Link></li>
                                     <li><Link to="/latest" className="text-decoration-none">Latest News</Link></li>
                                 </ul>
-                                </div>
+                                </div> */}
                                 
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
-                            <div class={style.footerWdget}>
-                                <div class={style.footerWdgetHeading}>
+                        <div className="col-xl-4 col-lg-4 col-md-6 mb-50">
+                            <div className={style.footerWdget}>
+                                <div className={style.footerWdgetHeading}>
                                     <h3 className="text-start">Subscribe</h3>
                                 </div>
-                                <div class={style.footerText} className="mb-25">
+                                <div id={style.footerText} className="mb-25">
                                     <p className="text-start text-secondary">Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
                                 </div>
-                                <div class={style.subscribeForm}>
+                                <div className={style.subscribeForm}>
                                     <form action="#">
                                         <input type="text" placeholder="Email Address" />
                                         <button>  <FontAwesomeIcon icon={faPaperPlane} /></button>
@@ -100,16 +100,16 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-        <div class={style.copyrightArea}>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6 text-center text-lg-left">
-                            <div class={style.copyrightText}>
+        <div className={style.copyrightArea}>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-xl-6 col-lg-6 text-center text-lg-left">
+                            <div className={style.copyrightText}>
                                 <p>Copyright &copy; 2021, All Right Reserved <Link to="">Auto Repair</Link></p>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
-                            <div class={style.footerMenu}>
+                        <div className="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                            <div className={style.footerMenu}>
                                 <ul>
                                     <li><Link className="text-decoration-none" to="/">Home</Link></li>
                                     <li><Link className="text-decoration-none" to="/">Terms</Link></li>

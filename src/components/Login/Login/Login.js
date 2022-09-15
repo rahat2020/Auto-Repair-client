@@ -1,241 +1,96 @@
-import React from 'react';
-import style from './Login.module.css';
-import login from '../../../img/login.svg';
-import { useContext, useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { firebaseConfigFrameWork, handleGoogleSignIn, handleLogIn, handleSignUp } from '../LoginManager/LoginManager';
-import { UserContext } from '../../../App';
-import GlobalNavbar from '../../../components/GlobalNavbar/GlobalNavbar';
-import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
+import React, { useContext, useState } from 'react';
+import GlobalNavbar from '../../GlobalNavbar/GlobalNavbar';
+import Footer from '../../Home/Footer/Footer';
+import './Login.css';
+import log from '../../../img/login_transfarent.png';
+import { Link, useHistory } from 'react-router-dom';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../../../Context/AuthContext';
 
-export default function Login() {
+const Login = () => {
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const history = useHistory()
 
-    // access firebase config
-    firebaseConfigFrameWork();
-    const [newUser, setNewUser] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    const history = useHistory();
-    const location = useLocation();
-    let { from } = location.state || { from: { pathname: "/" } };
-    const [user, setUser] = useState({
-        name: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-        emailValid: true,
-        passwordValid: true,
-        confirmPasswordValid: true,
-        error: ''
-    });
+    const { dispatch } = useContext(AuthContext);
 
-    // For using sign in with google
-
-    const googleSignIn = () => {
-        handleGoogleSignIn()
-            .then(res => {
-                handleResponse(res, true);
-            })
-    }
-    const handleResponse = (res, redirect) => {
-        setUser(res);
-        setLoggedInUser(res);
-        if (redirect) {
-            history.replace(from);
-        }
-    }
-
-    // For using login and signup
-    const handleSubmit = (event) => {
-        if (!newUser && user.email && user.password) {
-            setIsLoading(true);
-            handleLogIn(user.email, user.password)
-                .then(res => {
-                    if (res.email) {
-                        handleLogInUser(res, true);
-                    }
-                    else {
-                        const newUser = {
-                            error: res
-                        }
-                        setLoggedInUser(newUser);
-                        setIsLoading(false);
-                    }
-                })
-        }
-        if (newUser && user.email && user.password && user.confirmPassword) {
-            // setIsLoading(true);
-            if (user.password.length === user.confirmPassword.length) {
-                handleSignUp(user.name, user.email, user.confirmPassword)
-                    .then(res => {
-                        if (res.email) {
-                            handleLogInUser(res, false);
-                            const userDetail = { ...user };
-                            userDetail.error = "";
-                            setUser(userDetail);
-                            setIsLoading(false);
-                        }
-                        else {
-                            const newUser = {
-                                error: res
-                            }
-                            setLoggedInUser(newUser);
-                            const userDetail = { ...user };
-                            userDetail.error = "";
-                            setUser(userDetail);
-                            setIsLoading(false);
-                        }
-                    })
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        try {
+            const userObj = {
+                username,
+                password,
             }
-            else {
-                const userDetail = { ...user };
-                userDetail.error = "Confirm password do not match";
-                setUser(userDetail);
-                setIsLoading(false);
-            }
-        }
-        event.preventDefault();
-    }
-
-    // For accessing user information from input and validating data
-    const handleBlur = (event) => {
-        let isValid = true;
-        if (event.target.name === 'email') {
-            isValid = /\S+@\S+\.\S+/.test(event.target.value);
-        }
-        if (event.target.name === 'password') {
-            isValid = event.target.value.length >= 6 && /\d{1}/.test(event.target.value);
-        }
-        if (isValid) {
-            const newUser = { ...user };
-            newUser[event.target.name] = event.target.value;
-            newUser[event.target.name + "Valid"] = true;
-            setUser(newUser);
-        }
-        else {
-            const newUser = { ...user };
-            newUser[event.target.name + "Valid"] = false;
-            setUser(newUser);
-        }
-    }
-
-    // For using to reduce repetition code
-    const handleLogInUser = (res, isReplace) => {
-        fetch('https://enigmatic-coast-10449.herokuapp.com/isAdmin', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email: res.email })
-        })
-            .then(res => res.json())
-            .then(data => {
-                const newUser = {
-                    email: res.email,
-                    name: res.displayName,
-                    error: '',
-                    photo: res.photoURL,
-                    isAdmin: data
-                }
-                setLoggedInUser(newUser);
-                setIsLoading(false);
-                sessionStorage.setItem('user', JSON.stringify(data))
-                isReplace && history.replace(from);
+            console.log(userObj)
+            const res = await axios.post("http://localhost:5000/user/login", userObj)
+            console.log(res)
+            res.data && Swal.fire({
+                icon: 'success',
+                title: 'Logged in successfully',
             })
+            dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+            localStorage.setItem("token", JSON.stringify(res.data.token))
+            history.push("/dashboard/welcome")
+        } catch (err) {
+            console.log(err)
+            err && Swal.fire({
+                icon: 'error',
+                title: 'Logged in failed',
+            })
+        }
     }
-
-    // Conditionally showing log in and create new account button
-    const handleLogInOrCreate = () => {
-        setNewUser(!newUser);
-        const newLoggedInUser = { ...loggedInUser };
-        newLoggedInUser.error = '';
-        setLoggedInUser(newLoggedInUser);
-        const userDetail = { ...user };
-        userDetail.error = '';
-        setUser(userDetail);
-    }
-
     return (
         <>
-            <GlobalNavbar />
-            <section className="container mt-5 pt-5">
-                <div className="row mb-5 py-4" id={style.FormBox}>
-                    <div className="col-md-6">
-                        <div data-aos="fade-up" className={style.colLeft}>
-                            <img className={style.LoginImg} src={login} alt="" />
+            <div className="login__container ">
+                <GlobalNavbar />
+                <div className="container form__container">
+                    <div className="form__left" >
+                        <div className="flImg__container">
+                            <img src={log} alt="" className="fl__img" />
                         </div>
                     </div>
-                    <div className="col-md-6">
-                        <div className="flex justify-center container">
-                            <div className="mt-4 ">
-                                <div data-aos="fade-up" className="bg-white p-4 border-2 rounded-md mb-5">
-                                    <h4 className="font-bold text-lg text-center" id={style.title}>{newUser ? 'Create an account' : 'Log In here'}</h4>
-                                    {
-                                        user.error &&
-                                        <h6 className="text-red-500 text-center mt-3">{user.error}</h6>
-                                    }
-                                    {
-                                        loggedInUser.error &&
-                                        <h6 className="text-red-500 text-center mt-3">{loggedInUser.error}</h6>
-                                    }
-                                    {
-                                        loggedInUser.email &&
-                                        <h6 className="text-green-500 text-center mt-3">Signed up successfully</h6>
-                                    }
-                                    <div className=" ">
+                    <div className="form__right">
+                        <form className="container p-4">
+                            <h4 className="fl__title">Sign in</h4>
+                            <p className="fl__semiTitle">Sign in to continue to our application</p>
+                            <div className="mb-2">
+                                <label htmlFor="exampleInputEmail1" className="form-label lavel">Username</label>
+                                <input
+                                    type="email"
+                                    className="form-control fmc"
+                                    id="exampleInputEmail1"
+                                    aria-describedby="emailHelp"
+                                    onChange={(e) => setUsername(e.target.value)}
+                                />
 
-                                        <div data-aos="fade-down">
-                                            <form className={style.loginform} onSubmit={handleSubmit}>
-
-                                                {
-                                                    newUser &&
-                                                    <input type="text" onBlur={handleBlur} name="name" placeholder="Name" required />
-                                                }
-                                                <br />
-                                                <input type="text" onBlur={handleBlur} name="email" placeholder="Email" required />
-                                                <br />
-                                                {
-                                                    !user.emailValid &&
-                                                    <span className="text-red-500">Enter a valid email</span>
-                                                }
-                                                <input type="password" onBlur={handleBlur} name="password" placeholder="Password" required /><br />
-                                                {
-                                                    !user.passwordValid &&
-                                                    <span className="text-red-500">Enter a valid password (at least 6 character and number)</span>
-                                                }
-                                                {
-                                                    newUser && <input type="password" onBlur={handleBlur} name="confirmPassword" placeholder="Confirm password" required />
-                                                }
-                                                <br />
-                                                <input id={style.submitbtn} type="submit" value={newUser ? "Create an account" : "Login"} />
-                                            </form>
-                                            <h6 className="mt-3 text-center">
-                                                {
-                                                    newUser ?
-                                                        <span>Already have an account?<button className={style.createBtn} onClick={() => handleLogInOrCreate()}>Login</button></span>
-                                                        :
-                                                        <span>Don't have an account? <button className={style.createBtn} onClick={() => handleLogInOrCreate()}>Create an account</button></span>
-                                                }
-                                            </h6>
-
-                                            <hr />
-                                            <h5 className="text-center text-lg">Or</h5>
-                                            <hr />
-                                            <div className="text-center" id={style.socialbtn}>
-                                                <button onClick={googleSignIn}><FontAwesomeIcon icon={faGoogle} size="lg" /> Continue With Google</button><br />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
+                            <div className="mb-2">
+                                <label htmlFor="exampleInputPassword1" className="form-label lavel">Password</label>
+                                <input
+                                    type="password"
+                                    className="form-control fmc"
+                                    id="exampleInputPassword1"
+                                    onChange={(e) => setPassword(e.target.value)}
+                                />
+                            </div>
+                            <button type="submit" className="btn__login" onClick={handleSubmit}>Sign in</button>
+                            <div className="d-flex justify-content-center mt-3">
+                                <Link to="/signup" className="link">
+                                    <p className="sign__hover">Didn't have an account?</p>
+                                </Link>
+                                <Link to="/signup" className="link">
+                                    <p className="ms-3 sign__hover">forgot password?</p>
+                                </Link>
+                            </div>
+                        </form>
+
                     </div>
-
                 </div>
-            </section>
-
+            </div>
+            <Footer />
         </>
     )
 }
+
+export default Login

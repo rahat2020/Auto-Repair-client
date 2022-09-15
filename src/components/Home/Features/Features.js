@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Features.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faClock, faPhone, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faClock, faPhone } from '@fortawesome/free-solid-svg-icons'
 const Features = () => {
     return (
         <section className="container mt-4 pt-4 mb-4">

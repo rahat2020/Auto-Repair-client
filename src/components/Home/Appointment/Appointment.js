@@ -53,18 +53,18 @@ export default function Appointment() {
                     <div className="col-md-8">
                         <div data-aos="fade-up" className="mb-5" id={style.colRight}>
                             <div data-aos="zoom-in-up" className="container" id={style.form}>
-                                <form class="row g-3"  onSubmit={sendMail}>
-                                    <div class="col-md-6">
-                                        <input type="email" class="form-control" placeholder="Email" name="user_email" />
+                                <form className="row g-3"  onSubmit={sendMail}>
+                                    <div className="col-md-6">
+                                        <input type="email" className="form-control" placeholder="Email" name="user_email" />
                                     </div>
-                                    <div class="col-md-6">
-                                        <input type="name" class="form-control" placeholder="Name" name="name" />
+                                    <div className="col-md-6">
+                                        <input type="name" className="form-control" placeholder="Name" name="name" />
                                     </div>
-                                    <div class="col-12">
-                                        <textarea type="text" rows="5" class="form-control" placeholder="Your message" name="message"/>
+                                    <div className="col-12">
+                                        <textarea type="text" rows="5" className="form-control" placeholder="Your message" name="message"/>
                                     </div>
-                                    <div class="col-12">
-                                       <button class={style.slideContact}>Send message</button>
+                                    <div className="col-12">
+                                       <button className={style.slideContact}>Send message</button>
                                     </div>
                                 </form>
                             </div>

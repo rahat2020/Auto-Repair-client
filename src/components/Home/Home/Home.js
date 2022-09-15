@@ -13,6 +13,7 @@ import TeamMembers from '../TeamMembers/TeamMembers';
 import WhyChoose from '../WhyChoose/WhyChoose';
 
 const Home = () => {
+    
     return (
         <div>
             <Header />

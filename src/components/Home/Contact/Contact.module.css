@@ -1,10 +1,6 @@
-#navbar{
-    background: #44424298;
-    box-shadow: 0 0 10px #00000066;
-}
+
 .contactTilte{
     display: flex;
-  
     justify-content: center;
     align-items: center;
 }

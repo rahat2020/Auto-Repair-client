@@ -23,8 +23,8 @@ const Reviews = () => {
             <div className={style.popularBlog}>
                 <div className="row">
                     {
-                        review?.slice(0, 3).map((item) =>
-                            <div className="col-md-4">
+                        review?.slice(0, 5).map((item, index) =>
+                            <div className="col-md-4" key={index}>
                                     <HomePageReview key={item.id} item={item} />
                             </div>
 

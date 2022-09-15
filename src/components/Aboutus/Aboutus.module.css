@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-#navbar{
-    background-color: #5142369c;
-}
-#navItem:hover {
-    text-decoration: underline;
-}
+
 .aboutBox{
     text-align: center;
     margin-top: 6rem;
@@ -59,7 +54,7 @@
     display: flex;
     justify-content:center;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 4rem;
 }
 .aboutLogo{
     width: 10%;

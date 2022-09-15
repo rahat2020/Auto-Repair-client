@@ -1,65 +1,74 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import style from './Payment.module.css';
 import GlobalNavbar from '../../components/GlobalNavbar/GlobalNavbar';
 import Footer from '../../components/Home//Footer/Footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAmazon, faCcVisa, faPaypal } from '@fortawesome/free-brands-svg-icons';
 import { useContext } from 'react';
-import { UserContext } from '../../App';
 import Swal from 'sweetalert2';
-import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
+import { AuthContext } from '../../Context/AuthContext';
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 export default function Payment() {
-    // const [total, setTotal] =useContext(UserContext)
-    // console.log('this is total',total)
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
-    // console.log('this is logged in', loggedInUser)
+    const { user } = useContext(AuthContext);
+    const Pdetails = JSON.parse(localStorage.getItem('Pdetails'))
 
+    const [cardName, setCardName] = useState('')
+    const [cardNumber, setCardNumber] = useState('')
+    const [address, setAddresses] = useState('')
+    const [expMonth, setExpMonth] = useState('')
+    const [expYear, setExpYear] = useState('')
+    const [zip, setZip] = useState('')
+    const [cvc, setCvc] = useState('')
 
-    const [checkout, setCheckout] = useState([])
-    console.log(checkout)
+    const history = useHistory()
 
-    const handleSubmit = () => {
-        const items = { ...loggedInUser, product: checkout, date: new Date() }
-        const url = `http://localhost:5000/serviceOrdered`
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(items)
-        })
-            .then(response => response.json())
-            .then(data => {
-                Swal.fire(
-                    'Success',
-                    'Your order is confirmed',
-                    'success'
-                )
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        const pdObject = {
+            username: user.username,
+            email: user.email,
+            cardName,
+            cardNumber,
+            address,
+            expMonth,
+            expYear,
+            zip,
+            cvc,
+            pdName: Pdetails ? Pdetails.name : null,
+            pdImg: Pdetails ? Pdetails.img : null,
+            pdPrice: Pdetails ? Pdetails.price : null,
+
+        }
+        // console.log(pdObject)
+        try {
+            const res = await axios.post("http://localhost:5000/order/add", pdObject)
+            res && Swal.fire({
+                icon: "success",
+                title: "Order added successfully"
             })
-
+            history.push('/dashboard/ordered')
+        } catch (err) {
+            console.log(err)
+            err && Swal.fire({
+                icon: "error",
+                title: "Order placement failed"
+            })
+        }
     }
 
-    const { _id } = useParams()
-    console.log('id', _id)
-    const details = checkout.find(pd => pd?._id === _id)
-    console.log('details of single item', details)
-
-    useEffect(() => {
-        const url = `http://localhost:5000/serviceDetails/${_id}`
-        fetch(url)
-            .then(response => response.json())
-            .then(data => setCheckout(data))
-            .then(data => console.log(data))
-    }, [_id])
     return (
         <>
+
             <GlobalNavbar />
             <div className="mt-5 pt-5 mb-5 pt-3 d-flex justify-content-center align-content-center" id={style.paymentContainer}>
-                <div className="card" style={{ width: '18rem' }}>
-                    <img src={details?.imgURL} className="card-img-top img-fluid" alt="..." />
+                <div className="card shadow" style={{ width: '18rem' }}>
+                    <img src={Pdetails.img } className={style.payment__img} alt="..." />
                     <div className="card-body">
-                        <h5 className="card-title">{details?.name}</h5>
+                        <h5 className="card-title">{Pdetails.name}</h5>
+                        <h5 className="card-title">${ Pdetails.price }</h5>
+
                     </div>
                 </div>
 
@@ -82,72 +91,75 @@ export default function Payment() {
                         </div>
                     </div>
 
-                    {/* billing info */}
-                    <div className="billing mt-4 pt-2">
+                    {/*  info */}
+                    <div className=" mt-4 pt-2">
                         <div className="row">
                             <div className="col-md-6">
                                 <div className=" ">
                                     <span className={style.billOne}>1</span>
-                                    <span Billing className={style.billTwo}>Billing Info</span>
+                                    <span className={style.billTwo}> Info</span>
                                 </div>
 
                                 <form className="row g-3 mt-3">
                                     <div className="col-md-12">
-                                        <input type="email" className="form-control" id="inputEmail4" placeholder="full name" value={`${loggedInUser.name ? loggedInUser.name : " "}`} disabled />
+                                        <input type="email" className="form-control" id="inputEmail4" placeholder="full name" value={`${user ? user.username : " "}`} disabled />
                                     </div>
                                     <div className="col-md-12">
-                                        <input type="email" className="form-control" id="inputEmail4" placeholder="Email" value={`${loggedInUser.email ? loggedInUser.email : " "}`} disabled />
+                                        <input type="email" className="form-control" id="inputEmail4" placeholder="Email" value={`${user ? user.email : " "}`} disabled />
                                     </div>
                                     <div className="col-12">
-                                        <input type="text" className="form-control" id="inputAddress" placeholder="Address - 1234 Main St" />
+                                        <input type="text" className="form-control"
+                                            id="inputAddress" placeholder="Address - 1234 Main St" onChange={(e) => setAddresses(e.target.value)} />
                                     </div>
                                     <div className="col-md-6">
                                         <input type="text" className="form-control" placeholder="City" />
                                     </div>
                                     <div className="col-md-6">
-                                        <input type="text" className="form-control" placeholder="Zip" />
+                                        <input type="text" className="form-control" required placeholder="Zip" onChange={(e) => setZip(e.target.value)} />
                                     </div>
                                     <div className="col-12">
                                         <button type="submit" className={style.returnBtn}>Return to store</button>
                                     </div>
                                 </form>
-
                             </div>
 
                             {/* credit card info */}
+
                             <div className="col-md-6">
                                 <div className=" ">
                                     <span className={style.billOne}>2</span>
-                                    <span Billing className={style.billTwo}>Credit Card info</span>
+                                    <span className={style.billTwo}>Credit Card info</span>
                                 </div>
-
-                                <form className="row g-3 mt-3" onSubmit={handleSubmit}>
+                                <form className="row g-3 mt-3">
                                     <div className="col-md-12">
-                                        <input type="text" className="form-control" id="inputEmail4" placeholder="cardholder name" name="name" />
+                                        <input type="text" className="form-control"
+                                            id="inputEmail4" placeholder="cardholder name" name="name" required onChange={(e) => setCardName(e.target.value)} />
                                     </div>
                                     <div className="col-12">
-                                        <input type="number" className="form-control" id="inputAddress" placeholder="card number - 1234-5678-9012-3456" name="card" />
+                                        <input type="number" className="form-control" id="inputAddress"
+                                            placeholder="card number - 1234-5678-9012-3456" name="card" required onChange={(e) => setCardNumber(e.target.value)} />
                                     </div>
                                     <div className="col-md-6">
-                                        <input type="number" className="form-control" placeholder="exp.month" />
+                                        <input type="number" className="form-control" placeholder="exp.month" required onChange={(e) => setExpMonth(e.target.value)} />
                                     </div>
                                     <div className="col-md-6">
-                                        <input type="number" className="form-control" placeholder="exp.year" />
+                                        <input type="number" className="form-control" placeholder="exp.year" required onChange={(e) => setExpYear(e.target.value)} />
                                     </div>
                                     <div className="col-md-12">
-                                        <input type="number" className="form-control" placeholder="cvc number" />
+                                        <input type="number" className="form-control" placeholder="cvc number" required onChange={(e) => setCvc(e.target.value)} />
                                     </div>
-                                    <div className="col-12" id={style.proceedDiv}>
-                                        <button type="submit" className={style.proceedBtn}>Proceed</button>
+                                    <div className="col-12" id={style.proceedDiv} >
+                                        <button type="submit" className={style.proceedBtn} onClick={handleSubmit}>Proceed</button>
                                     </div>
                                 </form>
-
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
             <Footer />
         </>
+
     )
 }

@@ -16,8 +16,8 @@ export default function OurMotto() {
                 <div className="col-md-3" id={style.col}>
                     <div className={style.shape}>
                         <FontAwesomeIcon className={style.arrowOne} icon={faBriefcase} />
-                        <div class={style.innerShape} id={style.bkg1}>
-                            <div class={style.content}>
+                        <div className={style.innerShape} id={style.bkg1}>
+                            <div className={style.content}>
                                 <h4>Premium<br />Service</h4>
                                 <Link className={style.view} to="/about">View More..</Link>
                             </div>
@@ -27,8 +27,8 @@ export default function OurMotto() {
                 <div className="col-md-3" id={style.col}>
                     <div className={style.shape}>
                         <FontAwesomeIcon className={style.arrowTwo} icon={faUser} />
-                        <div class={style.innerShape} id={style.bkg2}>
-                            <div class={style.content}>
+                        <div className={style.innerShape} id={style.bkg2}>
+                            <div className={style.content}>
                                 <h4>User<br />Support</h4>
                                 <Link className={style.view} to="/about">View More..</Link>
                             </div>
@@ -39,8 +39,8 @@ export default function OurMotto() {
                 <div className="col-md-3" id={style.col}>
                     <div className={style.shape}>
                         <FontAwesomeIcon className={style.arrowThree} icon={faHandshake} />
-                        <div class={style.innerShape} id={style.bkg3}>
-                            <div class={style.content}>
+                        <div className={style.innerShape} id={style.bkg3}>
+                            <div className={style.content}>
                                 <h4>High<br />Scalability</h4>
                                 <Link className={style.view} to="/about">View More..</Link>
                             </div>
@@ -50,8 +50,8 @@ export default function OurMotto() {
                 <div className="col-md-3" id={style.col}>
                     <div className={style.shape}>
                         <FontAwesomeIcon className={style.arrowFour} icon={faLink} />
-                        <div class={style.innerShape} id={style.bkg4}>
-                            <div class={style.content}>
+                        <div className={style.innerShape} id={style.bkg4}>
+                            <div className={style.content}>
                                 <h4>Multiple<br />Services</h4>
                                 <Link className={style.view} to="/about">View More..</Link>
                             </div>
