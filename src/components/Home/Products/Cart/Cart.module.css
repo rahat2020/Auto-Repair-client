@@ -29,16 +29,33 @@
     font-weight: 600;
     font-size: 0.9em;
     border: none;
-    background-color: #1f1ffc;
+    background-color: #3333fad3;
     color: #ffffff;
-    padding:0.6em 6.5em;
+    padding:0.6em 5.3em;
     transition: all 0.5s ease;
+    position: relative;
 }
-.btnAdd:hover{
-    color: #000000e5;
+.btnAdd::before{
+    content: "See Details";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: rotateX(270deg);
+    transform-origin:top;
+    transition: all 0.5s ease;
+    text-transform: uppercase;
     font-weight: 600;
-    background-color: #EDBB00;
+    font-size: 0.9em;
+    border: none;
+    background-color: #0909ff;
     color: #ffffff;
+    padding:0.6em 5.3em;
+
+}
+.btnAdd:hover::before{
+    transform: rotateX(0deg);
 }
 #dollar{
  font-weight: 600;

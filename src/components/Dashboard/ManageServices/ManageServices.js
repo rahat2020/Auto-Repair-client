@@ -11,7 +11,7 @@ const ManageServices = () => {
     const [service, setService] = useState([])
     console.log(service)
     useEffect(() => {
-        const url = `http://localhost:5000/service/get`
+        const url = `https://autorepair.herokuapp.com/service/get`
         fetch(url)
             .then(res => res.json())
             .then(data => setService(data))
@@ -27,7 +27,7 @@ const ManageServices = () => {
     }
     const handleDeleteService = async (_id) => {
         try {
-            const res = await axios.delete(`http://localhost:5000/service/delete/${_id}`, config)
+            const res = await axios.delete(`https://autorepair.herokuapp.com/service/delete/${_id}`, config)
             res && Swal.fire({
                 icon: "success",
                 title: "Service deleted successfully"

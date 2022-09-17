@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+.titleText {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: 'Lobster', cursive;
+}
+
+.titleText .title {
+    margin: auto;
+    font-size: 2rem;
+    color: #EDBB00;
+    font-weight: 500;
+    /* text-shadow: 2px 0px #EDBB00; */
+    position: relative;
+    z-index: 1;
+}
+
+.titleHalf {
+    /* text-shadow: 2px 0px #1f1ffc; */
+    color: #1f1ffc;
+}
+
+.titleText .title::after {
+    content: "";
+    width: 3rem;
+    height: 2rem;
+    background: linear-gradient(#3434ff, #f3c41b);
+    position: absolute;
+    top: -30px;
+    left: 0;
+    z-index: -1;
+    transform: rotate(3deg);
+    border-top-left-radius: 62px;
+    border-bottom-right-radius: 55px;
+}
+
+.title {
+    color: #555;
+    font-size: 1.5rem;
+}
+
+/* user styles */
+#userDash {
+    height: 80vh;
+}
+
+.userimg {
+    border-radius: 50%;
+    border: 5px solid #30a9fa;
+    width: 6rem;
+}
+
+.userDash__edit {
+    border: none;
+    background-color: #30a9fa;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: #fff;
+
+}
+
+@media only screen and (max-width:468px) {
+    #userDash {
+        height: 100%;
+        margin-top: -2rem;
+        padding-top: -2rem;
+    }
+    #userBox{
+        margin-top: -2rem;
+        padding-top: -2rem; 
+    }
+}

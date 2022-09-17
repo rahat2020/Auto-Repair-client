@@ -6,9 +6,9 @@ import { AuthContext } from '../../Context/AuthContext';
 import style from './GlobalNavbar.module.css';
 
 export default function GlobalNavbar() {
-    const { user,dispatch } = useContext(AuthContext);
-    const handlelogout = () => { 
-        dispatch({ type:"LOGOUT"})
+    const { user, dispatch } = useContext(AuthContext);
+    const handlelogout = () => {
+        dispatch({ type: "LOGOUT" })
     }
     return (
         <section className="mb-5">
@@ -24,36 +24,39 @@ export default function GlobalNavbar() {
                             <li className="nav-item">
                                 <Link className="nav-link fw-bold" id={style.item} aria-current="page" to="/">Home</Link>
                             </li>
-                            <li className="nav-item">
-                                <Link className="nav-link fw-bold" id={style.item}   to="/dashboard/welcome">Dashboard</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link fw-bold"  id={style.item}  to="/allServices">Services</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link fw-bold"  id={style.item}  to="/products">Products</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link fw-bold"  id={style.item}  to="/blogs">Blogs</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link fw-bold"  id={style.item}   to="/about">About</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link fw-bold" id={style.item}   to="/contacts">Contact</Link>
-                            </li>
-                            <li className="nav-item">
+
                             {
-                                    user?
-                                    <button 
-                                    className="nav-link fw-bold"
-                                    onClick={handlelogout}
-                                    id={style.item}  
-                                    style={{border:"none", backgroundColor:"#00000000"}}
-                                    >
-                                        Logout</button>
+                                user ?
+                                    <li className="nav-item">
+                                        <Link className="nav-link fw-bold" id={style.item} to="/dashboard/welcome">Dashboard</Link>
+                                    </li>
                                     :
-                                    <Link className="nav-link fw-bold"  id={style.item}  to="/login">Login</Link>
+                                    " "
+                            }
+                            <li className="nav-item">
+                                <Link className="nav-link fw-bold" id={style.item} to="/allServices">Services</Link>
+                            </li>
+                            <li className="nav-item">
+                                <a className="nav-link fw-bold" id={style.item} href="#Products">Products</a>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link fw-bold" id={style.item} to="/about">About</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link fw-bold" id={style.item} to="/contacts">Contact</Link>
+                            </li>
+                            <li className="nav-item">
+                                {
+                                    user ?
+                                        <button
+                                            className="nav-link fw-bold"
+                                            onClick={handlelogout}
+                                            id={style.item}
+                                            style={{ border: "none", backgroundColor: "#00000000" }}
+                                        >
+                                            Logout</button>
+                                        :
+                                        <Link className="nav-link fw-bold" id={style.item} to="/login">Login</Link>
                                 }
                             </li>
                         </ul>

@@ -23,7 +23,7 @@ const Login = () => {
                 password,
             }
             console.log(userObj)
-            const res = await axios.post("http://localhost:5000/user/login", userObj)
+            const res = await axios.post("https://autorepair.herokuapp.com/user/login", userObj)
             console.log(res)
             res.data && Swal.fire({
                 icon: 'success',

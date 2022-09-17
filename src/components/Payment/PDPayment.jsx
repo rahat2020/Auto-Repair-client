@@ -45,7 +45,7 @@ export default function PDPayment() {
         }
         // console.log(pdObject)
         try {
-            const res = await axios.post("http://localhost:5000/order/add", pdObject)
+            const res = await axios.post("https://autorepair.herokuapp.com/order/add", pdObject)
             res && Swal.fire({
                 icon: "success",
                 title: "Order added successfully"
@@ -156,7 +156,8 @@ export default function PDPayment() {
                                         <input type="number" className="form-control" placeholder="exp.year" required onChange={(e) => setExpYear(e.target.value)} />
                                     </div>
                                     <div className="col-md-12">
-                                        <input type="number" className="form-control" placeholder="cvc number" required onChange={(e) => setCvc(e.target.value)} />
+                                        <input type="number" className="form-control" placeholder="cvc number" required 
+                                        onChange={(e) => setCvc(e.target.value)} />
                                     </div>
                                     <div className="col-12" id={style.proceedDiv} >
                                         <button type="submit" className={style.proceedBtn} onClick={handleSubmit}>Proceed</button>

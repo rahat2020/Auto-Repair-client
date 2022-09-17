@@ -32,7 +32,7 @@ export default function AddService() {
                 img: url
             }
             console.log(serviceObj)
-            const res = axios.post('http://localhost:5000/service/add', serviceObj, config)
+            const res = axios.post('https://autorepair.herokuapp.com/service/add', serviceObj, config)
             console.log(res)
             res && Swal.fire({
                 icon: "success",

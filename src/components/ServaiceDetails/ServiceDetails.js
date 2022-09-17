@@ -18,7 +18,7 @@ export default function ServiceDetails() {
     useEffect(() => {
         const fetchData = async() => {
             try{
-                const res = await axios.get( `http://localhost:5000/service/get/${_id}`)
+                const res = await axios.get( `https://autorepair.herokuapp.com/service/get/${_id}`)
                 setCheckout(res.data)
             }catch(err){
                 console.log(err)

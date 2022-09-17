@@ -11,17 +11,17 @@ const AllOrders = () => {
   const { user, decodedTkn } = useContext(AuthContext)
   const [data, setDeta] = useState([])
   // console.log(data)
-  const [pd, setPd] = useState([])
-  console.log(pd)
+  // const [pd, setPd] = useState([])
+  // console.log(pd)
   const [itmupdate, setUpdate] = useState(false)
   const [pdmupdate, setPdUpdate] = useState(false)
 
   /////////// PRODUCT DATA
-  useEffect(() => {
-    data.map((item) => {
-      return setPd(item.PD)
-    })
-  }, [data])
+  // useEffect(() => {
+  //   data.map((item) => {
+  //     return setPd(item.PD)
+  //   })
+  // }, [data])
 
   const config = {
     headers: { token: `Bearer ${JSON.parse(localStorage.getItem('token'))}` }
@@ -30,7 +30,7 @@ const AllOrders = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/order/get', config)
+        const res = await axios.get('https://autorepair.herokuapp.com/order/get', config)
         // console.log(res)
         setDeta(res.data)
         // setpdObject(res.data.PD)
@@ -44,7 +44,7 @@ const AllOrders = () => {
   ///////// DELETE ORDERS
   const handleDeleteOrder = async (_id) => {
     try {
-      const res = await axios.delete(`http://localhost:5000/order/delete/${_id}`)
+      const res = await axios.delete(`https://autorepair.herokuapp.com/order/delete/${_id}`)
       res && Swal.fire({
         icon: "success",
         title: "Order deleted successfully"
@@ -53,6 +53,32 @@ const AllOrders = () => {
       console.log(err)
     }
   }
+
+  ///////// UPDATE PRODUCTS ORDERS STATUS
+  const [status, setStatus] = useState('')
+  const [itmID,SetitemID] = useState('')
+  // console.log(itmID)
+
+
+  const handleStatusUpdate = async (e) => {
+    e.preventDefault()
+    const upStatusObj = {
+      status,
+    }
+    console.log(upStatusObj)
+    try {
+      const res = await axios.put(`https://autorepair.herokuapp.com/order/update/${itmID}`, upStatusObj, config)
+      res && Swal.fire({
+        icon: "success",
+        title: "Status Updated successfully"
+      })
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+
+
 
   const handleUpdate = () => {
     setUpdate(true)
@@ -94,7 +120,7 @@ const AllOrders = () => {
         </div>
         <hr />
 
-        {/* SERVICE TAHT ORDERED */}
+        {/*///////////////////////////////////////// SERVICE TAHT ORDERED //////////////////////////////////////////////*/}
         <div className="d-flex justify-content-between align-items-center mb-2">
           <h4 className="mt-3 text-muted fw-bold">Service Ordered List</h4>
           {
@@ -134,10 +160,15 @@ const AllOrders = () => {
                   {
                     pdmupdate ?
                       <td data-title="Service Price" className="text-muted fw-bold">
-                        <select className="form-select" id={style.formSelect} aria-label="Default select example">
-                          <option value={1}>pending</option>
-                          <option value={2}>ongoing</option>
-                          <option value={3}>done</option>
+                        <select className="form-select" 
+                        id={style.formSelect} 
+                        aria-label="Default select example"
+                        onChange={(e) => setStatus(e.target.value)}
+                        onClick={()=>SetitemID(item._id)}
+                        >
+                          <option value="pending">pending</option>
+                          <option value="ongoing">ongoing</option>
+                          <option value="done">done</option>
                         </select>
                       </td>
                       :
@@ -148,7 +179,7 @@ const AllOrders = () => {
                   <td data-title="Action">
                     {
                       item ?
-                        <button className={style.orderBtn__delete} onClick={() => handleDeleteOrder(data._id)}>
+                        <button className={style.orderBtn__delete} onClick={() => handleDeleteOrder(item._id)}>
                           <FontAwesomeIcon icon={faTrash} />
                         </button>
                         :
@@ -165,14 +196,18 @@ const AllOrders = () => {
 
         {
           pdmupdate ?
-            <button onClick={handlePduUpdate} className="btn btn-primary">
+            <button onClick={handleStatusUpdate}  className="btn btn-primary">
               Update
             </button>
             :
             " "
         }
 
-        {/* PRODUCT TAHT ORDERED */}
+
+
+
+        {/*/////////////////////////////////////////// PRODUCT TAHT ORDERED ///////////////////////////////////*/}
+
         <div className="d-flex justify-content-between align-items-center mb-2">
           <h4 className="mt-3 text-muted fw-bold">Products Ordered List</h4>
           {
@@ -199,58 +234,62 @@ const AllOrders = () => {
           </thead>
 
           {
-            pd.map((im, index) => (
-              <tbody key={index}>
-                <tr >
-                  <th scope="row" className="text-muted fw-bold" >1</th>
-                  <td data-title="User Name" className="text-muted fw-bold">{im?.name}</td>
-                  <td data-title="Product Price" className="text-muted fw-bold">{im?.price}</td>
-                  <td data-title="Product Image" >
-                    <img src={im?.img} alt="product-img" className={style.orderpd__img} />
-                  </td>
-                  {
-                    itmupdate ?
-                      <td data-title="Product Price" className="text-muted fw-bold">
-                        <select className="form-select" id={style.formSelect} aria-label="Default select example">
-                          <option value={1}>pending</option>
-                          <option value={2}>ongoing</option>
-                          <option value={3}>done</option>
-                        </select>
-                      </td>
-                      :
-                      <td data-title="Status" className="text-muted fw-bold">
-                        { data.map((item, index)=>(
-                          <span key={index}>
-                              {item.status}
-                          </span>
-                        )) }
-                      </td>
-                  }
-
-                  <td data-title="Action">
+            data.map((item, index) => (
+              item.PD.map((im, index) => (
+                <tbody key={index}>
+                  <tr >
+                    <th scope="row" className="text-muted fw-bold" >1</th>
+                    <td data-title="User Name" className="text-muted fw-bold">{im?.name}</td>
+                    <td data-title="Product Price" className="text-muted fw-bold">{im?.price}</td>
+                    <td data-title="Product Image" >
+                      <img src={im?.img} alt="product-img" className={style.orderpd__img} />
+                    </td>
                     {
-                      im ?
-                        <button
-                          className={style.orderBtn__delete}
-                          onClick={() => handleDeleteOrder(im._id)}>
-                          <FontAwesomeIcon icon={faTrash} />
-                        </button>
+                      itmupdate ?
+                        <td data-title="Product Price" className="text-muted fw-bold">
+                          <select className="form-select"
+                            id={style.formSelect}
+                            // onChange={(e) => setStatus(e.target.value)}
+                            // onClick={()=>SetitemID(im._id)}
+                            aria-label="Default select example">
+                            <option value="pending">pending</option>
+                            <option value="ongoing">ongoing</option>
+                            <option value="done">done</option>
+                          </select>
+                        </td>
                         :
-                        <button className={style.orderBtn__delete}>
-                          Not ordered
-                        </button>
+                        <td data-title="Status" className="text-muted fw-bold">
+                          {item.status}
+                        </td>
                     }
-                  </td>
-                </tr>
-              </tbody>
+
+                    <td data-title="Action">
+                      {
+                        im ?
+                          <button
+                            className={style.orderBtn__delete}
+                            onClick={() => handleDeleteOrder(im._id)}>
+                            <FontAwesomeIcon icon={faTrash} />
+                          </button>
+                          :
+                          <button className={style.orderBtn__delete}>
+                            Not ordered
+                          </button>
+                      }
+                    </td>
+                  </tr>
+                </tbody>
+              ))
             ))
           }
+
+
 
         </table>
 
         {
           itmupdate ?
-            <button onClick={handlePduUpdate} className="btn btn-primary">
+            <button className="btn btn-primary">
               Update
             </button>
             :

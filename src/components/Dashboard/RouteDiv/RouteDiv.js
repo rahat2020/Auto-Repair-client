@@ -11,6 +11,7 @@ import AllOrders from '../AllOrders/AllOrders';
 import ManageProducts from '../ManageProducts/ManageProducts';
 import { AuthContext } from '../../../Context/AuthContext';
 import Home from '../../Home/Home/Home';
+import UserDash from '../UserDash/UserDash';
 export default function RouteDiv() {
     let { path } = useRouteMatch();
     const { decodedTkn } = useContext(AuthContext);
@@ -73,9 +74,13 @@ export default function RouteDiv() {
                             <Home />
                     }
                 </Route>
+                <Route path={`${path}/user`}>
+                    <UserDash />
+                </Route>
                 <Route path={`${path}/ordered`}>
                     <Order />
                 </Route>
+              
             </Switch>
         </div>
     )

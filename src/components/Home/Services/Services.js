@@ -8,6 +8,7 @@ import 'aos/dist/aos.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from '../../../Context/AuthContext';
+import Swal from 'sweetalert2';
 
 const Services = () => {
     const [service, setService] = useState([])
@@ -16,7 +17,7 @@ const Services = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const data = await axios.get('http://localhost:5000/service/get')
+                const data = await axios.get('https://autorepair.herokuapp.com/service/get')
                 setService(data.data)
                 // console.log(data)
             } catch (err) {
@@ -31,7 +32,11 @@ const Services = () => {
     })
     const { user } = useContext(AuthContext);
     const notify = () => {
-        alert('Please login first, thank you!!')
+        Swal.fire({
+            icon: "question",
+            title: "Did you login?",
+            text:"Please login first, thank you!!",
+        })
     }
     // DATA FETCH LOADER
     useEffect(() => {

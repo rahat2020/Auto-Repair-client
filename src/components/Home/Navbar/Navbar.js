@@ -9,11 +9,11 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { AuthContext } from '../../../Context/AuthContext';
 
 const Navbar = () => {
-    const { user,dispatch } = useContext(AuthContext);
+    const { user, dispatch } = useContext(AuthContext);
     const [color, setColor] = useState(false)
 
-    const handlelogout = () => { 
-        dispatch({ type:"LOGOUT"})
+    const handlelogout = () => {
+        dispatch({ type: "LOGOUT" })
     }
     const changeColor = () => {
         if (window.scrollY >= 70) {
@@ -51,7 +51,7 @@ const Navbar = () => {
                                 <Link className="nav-link fw-bold" id={color ? style.item && style.liColor : style.item} to="/allServices">Services</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link fw-bold" id={color ? style.item && style.liColor : style.item} to="/products">Products</Link>
+                                <a href="#Products" className="nav-link fw-bold" id={color ? style.item && style.liColor : style.item}>Products</a>
                             </li>
                             {/* <li className="nav-item">
                                 <Link className="nav-link fw-bold" id={color ? style.item && style.liColor : style.item} to="/blogs">Blogs</Link>
@@ -68,11 +68,11 @@ const Navbar = () => {
                                         // <Link className="nav-link fw-bold" id={color ? style.item && style.liColor : style.item} to="/" style={{ color: 'white' }}>
                                         //     {user.username}
                                         // </Link>
-                                        <button 
-                                        className="nav-link fw-bold" 
-                                        id={color ? style.item && style.liColor : style.item} 
-                                        onClick={handlelogout}
-                                        style={{border:"none", backgroundColor:"#00000000"}}
+                                        <button
+                                            className="nav-link fw-bold"
+                                            id={color ? style.item && style.liColor : style.item}
+                                            onClick={handlelogout}
+                                            style={{ border: "none", backgroundColor: "#00000000" }}
                                         >Logout</button>
                                         :
                                         <Link className="nav-link fw-bold" id={color ? style.item && style.liColor : style.item} to="/login">Login</Link>
@@ -91,7 +91,7 @@ const Navbar = () => {
                         <div className="carousel-caption">
                             <h2 className={style.slideTitle}>We Are Professional </h2>
                             <h3 className={style.slideText}>we will modify your car as you want will fix your car problem</h3>
-                            <Link to="/">  <button className={style.slideContact}>Contact Now</button> </Link>
+                            <Link to="/contacts">  <button className={style.slideContact}>Contact Now</button> </Link>
                             <Link to="/">  <button className={style.slideContact}>Book Now</button> </Link>
                         </div>
                     </div>
@@ -100,7 +100,7 @@ const Navbar = () => {
                         <div className="carousel-caption">
                             <h2 className={style.slideTitle}>We are creative</h2>
                             <h3 className={style.slideText}>We will fix your car as you bought dammn new</h3>
-                            <Link to="/">  <button className={style.slideContact}>Contact Now</button> </Link>
+                            <Link to="/contacts">  <button className={style.slideContact}>Contact Now</button> </Link>
                             <Link to="/">  <button className={style.slideContact}>Book Now</button> </Link>
                         </div>
                     </div>
@@ -109,7 +109,7 @@ const Navbar = () => {
                         <div className="carousel-caption">
                             <h2 className={style.slideTitle}>We are<span> dedicated</span></h2>
                             <h3 className={style.slideText}>We care about your car as you do</h3>
-                            <Link to="/">  <button className={style.slideContact}>Contact Now</button> </Link>
+                            <Link to="/contacts">  <button className={style.slideContact}>Contact Now</button> </Link>
                             <Link to="/">  <button className={style.slideContact}>Book Now</button> </Link>
                         </div>
                     </div>

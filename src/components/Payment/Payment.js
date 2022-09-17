@@ -43,7 +43,7 @@ export default function Payment() {
         }
         // console.log(pdObject)
         try {
-            const res = await axios.post("http://localhost:5000/order/add", pdObject)
+            const res = await axios.post("https://autorepair.herokuapp.com/order/add", pdObject)
             res && Swal.fire({
                 icon: "success",
                 title: "Order added successfully"

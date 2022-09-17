@@ -43,7 +43,8 @@ const Menu = ({ isOpen, setOpen }) => {
                                 <Link to={`${url}/allorders`}>All Orders</Link>
                             </li>
                             <li onClick={() => setOpen(false)}>
-                                <span className="nav__log">{user ? user.username : null}</span>
+                                <Link to={`${url}/user`}> <span className="nav__log">{user ? user.username : null}</span> </Link>
+
                             </li>
                             <li onClick={() => setOpen(false)}>
                                 <span
@@ -63,7 +64,7 @@ const Menu = ({ isOpen, setOpen }) => {
                                 <Link to={`${url}/ordered`}>Order list</Link>
                             </li>
                             <li onClick={() => setOpen(false)}>
-                                <span>{user ? user.username : null}</span>
+                                <Link to={`${url}/user`}> <span className="nav__log">{user ? user.username : null}</span> </Link>
                             </li>
                             <li onClick={() => setOpen(false)}>
                                 <span

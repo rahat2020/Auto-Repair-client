@@ -29,7 +29,7 @@ const Signup = () => {
         }
         console.log(userObj)
         try {
-            const res = await axios.post("http://localhost:5000/user/register", userObj)
+            const res = await axios.post("https://autorepair.herokuapp.com/user/register", userObj)
             console.log(res.data)
             res.data && Swal.fire({
                 icon: 'success',

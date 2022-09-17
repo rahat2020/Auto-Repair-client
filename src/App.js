@@ -14,19 +14,19 @@ import AllServices from './components/AllServices/AllServices';
 import Payment from './components/Payment/Payment';
 import WelcomePage from './components/Dashboard/WelcomePage/WelcomePage';
 import ServiceDetails from './components/ServaiceDetails/ServiceDetails';
-import Products from './components/Home/Products/Products';
 import Signup from './components/Login/Signup/Signup';
 import { AuthContext } from './Context/AuthContext';
 import GotoTop from './components/Home/GotoTop/GotoTop';
 import Order from './components/Dashboard/Order/Order';
 import PDPayment from './components/Payment/PDPayment';
+import ProductsDetails from './components/ProductsDetails/ProductsDetails';
 // import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
 // export const UserContext = createContext();
 
 function App() {
   // const [loggedInUser, setLoggedInUser] = useState({});
-  const { user, decodedTkn } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   // console.log(decodedTkn);
 
   return (
@@ -50,18 +50,12 @@ function App() {
         </Route>  <Route path="/allServices">
           <AllServices />
         </Route>
-        <Route path="/products">
-          <Products />
-        </Route>
         <Route path="/details/:_id">
           <ServiceDetails />
         </Route>
-        {/* <Route path="*">
-          <NoMatch />
-        </Route> */}
-        {/* <Route path="/welcome">
-          <WelcomePage />
-        </Route> */}
+        <Route path="/pdDetails">
+          <ProductsDetails />
+        </Route>
 
         {/* PRIVATE ROUTES */}
         <Route path="/payment">

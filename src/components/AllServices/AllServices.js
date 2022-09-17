@@ -11,7 +11,7 @@ const AllServices = () => {
     const [service, setService] = useState([])
     console.log(service)
     useEffect(() => {
-        const url = `http://localhost:5000/service/get`
+        const url = `https://autorepair.herokuapp.com/service/get`
         fetch(url)
             .then(res => res.json())
             .then(data => setService(data))
