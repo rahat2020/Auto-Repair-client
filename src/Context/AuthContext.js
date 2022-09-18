@@ -56,7 +56,7 @@ export const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     const fetchTokenData = () => {
       const authToken = JSON.parse(localStorage.getItem('token')) ?? null;
-      let nullToken = null
+      let nullToken =  null
       if (authToken) {
         return setDecodedTkn(jwt_decode(authToken))
       } else {

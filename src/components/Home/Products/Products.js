@@ -53,7 +53,7 @@ export default function Products() {
                 </div>
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-9 mt-5">
+                        <div className="col-md-9 mt-4">
                             <div className="row">
                                 {
                                     loading ?

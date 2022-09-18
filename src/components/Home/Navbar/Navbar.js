@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import style from './navbar.module.css';
 import carousel from '../../../img/carousel.png';
@@ -15,14 +15,18 @@ const Navbar = () => {
     const handlelogout = () => {
         dispatch({ type: "LOGOUT" })
     }
-    const changeColor = () => {
-        if (window.scrollY >= 70) {
-            setColor(true);
-        } else {
-            setColor(false);
+    useEffect(() => {
+        const changeColor = () => {
+            if (window.scrollY >= 70) {
+                setColor(true);
+            } else {
+                setColor(false);
+            }
         }
-    }
-    window.addEventListener('scroll', changeColor)
+        // changeColor()
+        window.addEventListener('scroll', changeColor)
+    }, [])
+
     return (
         <div className={style.navContainer}>
             <nav id={color ? style.navbar && style.navbarBG : style.navbar} className="navbar navbar-expand-lg fixed-top  navbar-light navbar-inverse">

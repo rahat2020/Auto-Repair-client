@@ -1,7 +1,10 @@
 #detailsContainer{
     background-color: #e5f9fa73;
+    width: 100%;
+    height: 100vh;
 }
 #details{
+    
     display: flex;
     justify-content:center;
     align-items:start;
@@ -43,15 +46,18 @@
 }
 .rating{
     margin-left: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
  
 }
 .ratingIcon{
-    font-size: 1em;
+    font-size: .88em;
     color: goldenrod;
-    margin: 3px;
+    margin-left: 5px;
 }
 .description{
-    color: #000000b4;
+    color: #575757b4;
     font-weight: 400;
     font-size: .94em;
     text-align: justify;
@@ -62,15 +68,16 @@
     align-items: center;
 }
 .price{
-    color: #000000d2;
+    color: #777;
     font-weight: 500;
-    font-size: 1.56em;
+    font-size: 1em;
 }
 .btn{
-    margin-left: 4rem;
-    border: 1px solid #999;
-    background-color: #fff;
-    padding: 5px 20px;
+    /* margin-left: 4rem; */
+    background-color: #3b3bfac5;
+    border: none;
+    color: #fff;
+    padding: 7px 30px;
     font-weight: 600;
     font-size: .80rem;
     transition: all 0.5s ease;
@@ -78,25 +85,24 @@
     position: relative;
 }
 .btn::before{
-    content: "Buy now";
+    content: "Payment";
     top: 0;
     left: 0;
     position: absolute;
-    padding: 5px 20px;
+    padding: 7px 31px;
+    width: 100%;
+    border: none;
+    background-color: #2f2ff5f5;
+    border-radius: 10px;
     font-weight: 600;
     font-size: .80rem;
     transition: all 0.5s ease;
-    border-radius: 10px;
-    background-color: #2f2ff5da;
-    /* border: 1px solid #2f2ff5da; */
     transition: all 0.5s ease;
     transform:rotateX(270deg);
     transform-origin: bottom;
 }
 .btn:hover::before{
     transform:rotateX(0deg);
-    border: 1px solid #2f2ff5da;
-    color: #fff;
 } 
 
 /* responsive styles */

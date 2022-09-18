@@ -8,6 +8,7 @@ import { useContext } from 'react';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Context/AuthContext';
 import axios from 'axios';
+import success from '../../img/preview.gif';
 import { useHistory } from 'react-router-dom';
 
 export default function PDPayment() {
@@ -20,6 +21,7 @@ export default function PDPayment() {
     const [expYear, setExpYear] = useState('')
     const [zip, setZip] = useState('')
     const [cvc, setCvc] = useState('')
+    const [res, setRes] = useState(false)
 
     const history = useHistory()
 
@@ -39,16 +41,17 @@ export default function PDPayment() {
             expYear,
             zip,
             cvc,
-            PD: cart ,
+            PD: cart,
             total: total,
 
         }
         // console.log(pdObject)
         try {
             const res = await axios.post("https://autorepair.herokuapp.com/order/add", pdObject)
+            setRes(res)
             res && Swal.fire({
                 icon: "success",
-                title: "Order added successfully"
+                title: "Order placed successfully"
             })
             history.push('/dashboard/ordered')
         } catch (err) {
@@ -59,7 +62,7 @@ export default function PDPayment() {
             })
         }
     }
-  
+
 
     return (
         <>
@@ -70,7 +73,7 @@ export default function PDPayment() {
                     <img src={cart[0]?.img} className={style.payment__img} alt="..." />
                     <div className="card-body">
                         <h5 className="card-title">{cart.name}</h5>
-                        <h5 className="card-title">${ total}</h5>
+                        <h5 className="card-title">${total}</h5>
 
                         {
                             cart.map((itm, index) => (
@@ -156,15 +159,21 @@ export default function PDPayment() {
                                         <input type="number" className="form-control" placeholder="exp.year" required onChange={(e) => setExpYear(e.target.value)} />
                                     </div>
                                     <div className="col-md-12">
-                                        <input type="number" className="form-control" placeholder="cvc number" required 
-                                        onChange={(e) => setCvc(e.target.value)} />
+                                        <input type="number" className="form-control" placeholder="cvc number" required
+                                            onChange={(e) => setCvc(e.target.value)} />
                                     </div>
                                     <div className="col-12" id={style.proceedDiv} >
                                         <button type="submit" className={style.proceedBtn} onClick={handleSubmit}>Proceed</button>
                                     </div>
                                 </form>
+
                             </div>
                         </div>
+
+                    </div>
+                    <div className="gifcontianer">
+                      
+                        <img src={success} alt="success-gif" className="gif img-fluid" />
 
                     </div>
                 </div>
