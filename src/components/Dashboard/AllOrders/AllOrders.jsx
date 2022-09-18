@@ -15,13 +15,14 @@ const AllOrders = () => {
   // console.log(pd)
   const [itmupdate, setUpdate] = useState(false)
   const [pdmupdate, setPdUpdate] = useState(false)
+  const [loading, setLoading] = useState(false)
 
-  /////////// PRODUCT DATA
-  // useEffect(() => {
-  //   data.map((item) => {
-  //     return setPd(item.PD)
-  //   })
-  // }, [data])
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, [1000])
+    return () => clearTimeout(timeout);
+  })
 
   const config = {
     headers: { token: `Bearer ${JSON.parse(localStorage.getItem('token'))}` }
@@ -49,6 +50,10 @@ const AllOrders = () => {
         icon: "success",
         title: "Order deleted successfully"
       })
+      setTimeout(function () {
+        res && window.location.reload();
+      }, [1000])
+      return () => clearTimeout(setTimeout());
     } catch (err) {
       console.log(err)
     }
@@ -56,7 +61,7 @@ const AllOrders = () => {
 
   ///////// UPDATE PRODUCTS ORDERS STATUS
   const [status, setStatus] = useState('')
-  const [itmID,SetitemID] = useState('')
+  const [itmID, SetitemID] = useState('')
   // console.log(itmID)
 
 
@@ -72,6 +77,10 @@ const AllOrders = () => {
         icon: "success",
         title: "Status Updated successfully"
       })
+      setTimeout(function () {
+        res && window.location.reload();
+      }, [1000])
+      return () => clearTimeout(setTimeout());
     } catch (err) {
       console.log(err)
     }
@@ -160,11 +169,11 @@ const AllOrders = () => {
                   {
                     pdmupdate ?
                       <td data-title="Service Price" className="text-muted fw-bold">
-                        <select className="form-select" 
-                        id={style.formSelect} 
-                        aria-label="Default select example"
-                        onChange={(e) => setStatus(e.target.value)}
-                        onClick={()=>SetitemID(item._id)}
+                        <select className="form-select"
+                          id={style.formSelect}
+                          aria-label="Default select example"
+                          onChange={(e) => setStatus(e.target.value)}
+                          onClick={() => SetitemID(item._id)}
                         >
                           <option value="pending">pending</option>
                           <option value="ongoing">ongoing</option>
@@ -196,7 +205,7 @@ const AllOrders = () => {
 
         {
           pdmupdate ?
-            <button onClick={handleStatusUpdate}  className="btn btn-primary">
+            <button onClick={handleStatusUpdate} className="btn btn-primary">
               Update
             </button>
             :

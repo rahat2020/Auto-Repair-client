@@ -8,7 +8,7 @@ import { useContext } from 'react';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Context/AuthContext';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 export default function Payment() {
     const { user } = useContext(AuthContext);
@@ -63,11 +63,11 @@ export default function Payment() {
 
             <GlobalNavbar />
             <div className="mt-5 pt-5 mb-5 pt-3 d-flex justify-content-center align-content-center" id={style.paymentContainer}>
-                <div className="card shadow" style={{ width: '18rem' }}>
-                    <img src={Pdetails.img } className={style.payment__img} alt="..." />
+                <div className="card shadow" style={{ width: '18rem' }} id={style.imgContainer}>
+                    <img src={Pdetails.img} className={style.payment__img} alt="..." />
                     <div className="card-body">
                         <h5 className="card-title">{Pdetails.name}</h5>
-                        <h5 className="card-title">${ Pdetails.price }</h5>
+                        <h5 className="card-title">${Pdetails.price}</h5>
 
                     </div>
                 </div>
@@ -118,7 +118,9 @@ export default function Payment() {
                                         <input type="text" className="form-control" required placeholder="Zip" onChange={(e) => setZip(e.target.value)} />
                                     </div>
                                     <div className="col-12">
-                                        <button type="submit" className={style.returnBtn}>Return to store</button>
+                                        <Link to="/pdDetails">
+                                            <button type="submit" className={style.returnBtn}>Return to store</button>
+                                        </Link>
                                     </div>
                                 </form>
                             </div>
@@ -126,7 +128,7 @@ export default function Payment() {
                             {/* credit card info */}
 
                             <div className="col-md-6">
-                                <div className=" ">
+                                <div className={style.cardInfo}>
                                     <span className={style.billOne}>2</span>
                                     <span className={style.billTwo}>Credit Card info</span>
                                 </div>

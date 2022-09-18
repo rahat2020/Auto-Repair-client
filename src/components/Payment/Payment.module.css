@@ -5,6 +5,7 @@
     background-color: #ffffffce;
     box-sizing: border-box;
     padding: 2em;
+    position: relative;
 }
 #title{
     color: #000000c9;
@@ -89,6 +90,22 @@
     height: 100%;
     object-fit: cover;
 }
+.payment{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: #757272be;
+    top: -10px;
+    left: -500px;
+    width: 100vw;
+    height: 100vh;
+}
+.payment .gif{
+    width: 50%;
+    height: 60%;
+    border-radius:2rem;
+}
 .returnBtn:hover{
     border: 2px solid #000000c9;
     color:#000000c9;
@@ -114,4 +131,32 @@
 .proceedBtn:hover{
     background: #218fd9;
     color: #fff;
+}
+
+@media only screen and (max-width:468px){
+    #paymentContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+    }
+    #imgContainer{
+        width: 27rem !important;
+        height: 100%;
+    }
+    #payBox{
+        width: 100%;
+        height: 100%;
+        margin: 10px;
+        padding: 20px;
+    }
+    #payOptions{
+        display: none !important;
+    }
+    .cardInfo{
+        margin-top: 2rem !important;
+    }
 }

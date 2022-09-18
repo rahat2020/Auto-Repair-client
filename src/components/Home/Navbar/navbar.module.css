@@ -61,14 +61,17 @@ a{
     transition: all 0.5s ease;
 }
 .banner{
-    width:100%;
+
+    object-fit: cover
 }
 .banner {
+    width:100%;
 	-webkit-background-size: cover;
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
 	height: 100vh;  
+    object-fit: cover
 }
 .carousel-caption{
     position: absolute;

@@ -8,7 +8,6 @@ import { useContext } from 'react';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Context/AuthContext';
 import axios from 'axios';
-import success from '../../img/preview.gif';
 import { useHistory } from 'react-router-dom';
 
 export default function PDPayment() {
@@ -21,7 +20,6 @@ export default function PDPayment() {
     const [expYear, setExpYear] = useState('')
     const [zip, setZip] = useState('')
     const [cvc, setCvc] = useState('')
-    const [res, setRes] = useState(false)
 
     const history = useHistory()
 
@@ -48,7 +46,6 @@ export default function PDPayment() {
         // console.log(pdObject)
         try {
             const res = await axios.post("https://autorepair.herokuapp.com/order/add", pdObject)
-            setRes(res)
             res && Swal.fire({
                 icon: "success",
                 title: "Order placed successfully"
@@ -169,12 +166,6 @@ export default function PDPayment() {
 
                             </div>
                         </div>
-
-                    </div>
-                    <div className="gifcontianer">
-                      
-                        <img src={success} alt="success-gif" className="gif img-fluid" />
-
                     </div>
                 </div>
             </div>

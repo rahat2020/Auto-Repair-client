@@ -39,6 +39,7 @@ const Order = () => {
                 icon: "success",
                 title: "Order deleted successfully"
             })
+          res && window.location.reload()
         } catch (err) {
             console.log(err)
         }
@@ -46,7 +47,10 @@ const Order = () => {
     return (
         <>
             <div className="order__container shadow">
-                <h4 className="text-center border-bottom order__title">Order list</h4>
+                <div className="titleText">
+                    <h2 className="title">My<span className="titleHalf"> Orders</span></h2>
+                </div>
+            
                 <div className="ordered__user">
                     <div className="ol__left">
                         <p className="order__userData">User name:</p>

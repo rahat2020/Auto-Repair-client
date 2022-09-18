@@ -10,8 +10,8 @@ export default function WelcomePage() {
         <section className="mt-5 pt-5 mx-4">
             <div className={style.welcome}>
                 <div className={style.dashboardImg}>
-                    <img data-aos="fade-down" src={dashboard} alt="" className={style.dashimg}/>
-                    <h2 data-aos="fade-up" className={style.welcomeTitle}>{ user ? user.username : ""  } welcome <br/> to the <br /> dashboard</h2>
+                    <img src={dashboard} alt="" className={style.dashimg}/>
+                    <h2 className={style.welcomeTitle}>{ user ? user.username : ""  } welcome <br/> to the <br /> dashboard</h2>
                 </div>
             </div>
         </section>

@@ -1,9 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import style from './UserDash.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrash, } from '@fortawesome/free-solid-svg-icons';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import { AuthContext } from '../../../Context/AuthContext';
@@ -54,7 +52,7 @@ const UserDash = () => {
 
     return (
         <section className="mt-5 pt-5 mb-4 shadow" id={style.userDash}>
-            <div data-aos="fade-up" className={style.titleText}>
+            <div className={style.titleText}>
                 <h2 className={style.title}>User<span className={style.titleHalf}> Profile</span></h2>
             </div>
 

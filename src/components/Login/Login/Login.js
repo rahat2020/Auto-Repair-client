@@ -32,7 +32,12 @@ const Login = () => {
             dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
             localStorage.setItem("token", JSON.stringify(res.data.token))
             history.push("/dashboard/welcome")
-            res && window.location.reload();
+
+            setTimeout(function () {
+                res && window.location.reload();
+            }, [1000])
+            return () => clearTimeout(setTimeout());
+            
         } catch (err) {
             console.log(err)
             err && Swal.fire({

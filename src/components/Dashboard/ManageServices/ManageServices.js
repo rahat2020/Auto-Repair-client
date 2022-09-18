@@ -32,6 +32,10 @@ const ManageServices = () => {
                 icon: "success",
                 title: "Service deleted successfully"
             })
+            setTimeout(function () {
+                res && window.location.reload();
+            }, [1000])
+            return () => clearTimeout(setTimeout());
         } catch (err) {
             console.log(err)
             err && Swal.fire({
@@ -42,7 +46,7 @@ const ManageServices = () => {
     }
     return (
         <section className="mt-5 pt-5 shadow">
-            <div data-aos="fade-up" className={style.titleText}>
+            <div className={style.titleText}>
                 <h2 className={style.title}>Manage<span className={style.titleHalf}> Services</span></h2>
             </div>
 

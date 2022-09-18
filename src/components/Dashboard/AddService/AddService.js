@@ -50,7 +50,7 @@ export default function AddService() {
     }
     return (
         <section className="container mt-3 pt-3 mb-5 shadow rounded" id={style.AddService}>
-            <div data-aos="fade-up" className={style.titleText}>
+            <div className={style.titleText}>
                 <h2 className={style.title}>Add<span className={style.titleHalf}> Services</span></h2>
             </div>
             <form className="row g-3 mt-3">
