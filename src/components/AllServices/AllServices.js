@@ -11,7 +11,7 @@ const AllServices = () => {
     const [service, setService] = useState([])
     console.log(service)
     useEffect(() => {
-        const url = `https://autorepair.herokuapp.com/service/get`
+        const url = `https://angry-sweatpants-bear.cyclic.app/service/get`
         fetch(url)
             .then(res => res.json())
             .then(data => setService(data))

@@ -18,7 +18,7 @@ export default function Products() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get('https://autorepair.herokuapp.com/product/get')
+                const res = await axios.get('https://angry-sweatpants-bear.cyclic.app/product/get')
                 setPdItem(res.data)
             } catch (err) {
                 console.log(err)

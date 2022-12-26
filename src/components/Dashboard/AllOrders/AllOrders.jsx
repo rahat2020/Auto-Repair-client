@@ -31,7 +31,7 @@ const AllOrders = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get('https://autorepair.herokuapp.com/order/get', config)
+        const res = await axios.get('https://angry-sweatpants-bear.cyclic.app/order/get', config)
         // console.log(res)
         setDeta(res.data)
         // setpdObject(res.data.PD)
@@ -45,7 +45,7 @@ const AllOrders = () => {
   ///////// DELETE ORDERS
   const handleDeleteOrder = async (_id) => {
     try {
-      const res = await axios.delete(`https://autorepair.herokuapp.com/order/delete/${_id}`)
+      const res = await axios.delete(`https://angry-sweatpants-bear.cyclic.app/order/delete/${_id}`)
       res && Swal.fire({
         icon: "success",
         title: "Order deleted successfully"
@@ -72,7 +72,7 @@ const AllOrders = () => {
     }
     console.log(upStatusObj)
     try {
-      const res = await axios.put(`https://autorepair.herokuapp.com/order/update/${itmID}`, upStatusObj, config)
+      const res = await axios.put(`https://angry-sweatpants-bear.cyclic.app/order/update/${itmID}`, upStatusObj, config)
       res && Swal.fire({
         icon: "success",
         title: "Status Updated successfully"

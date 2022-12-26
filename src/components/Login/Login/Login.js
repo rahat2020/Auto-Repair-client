@@ -23,7 +23,7 @@ const Login = () => {
                 password,
             }
             console.log(userObj)
-            const res = await axios.post("https://autorepair.herokuapp.com/user/login", userObj)
+            const res = await axios.post("https://angry-sweatpants-bear.cyclic.app/user/login", userObj)
             console.log(res)
             res.data && Swal.fire({
                 icon: 'success',

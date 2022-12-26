@@ -34,7 +34,7 @@ const UserDash = () => {
         }
         console.log(userObj)
         try {
-            const res = await axios.put("https://autorepair.herokuapp.com/user/update/" + user._id, userObj)
+            const res = await axios.put("https://angry-sweatpants-bear.cyclic.app/user/update/" + user._id, userObj)
             console.log(res.data)
             res.data && Swal.fire({
                 icon: 'success',

@@ -17,7 +17,7 @@ const Services = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const data = await axios.get('https://autorepair.herokuapp.com/service/get')
+                const data = await axios.get('https://angry-sweatpants-bear.cyclic.app/service/get')
                 setService(data.data)
                 // console.log(data)
             } catch (err) {

@@ -22,7 +22,7 @@ const Order = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`https://autorepair.herokuapp.com/order/orderedByEmail?email=` + user?.email)
+                const res = await axios.get(`https://angry-sweatpants-bear.cyclic.app/order/orderedByEmail?email=` + user?.email)
                 // console.log(res)
                 setDeta(res.data)
 
@@ -34,7 +34,7 @@ const Order = () => {
     }, [user])
     const handleDeleteOrder = async (_id) => {
         try {
-            const res = await axios.delete(`https://autorepair.herokuapp.com/order/delete/${_id}`)
+            const res = await axios.delete(`https://angry-sweatpants-bear.cyclic.app/order/delete/${_id}`)
             res && Swal.fire({
                 icon: "success",
                 title: "Order deleted successfully"

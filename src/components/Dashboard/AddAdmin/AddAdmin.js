@@ -28,7 +28,7 @@ export default function AddService() {
         }
         console.log(userObj)
         try {
-            const res = await axios.post("https://autorepair.herokuapp.com/user/register", userObj)
+            const res = await axios.post("https://angry-sweatpants-bear.cyclic.app/user/register", userObj)
             console.log(res.data)
             res.data && Swal.fire({
                 icon: 'success',

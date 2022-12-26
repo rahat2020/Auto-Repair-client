@@ -11,7 +11,7 @@ const ManageProducts = () => {
     const [service, setService] = useState([])
     console.log(service)
     useEffect(() => {
-        const url = `https://autorepair.herokuapp.com/product/get`
+        const url = `https://angry-sweatpants-bear.cyclic.app/product/get`
         fetch(url)
             .then(res => res.json())
             .then(data => setService(data))
@@ -27,7 +27,7 @@ const ManageProducts = () => {
     }
     const handleDeleteService = async (_id) => {
         try {
-            const res = await axios.delete(`https://autorepair.herokuapp.com/product/delete/${_id}`, config)
+            const res = await axios.delete(`https://angry-sweatpants-bear.cyclic.app/product/delete/${_id}`, config)
             res && Swal.fire({
                 icon: "success",
                 title: "Service deleted successfully"
